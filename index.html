@@ -52,12 +52,13 @@ body{font-family:'Cabinet Grotesk',system-ui,sans-serif;background:linear-gradie
 @keyframes fu{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 
 /* TYPO */
-.hero{font-family:'Cabinet Grotesk',system-ui,sans-serif;font-size:clamp(48px,13vw,90px);font-weight:900;background:linear-gradient(135deg,#00CBC8 0%,#2264DC 40%,#F5F0E8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:.88;letter-spacing:-.04em;text-transform:uppercase}
+.hero{font-family:'Cabinet Grotesk',system-ui,sans-serif;font-size:clamp(68px,18vw,126px);font-weight:900;background:linear-gradient(135deg,#00CBC8 0%,#2264DC 40%,#F5F0E8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:.88;letter-spacing:-.04em;text-transform:uppercase}
+.hero-grad{font-family:'Cabinet Grotesk',system-ui,sans-serif;font-weight:900;background:linear-gradient(135deg,#00CBC8 0%,#2264DC 40%,#F5F0E8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.05em;line-height:.85}
 .hsub{font-size:clamp(15px,3vw,20px);font-weight:300;color:var(--t2);margin-bottom:24px}
-.tl{font-family:'Cabinet Grotesk',system-ui,sans-serif;font-size:clamp(20px,4.5vw,32px);font-weight:800;margin-bottom:4px;letter-spacing:-.02em;line-height:1.05}
+.tl{font-family:'Cabinet Grotesk',system-ui,sans-serif;font-size:clamp(24px,5.5vw,36px);font-weight:800;margin-bottom:4px;letter-spacing:-.02em;line-height:1.05}
 .sub{font-size:14px;color:var(--t2);margin-bottom:16px}
 .bd{font-size:15px;color:var(--t2);line-height:1.72;margin-bottom:14px;max-width:560px}.bd b{color:var(--cream)}
-.ey{font-family:'Chivo Mono',monospace;font-size:11px;font-weight:400;text-transform:uppercase;letter-spacing:.26em;color:var(--gold);display:flex;align-items:center;gap:12px}.ey::before{content:'';width:28px;height:1px;background:var(--gold)}
+.ey{font-family:'Chivo Mono',monospace;font-size:14px;font-weight:400;text-transform:uppercase;letter-spacing:.2em;color:var(--gold);display:flex;align-items:center;gap:12px}.ey::before{content:'';width:28px;height:1px;background:var(--gold)}
 
 /* CARD */
 .cd{background:var(--ink);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--b1);border-radius:2px;padding:20px;margin-bottom:10px;transition:.2s}.cd:hover{border-color:var(--b2)}
@@ -71,8 +72,8 @@ body{font-family:'Cabinet Grotesk',system-ui,sans-serif;background:linear-gradie
 .fw{width:100%;justify-content:center}
 
 /* EVIDENCE */
-.ev{display:inline-flex;font-family:'Chivo Mono',monospace;font-size:11px;color:var(--t3);cursor:pointer;border:none;background:none;letter-spacing:.02em}.ev:hover{color:var(--gold)}
-.evb{display:none;border-left:2px solid var(--gold);padding:8px 12px 8px 20px;margin:4px 0 10px;font-size:11px;color:var(--t2);line-height:1.7;border-radius:0}.evb.o{display:block}
+.ev{display:inline-flex;font-family:'Chivo Mono',monospace;font-size:13px;color:var(--cream);cursor:pointer;border:none;background:none;letter-spacing:.02em}.ev:hover{color:var(--gold)}
+.evb{display:none;border-left:2px solid var(--gold);padding:8px 12px 8px 20px;margin:4px 0 10px;font-size:13px;color:var(--cream);line-height:1.7;border-radius:0}.evb.o{display:block}
 
 /* BLACK HOLE */
 .bh{position:relative;margin:24px 0;border-radius:2px;overflow:hidden;background:var(--ink);backdrop-filter:blur(16px);border:1px solid var(--b1)}
@@ -129,7 +130,7 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;bac
 
 /* MCQ */
 .mcq-q{font-family:'Cabinet Grotesk',system-ui,sans-serif;font-size:16px;font-weight:700;margin-bottom:10px;letter-spacing:-.01em}
-.mcq-o{background:var(--ink-l);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--b1);border-radius:6px;padding:12px 14px;margin-bottom:5px;cursor:pointer;transition:.2s;font-size:14px;display:flex;align-items:center;gap:8px;color:var(--t2)}
+.mcq-o{background:var(--ink-l);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--b1);border-radius:6px;padding:12px 14px;margin-bottom:5px;cursor:pointer;transition:.2s;font-size:15px;display:flex;align-items:center;gap:8px;color:var(--cream)}
 .mcq-o:hover{border-color:var(--b2)}
 .mcq-o.pick1{border:1.5px solid var(--gold);background:rgba(212,192,122,.05);box-shadow:none;color:var(--cream)}
 .mcq-o.pick2{border:1.5px solid var(--tl);background:rgba(0,203,200,.04);box-shadow:none;color:var(--cream)}
@@ -203,7 +204,7 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;bac
 <body>
 <div class="nav"><button class="nb" id="nb" onclick="back()">← Back</button><div class="dots" id="dots"></div><span style="font-size:13px;font-weight:800;color:var(--deep);letter-spacing:-.02em">Design your BBA</span></div>
 <div class="shelf"><div class="shelf-inner" id="ticker"></div></div>
-<div class="src-ctr" id="srcCtr">Sources: <span class="sc-n" id="srcN">0</span>/16</div>
+<div class="src-ctr" id="srcCtr" style="display:none">Sources: <span class="sc-n" id="srcN">0</span>/16</div>
 
 <!-- S0: HOOK + BLACK HOLE -->
 <div class="scr on" id="s0">
@@ -211,20 +212,20 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;bac
 <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap"><div class="hero" id="ctr">0</div><div class="hsub" style="margin-bottom:0">days.</div></div>
 <div class="hsub" style="text-align:left">That's what you get.</div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px">
-<div class="cd" style="text-align:center;padding:14px"><div class="pr" style="font-size:24px;font-weight:800">17,520</div><div style="font-size:9px;color:var(--t3)">total waking hours</div></div>
-<div class="cd" style="text-align:center;padding:14px"><div class="pr" style="font-size:24px;font-weight:800;color:var(--tl)">~9,000</div><div style="font-size:9px;color:var(--t3)">productive hours</div></div>
+<div class="cd" style="text-align:center;padding:14px"><div style="font-size:28px;font-weight:900;color:#fff">17,520</div><div style="font-size:12px;color:var(--cream)">total waking hours</div></div>
+<div class="cd" style="text-align:center;padding:14px"><div style="font-size:28px;font-weight:900;color:#fff">~9,000</div><div style="font-size:12px;color:var(--cream)">productive hours</div></div>
 </div>
 <button class="ev" onclick="tog('e0')">How we calculated ▾</button>
 <div class="evb" id="e0">1,095 − 312 weekends − 36 holidays − 129 vacation = <b>618 productive days</b> × ~14.5 usable hrs ≈ <b>9,000 productive hours</b></div>
-<div class="rv"><div class="ey" style="margin-bottom:8px">A standard BBA (classroom + self-study + exams)</div><div class="big" style="font-family:'Cabinet Grotesk',system-ui,sans-serif;font-size:44px;font-weight:900;color:var(--tl)">~3,000 hrs</div><div style="font-size:12px;color:var(--t2);margin-top:3px">That's <b style="color:var(--t1)">33%</b> of your productive hours.</div></div>
+<div class="rv"><div class="ey" style="margin-bottom:8px">A standard BBA (classroom + self-study + exams)</div><div style="font-size:48px;font-weight:900;color:#fff;letter-spacing:-.03em">~3,000 hrs</div><div style="font-size:16px;color:#fff;margin-top:5px">That's <b style="color:var(--tl)">33%</b> of your productive hours.</div></div>
 <div style="margin:20px 0;border-radius:2px;overflow:hidden;border:1px solid var(--b1);background:#020014">
 <div class="bh-bar"><div class="bh-k" style="flex:33">33%</div><div class="bh-v" style="flex:67;background:#020014"><div class="bh-vx"></div><div class="bh-ct"></div><div class="bh-ps" id="bhp"></div><div class="bh-lb">67% — The Black Hole</div></div></div>
 </div>
 <div class="cd" style="margin-top:12px">
 <div style="font-size:26px;font-weight:900;color:var(--gold);letter-spacing:-.03em">~6,000 hours</div>
-<div style="margin-top:6px;font-size:12px;color:var(--t2);line-height:1.7">No syllabus covers them. No college brochure mentions them.</div>
-<div style="margin-top:8px;font-size:12px;color:var(--t2);line-height:1.7">They <i>will</i> be filled — by scrolling, by waiting, by hanging out.</div>
-<div style="margin-top:8px;font-size:12px;color:var(--t2);line-height:1.7"><b style="color:var(--tl)">Or — they can be the hours that actually change your life.</b></div>
+<div style="margin-top:6px;font-size:14px;color:var(--cream);line-height:1.45">No syllabus covers them. No college brochure mentions them.</div>
+<div style="margin-top:6px;font-size:14px;color:var(--cream);line-height:1.45">They <i>will</i> be filled — by scrolling, by waiting, by hanging out.</div>
+<div style="margin-top:6px;font-size:14px;color:var(--cream);line-height:1.45"><b style="color:var(--tl)">Or — they can be the hours that actually change your life.</b></div>
 </div>
 <button class="cta fw" onclick="go(1)">What does the world expect? →</button>
 </div>
@@ -241,8 +242,8 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;bac
 <div class="cd" style="text-align:center;padding:16px"><div class="pr" style="font-size:32px;font-weight:900;color:var(--em)">100%</div><div style="font-size:10px;color:var(--t2);margin-top:2px">rate Ethics as #1</div><div style="font-size:10px;color:var(--t2);margin-top:4px;font-weight:500">ISR 2025 · Universal consensus</div></div>
 </div>
 <div class="cd" style="border-color:rgba(0,203,200,.3)">
-<div style="font-size:13px;font-weight:700;margin-bottom:4px">Skills aren't taught in classrooms.</div>
-<p style="font-size:11px;color:var(--t2);line-height:1.6">Campus placements = only <b style="color:var(--am)">10%</b> of hiring. Job portals (37%) and referrals (32.5%) dominate. <span style="font-size:9px;color:var(--t3)">ISR 2025</span></p>
+<div style="font-size:15px;font-weight:700;margin-bottom:4px;color:#fff">Skills aren't taught in classrooms.</div>
+<p style="font-size:14px;color:var(--cream);line-height:1.5">Campus placements = only <b style="color:var(--am)">10%</b> of hiring. Job portals (37%) and referrals (32.5%) dominate. <span style="font-size:11px;color:var(--t3)">ISR 2025</span></p>
 </div>
 <div class="cd" style="border-color:rgba(0,203,200,.3);margin-top:6px">
 <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:4px"><span class="pr" style="font-size:13px;font-weight:700">"Will AI replace me?"</span></div>
@@ -316,8 +317,8 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;bac
 <!-- Axis labels -->
 <div class="map-lb" style="top:3px;left:50%;transform:translateX(-50%);color:var(--tl);font-size:11px">LEARN BY DOING</div>
 <div class="map-lb" style="bottom:3px;left:50%;transform:translateX(-50%);color:var(--t3);font-size:11px">LEARN BY STUDYING</div>
-<div class="map-lb" style="left:-2px;top:50%;transform:translateY(-50%) rotate(-90deg);color:var(--t3);font-size:11px">LOW ACCOUNTABILITY</div>
-<div class="map-lb" style="right:-2px;top:50%;transform:translateY(-50%) rotate(90deg);color:var(--am);font-size:11px">HIGH ACCOUNTABILITY</div>
+<div class="map-lb" style="left:4px;top:50%;transform:translateY(-50%) rotate(-90deg);transform-origin:center center;color:var(--t3);font-size:11px">LOW ACCOUNTABILITY</div>
+<div class="map-lb" style="right:4px;top:50%;transform:translateY(-50%) rotate(90deg);transform-origin:center center;color:var(--am);font-size:11px">HIGH ACCOUNTABILITY</div>
 <!-- Faint quadrant labels -->
 <div style="position:absolute;top:8%;left:6%;font-size:13px;font-weight:700;color:rgba(251,146,60,.55);line-height:1.3">Self-Directed<br>Practical</div>
 <div style="position:absolute;top:8%;right:6%;font-size:13px;font-weight:700;color:rgba(0,203,200,.6);text-align:right;line-height:1.3">Structured<br>Practical</div>
@@ -366,7 +367,7 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;bac
 <div class="ey" style="margin-bottom:14px;position:relative">YOUR COLLEGE DNA</div>
 <div id="dnaDecisions" style="margin-bottom:18px;position:relative"></div>
 <div style="text-align:center;margin:18px 0 8px;position:relative">
-<div id="rScore" style="font-size:clamp(64px,16vw,96px);font-weight:900;letter-spacing:-.05em;line-height:.85"><span style="color:var(--gold)">—</span><span style="-webkit-text-stroke:3px var(--gold);color:transparent">%</span></div>
+<div id="rScore" class="hero-grad" style="font-size:clamp(72px,20vw,110px)">—%</div>
 <div style="font-family:'Chivo Mono',monospace;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-top:6px">Industry Readiness</div>
 <div style="font-family:'Chivo Mono',monospace;font-size:9px;color:var(--t3);margin-top:2px">by age 21</div>
 </div>
@@ -388,7 +389,7 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;bac
 <div class="scr" id="s7">
 <div style="text-align:center;padding:16px 0 8px">
 <div class="ey" style="margin-bottom:4px">YOUR #1 MATCH</div>
-<div id="fPct" style="font-size:clamp(52px,14vw,76px);font-weight:900;letter-spacing:-.04em;line-height:.88"><span style="color:var(--gold)">—</span><span style="-webkit-text-stroke:2px var(--gold);color:transparent">%</span></div>
+<div id="fPct" class="hero-grad" style="font-size:clamp(72px,20vw,110px)">—%</div>
 <div style="font-size:12px;color:var(--t2);margin-top:3px">match with <b id="fNm">—</b></div>
 </div>
 
@@ -662,7 +663,7 @@ function bDNA(){
 }
 
 // RESULTS
-function bRes(){const r=calcR();document.getElementById('rScore').innerHTML='<span style="color:var(--gold)">'+r+'</span><span style="-webkit-text-stroke:3px var(--gold);color:transparent">%</span>';
+function bRes(){const r=calcR();document.getElementById('rScore').textContent=r+'%';
 // Path cards
 const m=match(),mc=document.getElementById('mCards');mc.innerHTML='';
 m.forEach((x,i)=>{const t=x.pct>=75?'a':x.pct>=55?'g':x.pct>=35?'s':'b';
@@ -675,7 +676,7 @@ mc.appendChild(d);if(i===0)d.classList.add('open')})}
 // FUTURE SELF
 function bFut(){
 const m=match(),top=m[0];
-document.getElementById('fPct').innerHTML='<span style="color:var(--gold)">'+top.pct+'</span><span style="-webkit-text-stroke:2px var(--gold);color:transparent">%</span>';
+document.getElementById('fPct').textContent=top.pct+'%';
 document.getElementById('fNm').textContent=top.n;
 
 // Data: work days and lecture days for 3 columns
