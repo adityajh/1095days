@@ -11,41 +11,40 @@
 <script async src="https://plausible.io/js/pa-zzgw9Dak5gtkxffbmedpY.js"></script>
 <script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)};plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-@font-face{font-family:'Prompt';src:url('assets/fonts/Prompt-Bold.ttf') format('truetype');font-weight:700}
-@font-face{font-family:'Prompt';src:url('assets/fonts/Prompt-ExtraBold.ttf') format('truetype');font-weight:800}
-@font-face{font-family:'Prompt';src:url('assets/fonts/Prompt-Black.ttf') format('truetype');font-weight:900}
-@font-face{font-family:'Supreme';src:url('assets/fonts/Supreme-Variable.ttf') format('truetype');font-weight:100 900}
+@import url('https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@300;400;500;700;800;900&family=Chivo+Mono:wght@300;400;700&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
---bg:#0C0E1A;--c1:#1a2854;--c2:#1e3060;--c3:#24376a;
---tl:#12D4B4;--td:#0A8C78;--tg:rgba(18,212,180,.25);
---am:#FFB800;--ag:rgba(255,184,0,.2);
---em:#10B981;--ro:#F43F5E;--bl:#3B82F6;
---t1:#F0F0F5;--t2:#9498B0;--t3:#5A5F7D;
---b1:#2a2e50;--b2:#3B4060;
---lb:#3663AD;
+--deep:#0A0045;--blue:#2264DC;--tl:#00CBC8;--td:#0A8C78;--tg:rgba(0,203,200,.25);
+--gold:#D4C07A;--gold-lt:rgba(212,192,122,.15);--gold-md:rgba(212,192,122,.35);
+--am:#D4C07A;--ag:rgba(212,192,122,.2);
+--em:#10B981;--ro:#D44E38;--bl:#3B82F6;
+--cream:#F5F0E8;--sand:#E8DDD0;
+--ink:rgba(10,0,69,.55);--ink-h:rgba(10,0,69,.7);--ink-l:rgba(10,0,69,.4);
+--t1:#F5F0E8;--t2:rgba(245,240,232,.6);--t3:rgba(245,240,232,.32);
+--b1:rgba(245,240,232,.1);--b2:rgba(245,240,232,.2);
+--lb:#2264DC;
 }
-body{font-family:'Supreme','Inter',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--t1);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-.pr{font-family:'Prompt','Inter',system-ui,-apple-system,sans-serif}
+body{font-family:'Cabinet Grotesk',system-ui,sans-serif;background:linear-gradient(180deg,#0A0045 0%,#2264DC 50%,#00CBC8 100%);background-attachment:fixed;color:var(--t1);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.pr{font-family:'Cabinet Grotesk',system-ui,sans-serif}
+.mono{font-family:'Chivo Mono',monospace}
 
 /* NAV */
-.nav{position:fixed;top:0;left:0;right:0;background:rgba(12,14,26,.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--b1);padding:9px 14px;display:flex;justify-content:space-between;align-items:center;z-index:100}
-.dots{display:flex;gap:3px}.dot{width:6px;height:6px;border-radius:50%;background:var(--b1);transition:.3s;cursor:pointer}.dot.on{background:var(--tl);box-shadow:0 0 6px var(--tg);width:16px;border-radius:3px}.dot.dn{background:var(--em)}
-.nb{color:var(--t2);font-size:11px;cursor:pointer;border:none;background:none;font-family:inherit}.nb:hover{color:var(--t1)}
+.nav{position:fixed;top:0;left:0;right:0;background:#fff;border-bottom:1px solid rgba(10,0,69,.06);padding:9px 14px;display:flex;justify-content:space-between;align-items:center;z-index:100}
+.dots{display:flex;gap:3px}.dot{width:6px;height:6px;border-radius:50%;background:rgba(10,0,69,.15);transition:.3s;cursor:pointer}.dot.on{background:var(--deep);box-shadow:none;width:16px;border-radius:2px}.dot.dn{background:var(--blue)}
+.nb{color:rgba(10,0,69,.5);font-size:13px;cursor:pointer;border:none;background:none;font-family:inherit}.nb:hover{color:var(--deep)}
 
 /* SHELF */
-.shelf{position:fixed;top:38px;left:0;right:0;background:rgba(12,14,26,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--td);padding:0;z-index:99;overflow:hidden;height:32px}
+.shelf{position:fixed;top:38px;left:0;right:0;background:#fff;border-bottom:1px solid rgba(10,0,69,.06);padding:0;z-index:99;overflow:hidden;height:32px}
 .shelf-inner{display:flex;align-items:center;gap:24px;white-space:nowrap;animation:ticker 40s linear infinite;padding:0 20px;height:100%;will-change:transform}
 .shelf-inner:hover{animation-play-state:paused}
 @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.shelf .st{font-family:'Prompt','Inter',sans-serif;font-weight:800;font-size:8px;color:var(--tl);padding:3px 8px;background:rgba(18,212,180,.1);border-radius:4px;letter-spacing:1.5px;text-transform:uppercase;flex-shrink:0}
-.shelf .si{font-size:10px;color:var(--t2);flex-shrink:0;display:flex;align-items:center;gap:6px}
-.shelf .si b{color:var(--am);font-weight:700}
-.shelf .si .src{color:var(--t3);font-size:9px}
+.shelf .st{font-family:'Chivo Mono',monospace;font-weight:700;font-size:9px;color:var(--deep);padding:3px 8px;background:rgba(10,0,69,.06);border-radius:2px;letter-spacing:.14em;text-transform:uppercase;flex-shrink:0}
+.shelf .si{font-size:11px;color:rgba(10,0,69,.55);flex-shrink:0;display:flex;align-items:center;gap:6px}
+.shelf .si b{color:var(--deep);font-weight:700}
+.shelf .si .src{color:rgba(10,0,69,.35);font-size:10px}
 /* Source counter */
-.src-ctr{position:fixed;top:74px;right:14px;z-index:99;font-size:9px;color:var(--tl);font-weight:700;background:rgba(18,212,180,.08);padding:3px 8px;border-radius:10px;border:1px solid rgba(18,212,180,.2);font-family:'Prompt','Inter',sans-serif;transition:all .3s}
-.src-ctr .sc-n{font-size:11px}
+.src-ctr{position:fixed;top:74px;right:14px;z-index:99;font-family:'Chivo Mono',monospace;font-size:11px;color:var(--cream);font-weight:400;background:rgba(10,0,69,.5);backdrop-filter:blur(12px);padding:3px 8px;border-radius:2px;border:1px solid var(--b1);letter-spacing:.05em;transition:all .3s}
+.src-ctr .sc-n{font-size:13px;font-weight:700}
 
 /* SCREEN */
 .scr{display:none;min-height:100vh;padding:76px 16px 20px;max-width:700px;margin:0 auto}
@@ -53,156 +52,156 @@ body{font-family:'Supreme','Inter',system-ui,-apple-system,sans-serif;background
 @keyframes fu{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 
 /* TYPO */
-.hero{font-family:'Prompt','Inter',system-ui,-apple-system,sans-serif;font-size:clamp(48px,13vw,90px);font-weight:900;background:linear-gradient(135deg,var(--tl),var(--am));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.05}
+.hero{font-family:'Cabinet Grotesk',system-ui,sans-serif;font-size:clamp(48px,13vw,90px);font-weight:900;background:linear-gradient(135deg,#00CBC8 0%,#2264DC 40%,#F5F0E8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:.88;letter-spacing:-.04em;text-transform:uppercase}
 .hsub{font-size:clamp(15px,3vw,20px);font-weight:300;color:var(--t2);margin-bottom:24px}
-.tl{font-family:'Prompt','Inter',system-ui,-apple-system,sans-serif;font-size:clamp(18px,4.5vw,28px);font-weight:800;margin-bottom:4px}
-.sub{font-size:12px;color:var(--t2);margin-bottom:16px}
-.bd{font-size:13px;color:var(--t1);line-height:1.8;margin-bottom:14px;max-width:560px}.bd b{color:#fff}
-.ey{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2.5px;color:var(--t2)}
+.tl{font-family:'Cabinet Grotesk',system-ui,sans-serif;font-size:clamp(20px,4.5vw,32px);font-weight:800;margin-bottom:4px;letter-spacing:-.02em;line-height:1.05}
+.sub{font-size:14px;color:var(--t2);margin-bottom:16px}
+.bd{font-size:15px;color:var(--t2);line-height:1.72;margin-bottom:14px;max-width:560px}.bd b{color:var(--cream)}
+.ey{font-family:'Chivo Mono',monospace;font-size:11px;font-weight:400;text-transform:uppercase;letter-spacing:.26em;color:var(--gold);display:flex;align-items:center;gap:12px}.ey::before{content:'';width:28px;height:1px;background:var(--gold)}
 
 /* CARD */
-.cd{background:var(--c1);border:1px solid var(--b1);border-radius:13px;padding:20px;margin-bottom:10px;transition:.2s}.cd:hover{border-color:var(--b2)}
+.cd{background:var(--ink);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--b1);border-radius:2px;padding:20px;margin-bottom:10px;transition:.2s}.cd:hover{border-color:var(--b2)}
 
 /* CTA */
-.cta{display:inline-flex;align-items:center;gap:7px;padding:12px 24px;background:var(--tl);color:var(--bg);border:none;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;transition:.25s;margin-top:20px;font-family:'Prompt','Inter',system-ui,-apple-system,sans-serif}
-.cta:hover{transform:translateY(-2px);box-shadow:0 6px 20px var(--tg)}
-.cta.s{background:transparent;border:1px solid var(--b1);color:var(--t1)}.cta.s:hover{border-color:var(--tl)}
+.cta{display:inline-flex;align-items:center;gap:7px;padding:12px 26px;background:var(--cream);color:#0A0045;border:none;border-radius:2px;font-size:15px;font-weight:800;cursor:pointer;transition:.25s;margin-top:20px;font-family:'Cabinet Grotesk',system-ui,sans-serif;letter-spacing:.07em;text-transform:uppercase}
+.cta:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(245,240,232,.3)}
+.cta.s{background:transparent;border:1.5px solid var(--cream);color:var(--cream)}.cta.s:hover{border-color:#fff;color:#fff}
 .cta.wa{background:#25D366;color:#fff}.cta.le{background:var(--lb);color:#fff}
 .cta-r{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
 .fw{width:100%;justify-content:center}
 
 /* EVIDENCE */
-.ev{display:inline-flex;font-size:9px;color:var(--t3);cursor:pointer;border:none;background:none;font-family:inherit}.ev:hover{color:var(--tl)}
-.evb{display:none;background:rgba(18,212,180,.03);border-left:2px solid var(--tl);padding:8px 12px;margin:4px 0 10px;font-size:9px;color:var(--t2);line-height:1.7;border-radius:0 6px 6px 0}.evb.o{display:block}
+.ev{display:inline-flex;font-family:'Chivo Mono',monospace;font-size:11px;color:var(--t3);cursor:pointer;border:none;background:none;letter-spacing:.02em}.ev:hover{color:var(--gold)}
+.evb{display:none;border-left:2px solid var(--gold);padding:8px 12px 8px 20px;margin:4px 0 10px;font-size:11px;color:var(--t2);line-height:1.7;border-radius:0}.evb.o{display:block}
 
 /* BLACK HOLE */
-.bh{position:relative;margin:24px 0;border-radius:14px;overflow:hidden;background:var(--c1);border:1px solid var(--b1)}
+.bh{position:relative;margin:24px 0;border-radius:2px;overflow:hidden;background:var(--ink);backdrop-filter:blur(16px);border:1px solid var(--b1)}
 .bh-bar{display:flex;height:48px;gap:2px}
-.bh-k{background:var(--tl);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px;color:var(--bg);border-radius:8px 0 0 8px}
-.bh-v{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:0 8px 8px 0}
-.bh-vx{position:absolute;inset:0;background:conic-gradient(from 0deg,#000,#0a1628,#000510,#0d1f3d,#000);animation:sp 8s linear infinite;opacity:.8}
+.bh-k{background:var(--tl);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:#0A0045;border-radius:2px 0 0 2px}
+.bh-v{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:0 2px 2px 0}
+.bh-vx{position:absolute;inset:0;background:conic-gradient(from 0deg,#000,#050520,#000210,#080030,#000);animation:sp 8s linear infinite;opacity:.95}
 @keyframes sp{to{transform:rotate(360deg)}}
 .bh-ct{position:absolute;inset:20%;border-radius:50%;background:radial-gradient(circle,#000 30%,transparent 70%)}
 .bh-ps{position:absolute;inset:0}
 .bh-p{position:absolute;width:3px;height:3px;border-radius:50%;animation:dr 3s linear infinite}
 @keyframes dr{0%{opacity:0;transform:translate(0,0) scale(1)}50%{opacity:1}100%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(0)}}
-.bh-lb{position:relative;z-index:2;font-weight:700;font-size:11px;color:var(--t2)}
-.bh-tx{padding:18px 20px;font-size:12px;color:var(--t2);line-height:1.7}
+.bh-lb{position:relative;z-index:2;font-weight:700;font-size:13px;color:var(--t2)}
+.bh-tx{padding:18px 20px;font-size:14px;color:var(--t2);line-height:1.7}
 .bh-tx b{color:var(--tl)}
-.bh-tx .bh-n{font-family:'Prompt','Inter',sans-serif;font-size:26px;font-weight:900;color:var(--am)}
+.bh-tx .bh-n{font-size:26px;font-weight:900;color:var(--gold);letter-spacing:-.03em}
 
 /* SLIDERS */
-.sg{background:var(--c1);border:1px solid var(--b1);border-radius:10px;padding:8px 12px;margin-bottom:5px;transition:.25s}
+.sg{background:#0c1445;border:1px solid var(--b1);border-radius:6px;padding:10px 14px;margin-bottom:5px;transition:.25s}
 .sg:hover{border-color:var(--b2)}
-.sg.wl{border-color:var(--ro);background:rgba(244,63,94,.04)}
-.sg.wh{border-color:var(--am);background:rgba(255,184,0,.04)}
+.sg.wl{border-color:var(--ro);background:#1c0c2a}
+.sg.wh{border-color:var(--gold);background:#14122e}
 .sgh{display:flex;justify-content:space-between;align-items:center;margin-bottom:1px}
 .sgl{display:flex;align-items:center;gap:7px;font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
 .sgd{width:14px;height:14px;border-radius:3px;flex-shrink:0}
-.sg-desc{font-size:11px;color:var(--t2);font-weight:500;margin-left:21px;margin-top:-2px;margin-bottom:2px}
-.sgv{font-family:'Prompt','Inter',sans-serif;font-size:10px;font-weight:500;min-width:60px;text-align:right;color:var(--t2)}
-.sgv .v3y{font-size:15px;font-weight:800;display:block;line-height:1.1}
+.sg-desc{font-size:13px;color:var(--t2);font-weight:500;margin-left:21px;margin-top:-2px;margin-bottom:2px}
+.sgv{font-family:'Chivo Mono',monospace;font-size:12px;font-weight:400;min-width:60px;text-align:right;color:var(--t2);letter-spacing:.05em}
+.sgv .v3y{font-size:16px;font-weight:800;display:block;line-height:1.1}
 .sg-ico{font-size:18px}
 .sgem{font-size:16px;margin-left:3px;animation:pop .3s ease}
 @keyframes pop{from{transform:scale(0)}to{transform:scale(1)}}
-.sglk{display:flex;align-items:center;gap:3px;font-size:12px;color:var(--t3);cursor:pointer;margin-left:8px}.sglk input{width:20px;height:20px;accent-color:var(--tl);cursor:pointer}.sglk.on{color:var(--tl)}
-.sgm{font-size:9px;color:var(--t3);margin-top:2px;font-style:italic}
+.sglk{display:flex;align-items:center;gap:3px;font-size:14px;color:var(--t3);cursor:pointer;margin-left:8px}.sglk input{width:20px;height:20px;accent-color:var(--tl);cursor:pointer}.sglk.on{color:var(--tl)}
+.sgm{font-family:'Chivo Mono',monospace;font-size:11px;color:var(--t3);margin-top:2px;font-style:italic;letter-spacing:.02em}
 /* Sweet spot glow */
-.sg.sweet{border-color:var(--em);background:rgba(16,185,129,.06);box-shadow:0 0 12px rgba(16,185,129,.1)}
-input[type=range]{-webkit-appearance:none;width:100%;height:5px;border-radius:3px;background:var(--b1);outline:none;transition:background .1s;margin:2px 0}
-input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;border-radius:50%;background:var(--tl);cursor:pointer;box-shadow:0 0 10px var(--tg);border:2px solid rgba(255,255,255,.2);transition:box-shadow .15s}
-input[type=range]::-webkit-slider-thumb:active{box-shadow:0 0 18px var(--tg);border-color:rgba(255,255,255,.4)}
-input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;background:var(--tl);cursor:pointer;border:2px solid rgba(255,255,255,.2)}
+.sg.sweet{border-color:var(--em);background:#0a1438;box-shadow:0 0 12px rgba(16,185,129,.1)}
+input[type=range]{-webkit-appearance:none;width:100%;height:5px;border-radius:3px;background:rgba(245,240,232,.06);outline:none;transition:background .1s;margin:2px 0}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;border-radius:50%;background:var(--tl);cursor:pointer;box-shadow:0 0 10px rgba(0,203,200,.25);border:2px solid rgba(245,240,232,.2);transition:box-shadow .15s}
+input[type=range]::-webkit-slider-thumb:active{box-shadow:0 0 18px rgba(0,203,200,.35);border-color:rgba(245,240,232,.4)}
+input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;background:var(--tl);cursor:pointer;border:2px solid rgba(245,240,232,.2)}
 
 /* LIVE CHART */
-.lc{background:var(--c1);border:1px solid var(--b1);border-radius:13px;padding:16px;margin:14px 0;position:sticky;top:50px;z-index:50}
-.lc.sw .bar-r{box-shadow:0 0 20px rgba(244,63,94,.25);border:2px solid var(--ro);border-radius:8px}
+.lc{background:var(--ink);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--b1);border-radius:2px;padding:16px;margin:14px 0;position:sticky;top:50px;z-index:50}
+.lc.sw .bar-r{box-shadow:0 0 20px rgba(212,78,56,.25);border:2px solid var(--ro);border-radius:2px}
 .lc.sw .lcl{color:var(--ro)}
-.lcl{font-size:9px;font-weight:700;color:var(--t2);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}
-.bar-r{display:flex;height:44px;border-radius:8px;overflow:hidden;gap:1px}
-.bar-s{transition:flex .3s;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;min-width:1px;overflow:hidden;color:rgba(0,0,0,.7)}
-.swm{display:none;color:var(--ro);font-size:9px;font-weight:600;margin-top:5px;padding:6px 9px;background:rgba(244,63,94,.05);border-radius:6px}
+.lcl{font-family:'Chivo Mono',monospace;font-size:11px;font-weight:400;color:var(--t2);text-transform:uppercase;letter-spacing:.18em;margin-bottom:8px}
+.bar-r{display:flex;height:44px;border-radius:2px;overflow:hidden;gap:1px}
+.bar-s{transition:flex .3s;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;min-width:1px;overflow:hidden;color:rgba(0,0,0,.7)}
+.swm{display:none;color:var(--ro);font-size:11px;font-weight:600;margin-top:5px;padding:6px 9px;background:rgba(212,78,56,.05);border-radius:2px}
 .lc.sw .swm{display:block}
 .leg{display:flex;justify-content:flex-start;gap:2px;margin-top:6px;overflow-x:auto;padding-bottom:4px}
 .li{display:flex;flex-direction:column;align-items:center;min-width:28px;flex-shrink:0}
 .ld{width:100%;height:0;border-radius:0}
-.ll{font-size:10px;font-weight:700;color:var(--t2);text-transform:uppercase;writing-mode:vertical-lr;transform:rotate(180deg);height:52px;display:flex;align-items:center;margin-top:8px;letter-spacing:.5px}
+.ll{font-family:'Chivo Mono',monospace;font-size:12px;font-weight:700;color:var(--t2);text-transform:uppercase;writing-mode:vertical-lr;transform:rotate(180deg);height:52px;display:flex;align-items:center;margin-top:8px;letter-spacing:.5px}
 
 /* MCQ */
-.mcq-q{font-family:'Prompt','Inter',sans-serif;font-size:14px;font-weight:700;margin-bottom:10px}
-.mcq-o{background:var(--c1);border:2px solid var(--b1);border-radius:11px;padding:12px 16px;margin-bottom:7px;cursor:pointer;transition:.2s;font-size:12px;display:flex;align-items:center;gap:9px}
+.mcq-q{font-family:'Cabinet Grotesk',system-ui,sans-serif;font-size:16px;font-weight:700;margin-bottom:10px;letter-spacing:-.01em}
+.mcq-o{background:var(--ink-l);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--b1);border-radius:6px;padding:12px 14px;margin-bottom:5px;cursor:pointer;transition:.2s;font-size:14px;display:flex;align-items:center;gap:8px;color:var(--t2)}
 .mcq-o:hover{border-color:var(--b2)}
-.mcq-o.pick1{border-color:var(--tl);background:rgba(18,212,180,.07);box-shadow:0 0 14px var(--tg)}
-.mcq-o.pick2{border-color:var(--am);background:rgba(255,184,0,.06);box-shadow:0 0 10px var(--ag)}
-.mcq-dot{width:18px;height:18px;border-radius:50%;border:2px solid var(--b2);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:800;transition:.2s}
-.mcq-o.pick1 .mcq-dot{border-color:var(--tl);background:var(--tl);color:var(--bg)}
-.mcq-o.pick2 .mcq-dot{border-color:var(--am);background:var(--am);color:var(--bg)}
-.mcq-badge{font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-left:auto;flex-shrink:0}
-.mcq-o.pick1 .mcq-badge{color:var(--tl)}
-.mcq-o.pick2 .mcq-badge{color:var(--am)}
+.mcq-o.pick1{border:1.5px solid var(--gold);background:rgba(212,192,122,.05);box-shadow:none;color:var(--cream)}
+.mcq-o.pick2{border:1.5px solid var(--tl);background:rgba(0,203,200,.04);box-shadow:none;color:var(--cream)}
+.mcq-dot{width:20px;height:20px;border-radius:50%;border:1.5px solid rgba(245,240,232,.2);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;transition:.2s}
+.mcq-o.pick1 .mcq-dot{border-color:var(--gold);background:var(--gold);color:#0A0045}
+.mcq-o.pick2 .mcq-dot{border-color:var(--tl);background:var(--tl);color:#0A0045}
+.mcq-badge{font-family:'Chivo Mono',monospace;font-size:10px;font-weight:400;text-transform:uppercase;letter-spacing:.14em;margin-left:auto;flex-shrink:0}
+.mcq-o.pick1 .mcq-badge{color:var(--gold)}
+.mcq-o.pick2 .mcq-badge{color:var(--tl)}
 
 /* COMPUTING VORTEX */
-.vortex{position:fixed;inset:0;z-index:200;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center}
-.vortex .vx-ring{width:120px;height:120px;border-radius:50%;border:3px solid transparent;border-top-color:var(--tl);border-right-color:var(--am);animation:vxspin 1s linear infinite}
+.vortex{position:fixed;inset:0;z-index:200;background:var(--deep);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.vortex .vx-ring{width:120px;height:120px;border-radius:50%;border:3px solid transparent;border-top-color:var(--gold);border-right-color:var(--tl);animation:vxspin 1s linear infinite}
 @keyframes vxspin{to{transform:rotate(360deg)}}
-.vortex .vx-txt{margin-top:16px;font-family:'Prompt','Inter',sans-serif;font-size:14px;color:var(--t2)}
+.vortex .vx-txt{margin-top:16px;font-family:'Chivo Mono',monospace;font-size:14px;color:var(--t2);letter-spacing:.1em;text-transform:uppercase}
 
 /* 2x2 MAP */
-.map{position:relative;width:100%;aspect-ratio:1.15;max-height:320px;background:var(--c1);border:1px solid var(--b1);border-radius:13px;overflow:hidden;margin:10px 0;touch-action:none}
+.map{position:relative;width:100%;aspect-ratio:1.15;max-height:320px;background:var(--ink);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--b1);border-radius:2px;overflow:hidden;margin:10px 0;touch-action:none}
 .map-ax{position:absolute;background:var(--b1)}.map-ax.h{top:50%;left:0;right:0;height:1px}.map-ax.v{left:50%;top:0;bottom:0;width:1px}
-.map-lb{position:absolute;font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px}
-.map-pd{position:absolute;width:11px;height:11px;border-radius:50%;border:2px solid;transform:translate(-50%,-50%)}
-.map-pl{position:absolute;font-size:7px;font-weight:600;transform:translateX(-50%);color:var(--t2)}
-#sDot{position:absolute;width:30px;height:30px;border-radius:50%;background:var(--tl);box-shadow:0 0 16px var(--tg),0 0 32px var(--tg);border:3px solid #fff;z-index:10;transform:translate(-50%,-50%);cursor:grab;animation:pulse 1.5s ease-in-out infinite}
-#sDot:active{cursor:grabbing;box-shadow:0 0 28px var(--tg),0 0 56px var(--tg);animation:none}
-#sDot.near{box-shadow:0 0 20px var(--tg),0 0 40px var(--tg),0 0 60px rgba(18,212,180,.2);transform:translate(-50%,-50%) scale(1.2);animation:none}
-@keyframes pulse{0%,100%{box-shadow:0 0 16px var(--tg),0 0 32px var(--tg);transform:translate(-50%,-50%) scale(1)}50%{box-shadow:0 0 28px var(--tg),0 0 48px var(--tg),0 0 64px rgba(18,212,180,.12);transform:translate(-50%,-50%) scale(1.15)}}
+.map-lb{position:absolute;font-family:'Chivo Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.14em}
+.map-pd{position:absolute;width:14px;height:14px;border-radius:50%;border:2px solid;transform:translate(-50%,-50%)}
+.map-pl{position:absolute;font-family:'Cabinet Grotesk',system-ui,sans-serif;font-size:11px;font-weight:800;transform:translateX(-50%);color:var(--cream)}
+#sDot{position:absolute;width:30px;height:30px;border-radius:50%;background:var(--tl);box-shadow:0 0 16px rgba(0,203,200,.25),0 0 32px rgba(0,203,200,.15);border:3px solid var(--cream);z-index:10;transform:translate(-50%,-50%);cursor:grab;animation:pulse 1.5s ease-in-out infinite}
+#sDot:active{cursor:grabbing;box-shadow:0 0 28px rgba(0,203,200,.3),0 0 56px rgba(0,203,200,.15);animation:none}
+#sDot.near{box-shadow:0 0 20px rgba(0,203,200,.3),0 0 40px rgba(0,203,200,.2),0 0 60px rgba(0,203,200,.1);transform:translate(-50%,-50%) scale(1.2);animation:none}
+@keyframes pulse{0%,100%{box-shadow:0 0 16px rgba(0,203,200,.25),0 0 32px rgba(0,203,200,.15);transform:translate(-50%,-50%) scale(1)}50%{box-shadow:0 0 28px rgba(0,203,200,.3),0 0 48px rgba(0,203,200,.2),0 0 64px rgba(0,203,200,.08);transform:translate(-50%,-50%) scale(1.15)}}
 .map-stats{margin-top:10px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.map-stat{background:var(--c1);border:1px solid var(--b1);border-radius:8px;padding:10px;text-align:center}
-.map-stat .ms-n{font-family:'Prompt','Inter',sans-serif;font-size:26px;font-weight:800}
-.map-stat .ms-l{font-size:12px;color:var(--t2);font-weight:500}
+.map-stat{background:var(--ink);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--b1);border-radius:2px;padding:10px;text-align:center}
+.map-stat .ms-n{font-family:'Cabinet Grotesk',system-ui,sans-serif;font-size:26px;font-weight:900;letter-spacing:-.04em}
+.map-stat .ms-l{font-family:'Chivo Mono',monospace;font-size:12px;color:var(--t2);font-weight:400;letter-spacing:.05em}
 
 /* MATCH CARDS */
-.mc{background:var(--c1);border:2px solid var(--b1);border-radius:13px;padding:16px;margin-bottom:9px;transition:.25s;cursor:pointer}
-.mc.top{border-color:var(--tl);box-shadow:0 0 16px var(--tg)}
+.mc{background:var(--ink);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--b1);border-radius:2px;padding:16px;margin-bottom:9px;transition:.25s;cursor:pointer}
+.mc.top{border:1px solid var(--gold)}
 .mc-head{display:flex;align-items:center;gap:12px}
-.mc-p{font-family:'Prompt','Inter',sans-serif;font-size:24px;font-weight:900;min-width:60px}
-.mc-n{font-family:'Prompt','Inter',sans-serif;font-size:13px;font-weight:700}
-.mc-d{font-size:10px;color:var(--t2);margin-top:2px}
-.mc-exp{display:none;padding-top:12px;margin-top:12px;border-top:1px solid var(--b1);font-size:11px;color:var(--t2);line-height:1.6}
+.mc-p{font-family:'Cabinet Grotesk',system-ui,sans-serif;font-size:28px;font-weight:900;min-width:60px;letter-spacing:-.04em}
+.mc-n{font-family:'Cabinet Grotesk',system-ui,sans-serif;font-size:15px;font-weight:800}
+.mc-d{font-family:'Chivo Mono',monospace;font-size:12px;color:var(--t3);margin-top:2px;letter-spacing:.05em}
+.mc-exp{display:none;padding-top:12px;margin-top:12px;border-top:1px solid var(--b1);font-size:13px;color:var(--t2);line-height:1.6}
 .mc.open .mc-exp{display:block}
-.mc-toggle{font-size:9px;color:var(--t3);margin-left:auto;transition:.2s}
+.mc-toggle{font-size:11px;color:var(--t3);margin-left:auto;transition:.2s}
 .mc.open .mc-toggle{transform:rotate(180deg)}
-.tier-a .mc-p{color:var(--tl)}.tier-g .mc-p{color:var(--am)}.tier-s .mc-p{color:var(--t2)}.tier-b .mc-p{color:var(--t3)}
+.tier-a .mc-p{color:var(--gold)}.tier-g .mc-p{color:var(--gold)}.tier-s .mc-p{color:var(--t2)}.tier-b .mc-p{color:var(--t3)}
 
 /* FORM */
-.form-wrap{background:var(--c1);border:1px solid var(--tl);border-radius:14px;padding:24px;margin:16px 0}
-.form-wrap input,.form-wrap select{width:100%;padding:11px 14px;background:var(--c2);border:1px solid var(--b1);border-radius:8px;color:var(--t1);font-family:'Supreme',sans-serif;font-size:13px;margin-bottom:10px;outline:none;transition:.2s}
-.form-wrap input:focus,.form-wrap select:focus{border-color:var(--tl)}
+.form-wrap{background:var(--ink);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--gold);border-radius:2px;padding:24px;margin:16px 0}
+.form-wrap input,.form-wrap select{width:100%;padding:11px 14px;background:var(--ink-l);border:1px solid var(--b1);border-radius:6px;color:var(--cream);font-family:'Cabinet Grotesk',system-ui,sans-serif;font-size:15px;margin-bottom:10px;outline:none;transition:.2s}
+.form-wrap input:focus,.form-wrap select:focus{border-color:var(--gold)}
 .form-wrap input::placeholder{color:var(--t3)}
-.form-wrap label{display:block;font-size:10px;font-weight:600;color:var(--t2);margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px}
+.form-wrap label{display:block;font-family:'Chivo Mono',monospace;font-size:12px;font-weight:400;color:var(--t2);margin-bottom:4px;text-transform:uppercase;letter-spacing:.18em}
 
 /* PROJECTION */
-.proj{background:linear-gradient(135deg,rgba(18,212,180,.04),rgba(255,184,0,.04));border:1px solid var(--td);border-radius:13px;padding:20px;margin:16px 0}
-.proj-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;padding:10px 0;border-bottom:1px solid rgba(37,41,64,.4);font-size:11px;align-items:center}
+.proj{background:var(--ink);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--b1);border-radius:2px;padding:20px;margin:16px 0}
+.proj-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;padding:10px 0;border-bottom:1px solid var(--b1);font-size:13px;align-items:center}
 .proj-row:last-child{border-bottom:none}
-.proj-h{font-family:'Prompt','Inter',sans-serif;font-weight:700;font-size:9px;color:var(--t3);text-transform:uppercase;letter-spacing:1px}
+.proj-h{font-family:'Chivo Mono',monospace;font-weight:400;font-size:11px;color:var(--t3);text-transform:uppercase;letter-spacing:.18em}
 
 /* (portfolio table styles removed — replaced by donut chart) */
 
-/* SHARE */
-.share-cd{background:linear-gradient(135deg,var(--bg),#0a1a2a,#1a1030);border:1px solid var(--b1);border-radius:13px;padding:22px;margin:16px 0;text-align:center}
+/* SHARE / BRAG */
+.share-cd{background:var(--ink);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--gold);border-radius:2px;padding:22px;margin:16px 0;text-align:center}
 
 .cite{margin-top:24px;padding-top:16px;border-top:1px solid var(--b1)}
-.cite h3{font-family:'Prompt','Inter',sans-serif;font-size:10px;font-weight:700;margin-bottom:6px;color:var(--t3)}
-.cite table{width:100%;font-size:9px;border-collapse:collapse}.cite td,.cite th{padding:4px 6px;border-bottom:1px solid var(--b1);text-align:left;color:var(--t2)}.cite th{color:var(--t3);font-weight:700;text-transform:uppercase;font-size:7px}
-.tag{text-align:center;margin-top:28px;padding:14px;font-size:9px;color:var(--t3)}
+.cite h3{font-family:'Chivo Mono',monospace;font-size:12px;font-weight:400;margin-bottom:6px;color:var(--gold);letter-spacing:.18em;text-transform:uppercase}
+.cite table{width:100%;font-size:11px;border-collapse:collapse}.cite td,.cite th{padding:4px 6px;border-bottom:1px solid var(--b1);text-align:left;color:var(--t2)}.cite th{color:var(--t3);font-weight:700;text-transform:uppercase;font-size:9px}
+.tag{text-align:center;margin-top:28px;padding:14px;font-family:'Chivo Mono',monospace;font-size:11px;color:var(--t3);letter-spacing:.05em}
 
 @media(max-width:600px){.cta-r{flex-direction:column}.cta{width:100%;justify-content:center}.map{aspect-ratio:.9}.proj-row{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<div class="nav"><button class="nb" id="nb" onclick="back()">← Back</button><div class="dots" id="dots"></div><img src="assets/logo-light.png" style="height:18px;opacity:.5" alt="LE"></div>
+<div class="nav"><button class="nb" id="nb" onclick="back()">← Back</button><div class="dots" id="dots"></div><span style="font-size:13px;font-weight:800;color:var(--deep);letter-spacing:-.02em">Design your BBA</span></div>
 <div class="shelf"><div class="shelf-inner" id="ticker"></div></div>
 <div class="src-ctr" id="srcCtr">Sources: <span class="sc-n" id="srcN">0</span>/16</div>
 
@@ -217,12 +216,12 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;bac
 </div>
 <button class="ev" onclick="tog('e0')">How we calculated ▾</button>
 <div class="evb" id="e0">1,095 − 312 weekends − 36 holidays − 129 vacation = <b>618 productive days</b> × ~14.5 usable hrs ≈ <b>9,000 productive hours</b></div>
-<div class="rv"><div class="ey" style="margin-bottom:8px">A standard BBA (classroom + self-study + exams)</div><div class="big" style="font-family:'Prompt','Inter',sans-serif;font-size:44px;font-weight:900;color:var(--tl)">~3,000 hrs</div><div style="font-size:12px;color:var(--t2);margin-top:3px">That's <b style="color:var(--t1)">33%</b> of your productive hours.</div></div>
-<div style="margin:20px 0;border-radius:14px;overflow:hidden;border:1px solid var(--b1)">
-<div class="bh-bar"><div class="bh-k" style="flex:33">33%</div><div class="bh-v" style="flex:67"><div class="bh-vx"></div><div class="bh-ct"></div><div class="bh-ps" id="bhp"></div><div class="bh-lb">67% — The Black Hole</div></div></div>
+<div class="rv"><div class="ey" style="margin-bottom:8px">A standard BBA (classroom + self-study + exams)</div><div class="big" style="font-family:'Cabinet Grotesk',system-ui,sans-serif;font-size:44px;font-weight:900;color:var(--tl)">~3,000 hrs</div><div style="font-size:12px;color:var(--t2);margin-top:3px">That's <b style="color:var(--t1)">33%</b> of your productive hours.</div></div>
+<div style="margin:20px 0;border-radius:2px;overflow:hidden;border:1px solid var(--b1);background:#020014">
+<div class="bh-bar"><div class="bh-k" style="flex:33">33%</div><div class="bh-v" style="flex:67;background:#020014"><div class="bh-vx"></div><div class="bh-ct"></div><div class="bh-ps" id="bhp"></div><div class="bh-lb">67% — The Black Hole</div></div></div>
 </div>
 <div class="cd" style="margin-top:12px">
-<div class="bh-n" style="font-family:'Prompt','Inter',sans-serif;font-size:26px;font-weight:900;color:var(--am)">~6,000 hours</div>
+<div style="font-size:26px;font-weight:900;color:var(--gold);letter-spacing:-.03em">~6,000 hours</div>
 <div style="margin-top:6px;font-size:12px;color:var(--t2);line-height:1.7">No syllabus covers them. No college brochure mentions them.</div>
 <div style="margin-top:8px;font-size:12px;color:var(--t2);line-height:1.7">They <i>will</i> be filled — by scrolling, by waiting, by hanging out.</div>
 <div style="margin-top:8px;font-size:12px;color:var(--t2);line-height:1.7"><b style="color:var(--tl)">Or — they can be the hours that actually change your life.</b></div>
@@ -241,18 +240,18 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;bac
 <div class="cd" style="text-align:center;padding:16px"><div class="pr" style="font-size:32px;font-weight:900;color:var(--tl)">69%</div><div style="font-size:10px;color:var(--t2);margin-top:2px">want analytical thinking</div><div style="font-size:10px;color:var(--t2);margin-top:4px;font-weight:500">WEF 2025 · 1,000+ employers</div></div>
 <div class="cd" style="text-align:center;padding:16px"><div class="pr" style="font-size:32px;font-weight:900;color:var(--em)">100%</div><div style="font-size:10px;color:var(--t2);margin-top:2px">rate Ethics as #1</div><div style="font-size:10px;color:var(--t2);margin-top:4px;font-weight:500">ISR 2025 · Universal consensus</div></div>
 </div>
-<div class="cd" style="border-color:var(--td)">
-<div class="pr" style="font-size:13px;font-weight:700;margin-bottom:4px">Skills aren't taught in classrooms.</div>
+<div class="cd" style="border-color:rgba(0,203,200,.3)">
+<div style="font-size:13px;font-weight:700;margin-bottom:4px">Skills aren't taught in classrooms.</div>
 <p style="font-size:11px;color:var(--t2);line-height:1.6">Campus placements = only <b style="color:var(--am)">10%</b> of hiring. Job portals (37%) and referrals (32.5%) dominate. <span style="font-size:9px;color:var(--t3)">ISR 2025</span></p>
 </div>
-<div class="cd" style="border-color:var(--td);background:rgba(18,212,180,.02);margin-top:6px">
+<div class="cd" style="border-color:rgba(0,203,200,.3);margin-top:6px">
 <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:4px"><span class="pr" style="font-size:13px;font-weight:700">"Will AI replace me?"</span></div>
 <div style="display:flex;align-items:baseline;gap:8px;margin:6px 0"><span class="pr" style="font-size:36px;font-weight:900;color:var(--tl)">ZERO</span><span style="font-size:11px;color:var(--t2)">skills at "very high" AI substitution</span></div>
 <p style="font-size:11px;color:var(--t2);line-height:1.6">Out of every skill measured globally, not one can be fully replaced by AI. The top 3 skills AI <i>cannot</i> replicate:</p>
 <div style="display:flex;gap:6px;margin:8px 0">
-<div style="flex:1;background:rgba(18,212,180,.08);border-radius:8px;padding:8px;text-align:center"><div style="font-size:16px">🧠</div><div style="font-size:10px;font-weight:700;color:var(--tl);margin-top:2px">Analytical Thinking</div><div style="font-size:9px;color:var(--t3)">#1 skill · 69%</div></div>
-<div style="flex:1;background:rgba(255,184,0,.08);border-radius:8px;padding:8px;text-align:center"><div style="font-size:16px">💪</div><div style="font-size:10px;font-weight:700;color:var(--am);margin-top:2px">Resilience & Agility</div><div style="font-size:9px;color:var(--t3)">#2 skill · 67%</div></div>
-<div style="flex:1;background:rgba(167,139,250,.08);border-radius:8px;padding:8px;text-align:center"><div style="font-size:16px">👑</div><div style="font-size:10px;font-weight:700;color:#A78BFA;margin-top:2px">Leadership</div><div style="font-size:9px;color:var(--t3)">#3 skill · 61%</div></div>
+<div style="flex:1;background:rgba(0,203,200,.08);border-radius:8px;padding:8px;text-align:center"><div style="font-size:16px">🧠</div><div style="font-size:10px;font-weight:700;color:var(--tl);margin-top:2px">Analytical Thinking</div><div style="font-size:9px;color:var(--t3)">#1 skill · 69%</div></div>
+<div style="flex:1;background:rgba(212,192,122,.08);border-radius:8px;padding:8px;text-align:center"><div style="font-size:16px">💪</div><div style="font-size:10px;font-weight:700;color:var(--am);margin-top:2px">Resilience & Agility</div><div style="font-size:9px;color:var(--t3)">#2 skill · 67%</div></div>
+<div style="flex:1;background:rgba(167,139,250,.06);border-radius:8px;padding:8px;text-align:center"><div style="font-size:16px">👑</div><div style="font-size:10px;font-weight:700;color:#A78BFA;margin-top:2px">Leadership</div><div style="font-size:9px;color:var(--t3)">#3 skill · 61%</div></div>
 </div>
 <p style="font-size:11px;color:var(--t2);line-height:1.5">All three are built through <b style="color:var(--t1)">real experience, not textbooks.</b> Yet 40% of Indian graduates can't even get hired today — the problem isn't robots, it's irrelevance. <span style="font-size:9px;color:var(--t3)">WEF FoJ 2025 Fig 3.3 · Mercer-Mettl 2025</span></p>
 </div>
@@ -263,7 +262,7 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;bac
 <div class="scr" id="s2">
 <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px;margin-bottom:2px">
 <div><div class="tl">Design your college life.</div><div class="sub">Drag sliders. Others adjust. Lock 🔒 what matters.</div></div>
-<div class="pr" style="font-size:11px;padding:4px 10px;border-radius:12px;font-weight:700" id="hl">0</div>
+<div style="font-family:'Chivo Mono',monospace;font-size:11px;padding:4px 10px;border-radius:6px;font-weight:700;letter-spacing:.05em" id="hl">0</div>
 </div>
 <div class="lc" id="stk">
 <div style="display:flex;justify-content:space-between;align-items:baseline"><div class="lcl">Your Next 3 Years</div><div style="font-size:9px;color:var(--t3)">Benchmarks: WHO · IIM Rohtak · AICTE</div></div>
@@ -311,7 +310,7 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;bac
 <div class="map-ax h"></div><div class="map-ax v"></div>
 <!-- Quadrant background glows -->
 <div style="position:absolute;top:0;left:0;width:50%;height:50%;background:radial-gradient(ellipse at 70% 70%,rgba(251,146,60,.06),transparent 70%)"></div>
-<div style="position:absolute;top:0;right:0;width:50%;height:50%;background:radial-gradient(ellipse at 30% 70%,rgba(18,212,180,.08),transparent 70%)"></div>
+<div style="position:absolute;top:0;right:0;width:50%;height:50%;background:radial-gradient(ellipse at 30% 70%,rgba(0,203,200,.08),transparent 70%)"></div>
 <div style="position:absolute;bottom:0;left:0;width:50%;height:50%;background:radial-gradient(ellipse at 70% 30%,rgba(59,130,246,.06),transparent 70%)"></div>
 <div style="position:absolute;bottom:0;right:0;width:50%;height:50%;background:radial-gradient(ellipse at 30% 30%,rgba(167,139,250,.06),transparent 70%)"></div>
 <!-- Axis labels -->
@@ -320,10 +319,10 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;bac
 <div class="map-lb" style="left:-2px;top:50%;transform:translateY(-50%) rotate(-90deg);color:var(--t3);font-size:11px">LOW ACCOUNTABILITY</div>
 <div class="map-lb" style="right:-2px;top:50%;transform:translateY(-50%) rotate(90deg);color:var(--am);font-size:11px">HIGH ACCOUNTABILITY</div>
 <!-- Faint quadrant labels -->
-<div style="position:absolute;top:8%;left:6%;font-size:11px;color:rgba(251,146,60,.35);line-height:1.3">Self-Directed<br>Practical</div>
-<div style="position:absolute;top:8%;right:6%;font-size:11px;color:rgba(18,212,180,.4);text-align:right;line-height:1.3">Structured<br>Practical</div>
-<div style="position:absolute;bottom:8%;left:6%;font-size:11px;color:rgba(59,130,246,.3);line-height:1.3">Self-Directed<br>Academic</div>
-<div style="position:absolute;bottom:8%;right:6%;font-size:11px;color:rgba(167,139,250,.35);text-align:right;line-height:1.3">Structured<br>Academic</div>
+<div style="position:absolute;top:8%;left:6%;font-size:13px;font-weight:700;color:rgba(251,146,60,.55);line-height:1.3">Self-Directed<br>Practical</div>
+<div style="position:absolute;top:8%;right:6%;font-size:13px;font-weight:700;color:rgba(0,203,200,.6);text-align:right;line-height:1.3">Structured<br>Practical</div>
+<div style="position:absolute;bottom:8%;left:6%;font-size:13px;font-weight:700;color:rgba(59,130,246,.5);line-height:1.3">Self-Directed<br>Academic</div>
+<div style="position:absolute;bottom:8%;right:6%;font-size:13px;font-weight:700;color:rgba(167,139,250,.55);text-align:right;line-height:1.3">Structured<br>Academic</div>
 <div id="pDots"></div>
 <div id="sDot"></div>
 <div style="position:absolute;bottom:4px;right:8px;font-size:9px;color:var(--t3);opacity:.5">Ericsson 1993 · McKinsey MGI 2022</div>
@@ -334,8 +333,9 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;bac
 <div class="map-stat"><div class="ms-n" id="msR" style="color:var(--tl)">—</div><div class="ms-l">readiness %</div></div>
 <div class="map-stat"><div class="ms-n" id="msP" style="color:var(--t2)">—</div><div class="ms-l">closest path</div></div>
 </div>
-<div class="cd" style="font-size:12px;color:var(--t2);line-height:1.6;border-color:var(--td);margin-top:14px">
-<b style="color:var(--t1)">"The best performers had ~7,410 hours of deliberate practice by 18 — not talent, but structured effort with feedback."</b> <span style="font-size:10px;color:var(--t3)">— Ericsson et al., 1993</span>
+<div style="background:rgba(8,0,50,.75);border-radius:2px;padding:18px 20px;margin-top:14px;border-left:2px solid var(--gold)">
+<div style="font-size:clamp(14px,2vw,18px);font-weight:700;color:var(--cream);line-height:1.35;letter-spacing:-.015em">"The best performers had ~7,410 hours of deliberate practice by 18 — not talent, but structured effort with feedback."</div>
+<div style="font-family:'Chivo Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:6px">— Ericsson et al. 1993 · 9,000+ citations</div>
 </div>
 <button class="cta fw" onclick="go(5)">See my results →</button>
 </div>
@@ -360,21 +360,22 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;bac
 <!-- S6: YOUR RESULTS (screenshot card + paths) -->
 <div class="scr" id="s6">
 <!-- SCREENSHOT CARD ZONE -->
-<div id="dnaCard" style="background:linear-gradient(165deg,#0C0E1A,#12183a,#0a1628);border:1px solid rgba(18,212,180,.12);border-radius:18px;padding:24px 20px;margin-bottom:16px;position:relative;overflow:hidden">
-<div style="position:absolute;top:-30px;right:-30px;width:150px;height:150px;background:radial-gradient(circle,rgba(18,212,180,.06),transparent 70%)"></div>
-<div style="position:absolute;bottom:-30px;left:-30px;width:150px;height:150px;background:radial-gradient(circle,rgba(255,184,0,.04),transparent 70%)"></div>
-<div class="ey" style="margin-bottom:14px;position:relative;font-size:13px;letter-spacing:3px">YOUR COLLEGE DNA</div>
+<div id="dnaCard" style="background:rgba(10,0,69,.65);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(212,192,122,.3);border-radius:2px;padding:24px 20px;margin-bottom:16px;position:relative;overflow:hidden">
+<div style="position:absolute;bottom:-1px;right:-1px;width:18px;height:18px;border-bottom:1px solid var(--gold);border-right:1px solid var(--gold)"></div>
+<div style="position:absolute;top:-20px;right:-20px;width:100px;height:100px;background:radial-gradient(circle,rgba(212,192,122,.05),transparent 70%)"></div>
+<div class="ey" style="margin-bottom:14px;position:relative">YOUR COLLEGE DNA</div>
 <div id="dnaDecisions" style="margin-bottom:18px;position:relative"></div>
-<div style="display:flex;align-items:center;gap:12px;margin-bottom:5px;position:relative">
-<div id="rScore" class="pr" style="font-size:44px;font-weight:900;background:linear-gradient(135deg,var(--tl),var(--am));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1">—%</div>
-<div><div style="font-size:12px;color:var(--t2);font-weight:600;text-transform:uppercase;letter-spacing:1px">Industry Readiness</div><div style="font-size:9px;color:var(--t3);margin-top:1px">by age 21</div></div>
+<div style="text-align:center;margin:18px 0 8px;position:relative">
+<div id="rScore" style="font-size:clamp(64px,16vw,96px);font-weight:900;letter-spacing:-.05em;line-height:.85"><span style="color:var(--gold)">—</span><span style="-webkit-text-stroke:3px var(--gold);color:transparent">%</span></div>
+<div style="font-family:'Chivo Mono',monospace;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-top:6px">Industry Readiness</div>
+<div style="font-family:'Chivo Mono',monospace;font-size:9px;color:var(--t3);margin-top:2px">by age 21</div>
 </div>
-<div style="width:100%;height:5px;background:#1a2050;border-radius:3px;overflow:hidden;margin-bottom:14px;position:relative"><div id="rBar3" style="height:100%;border-radius:3px;background:linear-gradient(90deg,var(--tl),var(--am));width:0%;transition:width .5s"></div></div>
-<div id="pctBox" style="background:rgba(255,184,0,.05);border:1px solid rgba(255,184,0,.12);border-radius:10px;padding:10px 14px;text-align:center;position:relative">
-<div id="pctNum" class="pr" style="font-size:22px;font-weight:900;color:var(--am)">Top —%</div>
+<div style="width:100%;height:5px;background:rgba(245,240,232,.06);border-radius:3px;overflow:hidden;margin:10px 0 14px;position:relative"><div id="rBar3" style="height:100%;border-radius:3px;background:var(--gold);width:0%;transition:width .5s"></div></div>
+<div id="pctBox" style="background:rgba(212,192,122,.05);border:1px solid rgba(212,192,122,.12);border-radius:2px;padding:10px 14px;text-align:center;position:relative">
+<div id="pctNum" style="font-size:22px;font-weight:900;color:var(--gold)">Top —%</div>
 <div id="pctText" style="font-size:12px;color:var(--t2)">more work-ready than —% of students</div>
 </div>
-<div style="display:flex;justify-content:space-between;margin-top:12px;padding-top:8px;border-top:1px solid rgba(42,46,80,.4);position:relative"><span style="font-size:10px;color:var(--t3)">bba.letsenterprise.in</span><span style="font-size:10px;color:var(--t3)">Built on 16 research sources</span></div>
+<div style="display:flex;justify-content:space-between;margin-top:10px;padding-top:7px;border-top:1px solid var(--b1);position:relative"><span style="font-family:'Chivo Mono',monospace;font-size:9px;color:var(--t3);letter-spacing:.05em">bba.letsenterprise.in</span><span style="font-family:'Chivo Mono',monospace;font-size:9px;color:var(--t3);letter-spacing:.05em">16 sources</span></div>
 </div>
 <!-- PATH CARDS -->
 <div class="ey" style="margin-bottom:10px">PATHS RANKED BY YOUR FIT</div>
@@ -387,24 +388,24 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;bac
 <div class="scr" id="s7">
 <div style="text-align:center;padding:16px 0 8px">
 <div class="ey" style="margin-bottom:4px">YOUR #1 MATCH</div>
-<div id="fPct" class="pr" style="font-size:clamp(52px,14vw,76px);font-weight:900;background:linear-gradient(135deg,var(--tl),var(--am));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1">—%</div>
+<div id="fPct" style="font-size:clamp(52px,14vw,76px);font-weight:900;letter-spacing:-.04em;line-height:.88"><span style="color:var(--gold)">—</span><span style="-webkit-text-stroke:2px var(--gold);color:transparent">%</span></div>
 <div style="font-size:12px;color:var(--t2);margin-top:3px">match with <b id="fNm">—</b></div>
 </div>
 
 <!-- TOP MATCH WHY -->
-<div class="cd" style="border-color:var(--tl);margin-bottom:16px">
-<div class="pr" style="font-size:18px;font-weight:800;margin-bottom:6px" id="aN">—</div>
-<p style="font-size:14px;color:var(--t1);line-height:1.6;margin-bottom:8px" id="aWhy">—</p>
-<p style="font-size:13px;color:var(--t2);line-height:1.6;border-left:3px solid var(--tl);padding-left:12px" id="aRef">—</p>
+<div class="cd" style="border-color:var(--gold);margin-bottom:16px">
+<div style="font-size:18px;font-weight:800;margin-bottom:6px;letter-spacing:-.02em" id="aN">—</div>
+<p style="font-size:14px;color:var(--t2);line-height:1.72;margin-bottom:8px" id="aWhy">—</p>
+<p style="font-size:13px;color:var(--t2);line-height:1.6;border-left:2px solid var(--gold);padding-left:20px" id="aRef">—</p>
 </div>
 
 <!-- VERTICAL BAR COMPARISON -->
 <div class="proj" style="padding:20px 16px">
-<div class="ey" style="margin-bottom:12px;text-align:center">BY AGE 21 — WORK EXPERIENCE VS LECTURES & EXAMS</div>
+<div class="ey" style="margin-bottom:12px;justify-content:center">BY AGE 21 — WORK VS LECTURES</div>
 <div style="text-align:center;font-size:9px;color:var(--t3);margin-bottom:8px">Work data: ISR 2025 · BBA hours: AICTE 2024</div>
-<div style="display:flex;gap:6px;justify-content:center;margin-bottom:20px">
-<div style="display:flex;align-items:center;gap:4px;font-size:10px;color:var(--t2)"><span style="width:10px;height:10px;border-radius:2px;background:#8B8FA3"></span>Lectures & Exams</div>
-<div style="display:flex;align-items:center;gap:4px;font-size:10px;color:var(--t2)"><span style="width:10px;height:10px;border-radius:2px;background:var(--bl)"></span>Work Experience</div>
+<div style="display:flex;gap:14px;justify-content:center;margin-bottom:20px">
+<div style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--cream)"><span style="width:12px;height:12px;border-radius:2px;background:#F5F0E8"></span>Lectures & Exams</div>
+<div style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--cream)"><span style="width:12px;height:12px;border-radius:2px;background:var(--bl)"></span>Work Experience</div>
 </div>
 <div id="vBars" style="display:flex;justify-content:center;gap:12px;align-items:flex-end;height:220px;padding:0 8px"></div>
 <div id="vLabels" style="display:flex;justify-content:center;gap:12px;margin-top:8px"></div>
@@ -412,9 +413,9 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;bac
 
 <!-- DONUT CHART -->
 <div style="margin-top:28px">
-<div class="pr" style="font-size:18px;font-weight:800;margin-bottom:4px;text-align:center">Your 3-Year Investment Portfolio</div>
+<div style="font-size:clamp(20px,4vw,28px);font-weight:800;margin-bottom:4px;text-align:center;letter-spacing:-.02em">Your 3-Year Investment Portfolio</div>
 <p style="font-size:10px;color:var(--t3);margin-bottom:4px;text-align:center">How you're allocating your productive hours</p>
-<p style="font-size:9px;color:var(--t3);margin-bottom:14px;text-align:center">Model: IIM Rohtak 2024 · AICTE 2024</p>
+<p style="font-family:'Chivo Mono',monospace;font-size:9px;color:var(--t3);margin-bottom:14px;text-align:center;letter-spacing:.05em">Model: IIM Rohtak 2024 · AICTE 2024</p>
 <div style="display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap">
 <svg id="donutSvg" width="200" height="200" viewBox="0 0 200 200" style="flex-shrink:0"></svg>
 <div id="donutLegend" style="display:flex;flex-direction:column;gap:12px;min-width:140px"></div>
@@ -424,39 +425,39 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;bac
 
 <!-- BRAG BOX -->
 <div class="share-cd" id="bragBox" style="margin-top:24px">
-<div class="ey" style="color:var(--am);margin-bottom:10px">YOUR 3-YEAR EDGE</div>
-<div class="pr" style="font-size:clamp(26px,6vw,36px);font-weight:900;color:var(--am);line-height:1.15" id="sBrag">—</div>
+<div style="font-family:'Chivo Mono',monospace;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;display:flex;align-items:center;justify-content:center;gap:8px"><span style="width:16px;height:1px;background:var(--gold)"></span>YOUR 3-YEAR EDGE<span style="width:16px;height:1px;background:var(--gold)"></span></div>
+<div style="font-family:'Chivo Mono',monospace;font-size:clamp(24px,5vw,38px);font-weight:700;letter-spacing:-.02em" id="sBrag">—</div>
 <div style="font-size:13px;color:var(--t2);margin-top:8px;line-height:1.5" id="sBrag2">—</div>
 <div style="font-size:11px;color:var(--t3);margin-top:10px" id="sBrag3">—</div>
 </div>
 
 <!-- ACTION BUTTONS -->
 <div style="display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:24px">
-<button class="cta s" onclick="shareFriend()" style="width:100%;max-width:320px;justify-content:center;font-size:15px;padding:14px 24px">💬 Share with a friend</button>
-<button class="cta" onclick="window.open('https://admissions.letsenterprise.in','_blank');try{plausible('Apply',{props:{p:'Working BBA'}})}catch(e){}" style="width:100%;max-width:320px;justify-content:center;font-size:15px;padding:14px 24px;background:var(--tl);color:var(--bg)">START YOUR WORKING BBA APPLICATION →</button>
-<button class="cta s" onclick="go(0)" style="width:100%;max-width:320px;justify-content:center;font-size:13px;padding:12px 24px">↺ Start over</button>
+<button class="cta s" onclick="shareFriend()" style="width:100%;max-width:320px;justify-content:center;font-size:13px;padding:14px 24px">💬 Share with a friend</button>
+<button class="cta" onclick="window.open('https://admissions.letsenterprise.in','_blank');try{plausible('Apply',{props:{p:'Working BBA'}})}catch(e){}" style="width:100%;max-width:320px;justify-content:center;font-size:13px;padding:14px 24px;background:var(--blue);color:#fff">Apply Now →</button>
+<button class="cta s" onclick="go(0)" style="width:100%;max-width:320px;justify-content:center;font-size:11px;padding:12px 24px">↺ Start over</button>
 </div>
-<div style="margin-top:28px;padding-top:20px;border-top:1px solid var(--b1)">
-<div class="pr" style="font-size:15px;font-weight:800;margin-bottom:4px;color:var(--tl)">Built on 16 primary research sources.</div>
-<p style="font-size:10px;color:var(--t3);margin-bottom:12px">Every number in this tool traces to a published, verifiable source. Tap any row for details.</p>
-<table style="width:100%;font-size:10px;border-collapse:collapse">
-<tr style="background:rgba(18,212,180,.05)"><th style="padding:6px 8px;text-align:left;color:var(--tl);font-size:8px;text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid var(--b1)">Finding</th><th style="padding:6px 8px;text-align:left;color:var(--tl);font-size:8px;text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid var(--b1)">Source</th><th style="padding:6px 8px;text-align:left;color:var(--tl);font-size:8px;text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid var(--b1)">Sample</th></tr>
-<tr><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t2)">69% want analytical thinking</td><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t2)">WEF Future of Jobs 2025</td><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t3)">1,000+ employers, 55 economies</td></tr>
-<tr><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t2)">14% freshers / 47% experienced</td><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t2)">ISR 2025 (Wheebox/CII/AICTE)</td><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t3)">1,000+ corporations, 15 industries</td></tr>
-<tr><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t2)">58% of earnings from experience</td><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t2)">McKinsey MGI 2022</td><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t3)">~1 million Indian work histories</td></tr>
-<tr><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t2)">100% rate Ethics #1</td><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t2)">ISR 2025</td><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t3)">Universal consensus across all companies</td></tr>
-<tr><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t2)">6h45m average screen time</td><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t2)">IIM Rohtak 2024</td><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t3)">38,896 youth aged 18–25</td></tr>
-<tr><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t2)">42.6% graduates employable</td><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t2)">Mercer-Mettl GSI 2025</td><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t3)">Hiring pipeline assessment data</td></tr>
-<tr><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t2)">Zero skills at very-high AI sub.</td><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t2)">WEF × Indeed 2025</td><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t3)">Global labour market skill analysis</td></tr>
-<tr><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t2)">~1,800 BBA contact hours</td><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t2)">AICTE Model Curriculum 2024</td><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t3)">120 credits × 15 hrs/credit</td></tr>
-<tr><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t2)">80% use phones for entertainment</td><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t2)">ASER 2023</td><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t3)">34,745 youth, 28 districts, 26 states</td></tr>
-<tr><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t2)">377M Indian Gen Z</td><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t2)">BCG × Snap 2024</td><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t3)">Born 1997–2012, $860B spending power</td></tr>
-<tr><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t2)">~7,410 hrs deliberate practice</td><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t2)">Ericsson et al. 1993</td><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t3)">Psychological Review, 9,000+ citations</td></tr>
-<tr><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t2)">98% apprentice transition rate</td><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t2)">TeamLease EdTech</td><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t3)">200K+ apprentices since 2014</td></tr>
-<tr><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t2)">495 SPUs serve 81% of students</td><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t2)">NITI Aayog × AIU 2025</td><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t3)">3.25 crore students</td></tr>
-<tr><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t2)">Campus hiring = 10%</td><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t2)">ISR 2025</td><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t3)">Job portals 37%, referrals 32.5%</td></tr>
-<tr><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t2)">+78M net new jobs by 2030</td><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t2)">WEF FoJ 2025</td><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t3)">170M created, 92M displaced</td></tr>
-<tr><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t2)">80% favour skill-based hiring</td><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t2)">Deloitte ASHE 2024 (CII)</td><td style="padding:5px 8px;border-bottom:1px solid var(--b1);color:var(--t3)">Executive survey across industries</td></tr>
+<div style="margin-top:28px;background:#fff;border-radius:6px;padding:20px 16px;color:#0A0045">
+<div style="font-size:16px;font-weight:800;margin-bottom:4px;color:#0A0045;letter-spacing:-.01em">Built on 16 primary research sources.</div>
+<p style="font-size:12px;color:rgba(10,0,69,.5);margin-bottom:12px">Every number in this tool traces to a published, verifiable source.</p>
+<table style="width:100%;font-size:12px;border-collapse:collapse">
+<tr style="background:rgba(10,0,69,.04)"><th style="padding:6px 8px;text-align:left;font-family:'Chivo Mono',monospace;color:var(--deep);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;border-bottom:1px solid rgba(10,0,69,.1)">Finding</th><th style="padding:6px 8px;text-align:left;font-family:'Chivo Mono',monospace;color:var(--deep);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;border-bottom:1px solid rgba(10,0,69,.1)">Source</th><th style="padding:6px 8px;text-align:left;font-family:'Chivo Mono',monospace;color:var(--deep);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;border-bottom:1px solid rgba(10,0,69,.1)">Sample</th></tr>
+<tr><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">69% want analytical thinking</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">WEF Future of Jobs 2025</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.45)">1,000+ employers, 55 economies</td></tr>
+<tr><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">14% freshers / 47% experienced</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">ISR 2025 (Wheebox/CII/AICTE)</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.45)">1,000+ corporations, 15 industries</td></tr>
+<tr><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">58% of earnings from experience</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">McKinsey MGI 2022</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.45)">~1 million Indian work histories</td></tr>
+<tr><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">100% rate Ethics #1</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">ISR 2025</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.45)">Universal consensus across all companies</td></tr>
+<tr><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">6h45m average screen time</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">IIM Rohtak 2024</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.45)">38,896 youth aged 18–25</td></tr>
+<tr><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">42.6% graduates employable</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">Mercer-Mettl GSI 2025</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.45)">Hiring pipeline assessment data</td></tr>
+<tr><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">Zero skills at very-high AI sub.</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">WEF × Indeed 2025</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.45)">Global labour market skill analysis</td></tr>
+<tr><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">~1,800 BBA contact hours</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">AICTE Model Curriculum 2024</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.45)">120 credits × 15 hrs/credit</td></tr>
+<tr><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">80% use phones for entertainment</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">ASER 2023</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.45)">34,745 youth, 28 districts, 26 states</td></tr>
+<tr><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">377M Indian Gen Z</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">BCG × Snap 2024</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.45)">Born 1997–2012, $860B spending power</td></tr>
+<tr><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">~7,410 hrs deliberate practice</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">Ericsson et al. 1993</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.45)">Psychological Review, 9,000+ citations</td></tr>
+<tr><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">98% apprentice transition rate</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">TeamLease EdTech</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.45)">200K+ apprentices since 2014</td></tr>
+<tr><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">495 SPUs serve 81% of students</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">NITI Aayog × AIU 2025</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.45)">3.25 crore students</td></tr>
+<tr><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">Campus hiring = 10%</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">ISR 2025</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.45)">Job portals 37%, referrals 32.5%</td></tr>
+<tr><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">+78M net new jobs by 2030</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">WEF FoJ 2025</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.45)">170M created, 92M displaced</td></tr>
+<tr><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">80% favour skill-based hiring</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">Deloitte ASHE 2024 (CII)</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.45)">Executive survey across industries</td></tr>
 </table>
 </div>
 <div class="tag">"Your Next 1,095 Days" — 16 primary sources, zero opinions.</div>
@@ -472,7 +473,7 @@ const SHRINK=['entertainment','home','growth'];
 // 6 COMBINED CATEGORIES
 const C=[
 {k:'classroom',l:'Classroom',desc:'Lectures, textbooks, self-study, exams',h:'#3B82F6',i:'📖',mn:0,mx:6,lo:0,hi:5,loE:'🤔',hiE:'🤓',bn:'Avg BBA: ~3h on class days',short:'CLASS'},
-{k:'practical',l:'Practical',desc:'Projects, apprenticeships, real work, applied learning',h:'#12D4B4',i:'🔧',mn:0,mx:10,lo:0,hi:8,loE:'',hiE:'💪',bn:'Apprentice: 4-6h. Full-time: 8h.',short:'PRACTICAL'},
+{k:'practical',l:'Practical',desc:'Projects, apprenticeships, real work, applied learning',h:'#00CBC8',i:'🔧',mn:0,mx:10,lo:0,hi:8,loE:'',hiE:'💪',bn:'Apprentice: 4-6h. Full-time: 8h.',short:'PRACTICAL'},
 {k:'growth',l:'Growth',desc:'Self-reflection, fitness, hobbies, personal development',h:'#A78BFA',i:'🧠',mn:0,mx:5,lo:1,hi:3.5,loE:'😶',hiE:'🧘',bn:'WHO: 60 min fitness + 30 min reflection',short:'GROWTH'},
 {k:'entertainment',l:'Entertainment',desc:'Screens, social media, friends, hanging out',h:'#FB923C',i:'📱',mn:0,mx:12,lo:0,hi:5,loE:'',hiE:'📵',bn:'Indian avg: 6h45m screens + 3h social!',short:'SCREEN'},
 {k:'home',l:'Home',desc:'Family time, chores, commute, errands',h:'#F87171',i:'🏠',mn:0,mx:6,lo:1,hi:4,loE:'💔',hiE:'🚗',bn:'Family 1-2h + commute 1-2h typical',short:'HOME'},
@@ -487,7 +488,7 @@ const P=[
 {n:'Gap Year / Self-Directed',d:'Your own path · maximum freedom · variable',p:{classroom:1,practical:1.5,growth:2.5,entertainment:8,home:2.5,sleep:8.5},wh:1095,lh:500,q1w:[0,.2,.5,1],q2w:[0,.9,.3,0],q3w:[1,.1,0,.1],fit:['You have a plan and you\'ve already started','Genuinely self-disciplined, no reminders needed','You know how you\'ll use the freedom'],why:['Only 5.6% of youth self-direct into structured learning','Avg screen time: 6h45m/day — entertainment fills the vacuum','Works for self-starters — most 18-year-olds haven\'t been tested']},
 ];
 const DEF={classroom:1.5,practical:2,growth:2,entertainment:7,home:3.5,sleep:8};
-const MAP_POS=[{x:25,y:75,n:'Gap Year',c:'#FB923C'},{x:28,y:25,n:'College BBA',c:'#3B82F6'},{x:72,y:25,n:'Premium BBA',c:'#A78BFA'},{x:80,y:82,n:'Working BBA',c:'#12D4B4'}];
+const MAP_POS=[{x:25,y:75,n:'Gap Year',c:'#FB923C'},{x:28,y:25,n:'College BBA',c:'#3B82F6'},{x:72,y:25,n:'Premium BBA',c:'#A78BFA'},{x:80,y:82,n:'Working BBA',c:'#00CBC8'}];
 const MAP_POS_N=MAP_POS.map(p=>({x:p.x/100,y:p.y/100,n:p.n,c:p.c}));
 
 // NAV
@@ -531,7 +532,7 @@ if(v<c.lo){el.classList.add('wl');if(c.loE)em.textContent=c.loE}else if(v>c.hi){
 else if(c.k==='work'&&v>=2)em.textContent='💪';else if(c.k==='application'&&v>=2)em.textContent='🔥';else if(c.k==='selfReflection'&&v>=1)em.textContent='✨'})}
 function chkSweet(){C.forEach(c=>{const v=vals[c.k],el=document.getElementById('sg_'+c.k),sw=SWEET[c.k];
 if(sw&&v>=sw[0]&&v<=sw[1])el.classList.add('sweet');else el.classList.remove('sweet')})}
-function uH(){const t=Object.values(vals).reduce((s,v)=>s+v,0),l=TD-t,e=document.getElementById('hl');e.style.background=Math.abs(l)<.05?'rgba(18,212,180,.1)':l>0?'rgba(18,212,180,.1)':'rgba(244,63,94,.1)';e.style.color=l<-.05?'var(--ro)':'var(--tl)';e.textContent=Math.abs(l)<.05?'✓ 24h':l>0?l.toFixed(1)+'h left':Math.abs(l).toFixed(1)+'h over';
+function uH(){const t=Object.values(vals).reduce((s,v)=>s+v,0),l=TD-t,e=document.getElementById('hl');e.style.background=Math.abs(l)<.05?'rgba(0,203,200,.1)':l>0?'rgba(0,203,200,.1)':'rgba(244,63,94,.1)';e.style.color=l<-.05?'var(--ro)':'var(--tl)';e.textContent=Math.abs(l)<.05?'✓ 24h':l>0?l.toFixed(1)+'h left':Math.abs(l).toFixed(1)+'h over';
 document.getElementById('stk').classList.toggle('sw',(vals.sleep||0)<6)}
 function uB(){const b=document.getElementById('lBar'),l=document.getElementById('leg');b.innerHTML='';l.innerHTML='';
 const tot=Object.values(vals).reduce((s,v)=>s+v,0);
@@ -646,7 +647,7 @@ function bDNA(){
   for(let q=0;q<3;q++){
     const p1=qa[q][0];
     if(p1!==null&&Q_TEXTS[q][p1]){
-      dd.innerHTML+=`<div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:7px"><span style="color:var(--tl);font-size:13px;margin-top:1px;flex-shrink:0">✓</span><span style="font-size:12px;color:#c8c8e0;line-height:1.45;font-weight:500">${Q_TEXTS[q][p1]}</span></div>`;
+      dd.innerHTML+=`<div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:5px;position:relative"><span style="color:var(--tl);font-size:12px">✓</span><span style="font-size:12px;color:var(--cream);font-weight:500">${Q_TEXTS[q][p1]}</span></div>`;
     }
   }
   // Readiness bar
@@ -661,7 +662,7 @@ function bDNA(){
 }
 
 // RESULTS
-function bRes(){const r=calcR();document.getElementById('rScore').textContent=r+'%';
+function bRes(){const r=calcR();document.getElementById('rScore').innerHTML='<span style="color:var(--gold)">'+r+'</span><span style="-webkit-text-stroke:3px var(--gold);color:transparent">%</span>';
 // Path cards
 const m=match(),mc=document.getElementById('mCards');mc.innerHTML='';
 m.forEach((x,i)=>{const t=x.pct>=75?'a':x.pct>=55?'g':x.pct>=35?'s':'b';
@@ -674,7 +675,7 @@ mc.appendChild(d);if(i===0)d.classList.add('open')})}
 // FUTURE SELF
 function bFut(){
 const m=match(),top=m[0];
-document.getElementById('fPct').textContent=top.pct+'%';
+document.getElementById('fPct').innerHTML='<span style="color:var(--gold)">'+top.pct+'</span><span style="-webkit-text-stroke:2px var(--gold);color:transparent">%</span>';
 document.getElementById('fNm').textContent=top.n;
 
 // Data: work days and lecture days for 3 columns
@@ -689,21 +690,21 @@ const vl=document.getElementById('vLabels');vl.innerHTML='';
 const cols=[
   {label:'Your Path',work:wYou,lec:lYou,accent:'var(--tl)',border:'var(--tl)'},
   {label:'Typical BBA',work:wBBA,lec:lBBA,accent:'var(--t3)',border:'var(--b2)'},
-  {label:'Working BBA',work:wWBBA,lec:lWBBA,accent:'var(--am)',border:'var(--am)'}
+  {label:'Working BBA',work:wWBBA,lec:lWBBA,accent:'var(--gold)',border:'var(--gold)'}
 ];
 cols.forEach(col=>{
   const wPct=col.work/maxDays*100, lPct=col.lec/maxDays*100;
   vb.innerHTML+=`<div style="display:flex;gap:4px;align-items:flex-end;flex:1;max-width:100px">
     <div style="flex:1;display:flex;flex-direction:column;align-items:center">
-      <div class="pr" style="font-size:13px;font-weight:800;color:#8B8FA3;margin-bottom:4px">${col.lec}</div>
-      <div style="width:100%;height:${Math.max(4,lPct*1.8)}px;background:#8B8FA3;border-radius:6px 6px 0 0;transition:height .5s ease"></div>
+      <div style="font-family:'Chivo Mono',monospace;font-size:11px;font-weight:700;color:#F5F0E8;margin-bottom:4px">${col.lec}</div>
+      <div style="width:100%;height:${Math.max(4,lPct*1.8)}px;background:#F5F0E8;border-radius:2px 2px 0 0;transition:height .5s ease"></div>
     </div>
     <div style="flex:1;display:flex;flex-direction:column;align-items:center">
-      <div class="pr" style="font-size:13px;font-weight:800;color:var(--bl);margin-bottom:4px">${col.work}</div>
-      <div style="width:100%;height:${Math.max(4,wPct*1.8)}px;background:var(--bl);border-radius:6px 6px 0 0;transition:height .5s ease"></div>
+      <div style="font-family:'Chivo Mono',monospace;font-size:11px;font-weight:700;color:var(--bl);margin-bottom:4px">${col.work}</div>
+      <div style="width:100%;height:${Math.max(4,wPct*1.8)}px;background:var(--bl);border-radius:2px 2px 0 0;transition:height .5s ease"></div>
     </div>
   </div>`;
-  vl.innerHTML+=`<div style="flex:1;max-width:100px;text-align:center;font-size:10px;font-weight:600;color:${col.accent};border-top:2px solid ${col.border};padding-top:6px">${col.label}</div>`;
+  vl.innerHTML+=`<div style="flex:1;max-width:100px;text-align:center;font-size:13px;font-weight:800;color:${col.accent};border-top:2px solid ${col.border};padding-top:6px">${col.label}</div>`;
 });
 
 // DONUT CHART
@@ -735,8 +736,8 @@ pcts.forEach((pct,i)=>{
   svg.innerHTML+=`<path d="M${x1o},${y1o} A${r},${r} 0 ${large} 1 ${x2o},${y2o} L${x1i},${y1i} A${rInner},${rInner} 0 ${large} 0 ${x2i},${y2i} Z" fill="${dColors[i]}"${i===0?' filter="url(#glow)"':''} style="opacity:${i===0?1:0.75}"/>`;
   angle+=pct*Math.PI*2;
 });
-svg.innerHTML+=`<text x="${cx}" y="${cy-4}" text-anchor="middle" fill="var(--t1)" font-family="'Prompt','Inter',sans-serif" font-weight="800" font-size="20">${total.toLocaleString()}</text>`;
-svg.innerHTML+=`<text x="${cx}" y="${cy+12}" text-anchor="middle" fill="var(--t3)" font-family="'Inter',sans-serif" font-size="8">productive hours</text>`;
+svg.innerHTML+=`<text x="${cx}" y="${cy-4}" text-anchor="middle" fill="var(--cream)" font-family="'Cabinet Grotesk',sans-serif" font-weight="900" font-size="20">${total.toLocaleString()}</text>`;
+svg.innerHTML+=`<text x="${cx}" y="${cy+12}" text-anchor="middle" fill="var(--t3)" font-family="'Chivo Mono',monospace" font-size="8">productive hours</text>`;
 
 // Side legend (prominent labels)
 const dl=document.getElementById('donutLegend');dl.innerHTML='';
@@ -753,11 +754,11 @@ pcts.forEach((pct,i)=>{
 // Stats below with keywords
 const ds=document.getElementById('donutStats');ds.innerHTML='';
 pcts.forEach((pct,i)=>{
-  ds.innerHTML+=`<div style="background:var(--c1);border:1px solid var(--b1);border-radius:10px;padding:12px;text-align:center">
-    <div style="font-size:18px;margin-bottom:2px">${dEmoji[i]}</div>
-    <div class="pr" style="font-size:16px;font-weight:800;color:${dColors[i]}">${bktTotals[i].toLocaleString()}</div>
-    <div style="font-size:9px;color:var(--t3);margin-top:2px">${Math.round(pct*100)}%</div>
-    <div style="font-size:9px;color:var(--t3);margin-top:6px;line-height:1.4;border-top:1px solid var(--b1);padding-top:6px">${dKeywords[i]}</div>
+  ds.innerHTML+=`<div style="background:var(--ink);backdrop-filter:blur(16px);border:1px solid var(--b1);border-radius:2px;padding:14px;text-align:center">
+    <div style="font-size:20px;margin-bottom:4px">${dEmoji[i]}</div>
+    <div style="font-size:22px;font-weight:900;color:${dColors[i]};letter-spacing:-.03em">${bktTotals[i].toLocaleString()}</div>
+    <div style="font-size:11px;color:var(--t2);margin-top:2px;font-weight:600">${Math.round(pct*100)}%</div>
+    <div style="font-size:11px;color:var(--t2);margin-top:6px;line-height:1.5;border-top:1px solid var(--b1);padding-top:6px">${dKeywords[i]}</div>
   </div>`;
 });
 bBrag();
@@ -783,11 +784,11 @@ const wDays=Math.round((vals.practical||0)*618/7);
 const bbaDays=Math.round(200/7);
 const multiplier=bbaDays>0?Math.round(wDays/bbaDays*10)/10:0;
 if(wDays>bbaDays&&multiplier>=1.5){
-  document.getElementById('sBrag').textContent=wDays+' working days';
-  document.getElementById('sBrag2').textContent='of real work experience by 21 — that\'s '+multiplier+'× more than the average BBA grad.';
+  document.getElementById('sBrag').innerHTML='<span style="color:var(--gold)">'+wDays+'</span> <span style="color:var(--cream)">working days</span>';
+  document.getElementById('sBrag2').textContent=multiplier+'× more than the average BBA grad';
   document.getElementById('sBrag3').textContent='While most graduates have 6 weeks of internship, you\'ll have '+Math.round(wDays/22)+' months.';
 }else{
-  document.getElementById('sBrag').textContent=Math.round((vals.practical||0)*618)+' hours';
+  document.getElementById('sBrag').innerHTML='<span style="color:var(--gold)">'+Math.round((vals.practical||0)*618)+'</span> <span style="color:var(--cream)">hours</span>';
   document.getElementById('sBrag2').textContent='of intentional time invested in real work over 3 years.';
   document.getElementById('sBrag3').textContent='Readiness score: '+calcR()+'%';
 }
@@ -835,7 +836,7 @@ t.innerHTML=html}
 const SRC_MAP={0:[7,8],1:[0,1,2,3,6,10],2:[4,5],3:[0,1,2],4:[9,2],5:[],6:[0,1,2,3,6,10,11],7:[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]};
 function updSrcCtr(){const seen=new Set();for(let i=0;i<=cur;i++){(SRC_MAP[i]||[]).forEach(s=>seen.add(s))}
 const n=Math.min(seen.size,16);document.getElementById('srcN').textContent=n;
-document.getElementById('srcCtr').style.background=n>=16?'rgba(18,212,180,.15)':'rgba(18,212,180,.08)'}
+document.getElementById('srcCtr').style.background=n>=16?'rgba(212,192,122,.15)':'rgba(212,192,122,.08)'}
 
 // INIT
 buildTicker();
