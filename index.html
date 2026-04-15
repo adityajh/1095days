@@ -202,7 +202,7 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;bac
 </style>
 </head>
 <body>
-<div class="nav"><button class="nb" id="nb" onclick="back()">← Back</button><div class="dots" id="dots"></div><span style="font-size:13px;font-weight:800;color:var(--deep);letter-spacing:-.02em">BBA Time Calculator</span></div>
+<div class="nav"><button class="nb" id="nb" onclick="back()">← Back</button><div class="dots" id="dots"></div><span style="font-size:13px;font-weight:800;color:var(--deep);letter-spacing:-.02em">BBA TIME CALCULATOR</span></div>
 <div class="shelf"><div class="shelf-inner" id="ticker"></div></div>
 <div class="src-ctr" id="srcCtr" style="display:none">Sources: <span class="sc-n" id="srcN">0</span>/16</div>
 
@@ -387,7 +387,8 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;bac
 
 <!-- DONUT CHART (top) -->
 <div style="margin-top:8px">
-<div class="tl" style="text-align:center">Your 3-Year Investment Portfolio</div>
+<div class="tl" style="text-align:center">Your 3-Year Time Investment Portfolio</div>
+<div class="sub" style="text-align:center">This is how you're investing your next 1,095 days.</div>
 <div style="display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap">
 <svg id="donutSvg" width="240" height="240" viewBox="0 0 200 200" style="flex-shrink:0"></svg>
 <div id="donutLegend" style="display:flex;flex-direction:column;gap:14px;min-width:160px"></div>
@@ -781,20 +782,33 @@ document.getElementById('aWhy').textContent=w.why;
 document.getElementById('aRef').textContent=w.ref;
 }
 
-// BRAG (called from bFut, since brag box is on Future Self screen)
+// BRAG (called from bFut — path-aware)
 function bBrag(){
+const top=match()[0];
 const wDays=Math.round((vals.practical||0)*618/7);
-const bbaDays=Math.round(200/7);
-const multiplier=bbaDays>0?Math.round(wDays/bbaDays*10)/10:0;
-if(wDays>bbaDays&&multiplier>=1.5){
-  document.getElementById('sBrag').innerHTML='<span style="color:var(--gold)">'+wDays+'</span> <span style="color:var(--cream)">working days</span>';
-  document.getElementById('sBrag2').textContent=multiplier+'× more than the average BBA grad';
-  document.getElementById('sBrag3').textContent='While most graduates have 6 weeks of internship, you\'ll have '+Math.round(wDays/22)+' months.';
-}else{
-  document.getElementById('sBrag').innerHTML='<span style="color:var(--gold)">'+Math.round((vals.practical||0)*618)+'</span> <span style="color:var(--cream)">hours</span>';
-  document.getElementById('sBrag2').textContent='of intentional time invested in real work over 3 years.';
-  document.getElementById('sBrag3').textContent='Readiness score: '+calcR()+'%';
-}
+const months=Math.round(wDays/22);
+const BRAG={
+'College BBA (Tier-2/3)':{
+  head:'<span style="color:var(--gold)">1,800</span> <span style="color:var(--cream)">classroom hours</span>',
+  sub:'A recognised degree, close to home, at a fraction of the cost.',
+  detail:'Campus placements account for 10% of hiring — your next step after graduation matters more than the degree itself.'},
+'Premium BBA (Metro)':{
+  head:'<span style="color:var(--gold)">2,300</span> <span style="color:var(--cream)">classroom hours</span>',
+  sub:'A stronger network, better infrastructure, metro city exposure.',
+  detail:'The network you build matters more than the placement cell.'},
+'The Working BBA':{
+  head:'<span style="color:var(--gold)">347</span> <span style="color:var(--cream)">working days</span>',
+  sub:'12\u00d7 more real work experience than the average BBA grad.',
+  detail:'While most graduates have 6 weeks of internship, you\'ll have '+months+' months. 47% of hires have 1\u20135yr experience.'},
+'Gap Year / Self-Directed':{
+  head:'<span style="color:var(--gold)">1,095</span> <span style="color:var(--cream)">days</span>',
+  sub:'Maximum freedom \u2014 if you have a plan.',
+  detail:'Only 5.6% of youth self-direct into structured learning. The rest fill the time with screens.'}
+};
+const b=BRAG[top.n]||BRAG['The Working BBA'];
+document.getElementById('sBrag').innerHTML=b.head;
+document.getElementById('sBrag2').textContent=b.sub;
+document.getElementById('sBrag3').textContent=b.detail;
 }
 
 // SHARE
