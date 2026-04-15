@@ -34,14 +34,14 @@ body{font-family:'Cabinet Grotesk',system-ui,sans-serif;background:linear-gradie
 .nb{color:rgba(10,0,69,.5);font-size:14px;cursor:pointer;border:none;background:none;font-family:inherit}.nb:hover{color:var(--deep)}
 
 /* SHELF */
-.shelf{position:fixed;top:38px;left:0;right:0;background:#fff;border-bottom:1px solid rgba(10,0,69,.06);padding:0;z-index:99;overflow:hidden;height:32px}
-.shelf-inner{display:flex;align-items:center;gap:24px;white-space:nowrap;animation:ticker 40s linear infinite;padding:0 20px;height:100%;will-change:transform}
+.shelf{position:fixed;top:38px;left:0;right:0;background:#fff;border-bottom:1px solid rgba(10,0,69,.06);padding:0;z-index:99;overflow:hidden;height:28px}
+.shelf-inner{display:flex;align-items:center;gap:24px;white-space:nowrap;animation:ticker 32s linear infinite;padding:0 20px;height:100%;will-change:transform}
 .shelf-inner:hover{animation-play-state:paused}
 @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.shelf .st{font-family:'Chivo Mono',monospace;font-weight:700;font-size:9px;color:var(--deep);padding:3px 8px;background:rgba(10,0,69,.06);border-radius:2px;letter-spacing:.14em;text-transform:uppercase;flex-shrink:0}
-.shelf .si{font-size:11px;color:rgba(10,0,69,.55);flex-shrink:0;display:flex;align-items:center;gap:6px}
+.shelf .st{font-family:'Chivo Mono',monospace;font-weight:700;font-size:11px;color:var(--deep);padding:2px 6px;background:rgba(10,0,69,.06);border-radius:2px;letter-spacing:.14em;text-transform:uppercase;flex-shrink:0}
+.shelf .si{font-size:13px;color:rgba(10,0,69,.55);flex-shrink:0;display:flex;align-items:center;gap:6px}
 .shelf .si b{color:var(--deep);font-weight:700}
-.shelf .si .src{color:rgba(10,0,69,.35);font-size:10px}
+.shelf .si .src{color:var(--blue);font-size:12px;font-weight:600}
 /* Source counter */
 .src-ctr{position:fixed;top:74px;right:14px;z-index:99;font-family:'Chivo Mono',monospace;font-size:11px;color:var(--cream);font-weight:400;background:rgba(10,0,69,.5);backdrop-filter:blur(12px);padding:3px 8px;border-radius:2px;border:1px solid var(--b1);letter-spacing:.05em;transition:all .3s}
 .src-ctr .sc-n{font-size:13px;font-weight:700}
@@ -202,7 +202,7 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;bac
 </style>
 </head>
 <body>
-<div class="nav"><button class="nb" id="nb" onclick="back()">← Back</button><div class="dots" id="dots"></div><span style="font-size:13px;font-weight:800;color:var(--deep);letter-spacing:-.02em">Design your BBA</span></div>
+<div class="nav"><button class="nb" id="nb" onclick="back()">← Back</button><div class="dots" id="dots"></div><span style="font-size:13px;font-weight:800;color:var(--deep);letter-spacing:-.02em">BBA Time Calculator</span></div>
 <div class="shelf"><div class="shelf-inner" id="ticker"></div></div>
 <div class="src-ctr" id="srcCtr" style="display:none">Sources: <span class="sc-n" id="srcN">0</span>/16</div>
 
@@ -430,7 +430,7 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;bac
 
 <!-- ACTION BUTTONS -->
 <div style="display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:24px">
-<button class="cta" onclick="window.open('https://admissions.letsenterprise.in','_blank');try{plausible('Apply',{props:{p:'Working BBA'}})}catch(e){}" style="width:100%;max-width:320px;justify-content:center;font-size:15px;padding:16px 24px;background:#fff;color:#0A0045">Apply Now →</button>
+<button class="cta" onclick="window.open('https://admissions.letsenterprise.in','_blank');try{plausible('Apply',{props:{p:'Working BBA'}})}catch(e){}" style="width:100%;max-width:400px;justify-content:center;font-size:14px;padding:16px 24px;background:#fff;color:#0A0045;text-transform:none;letter-spacing:0">Take the first step with your Working BBA application →</button>
 <button class="cta s" onclick="shareFriend()" style="width:100%;max-width:320px;justify-content:center;font-size:13px;padding:14px 24px">💬 Share with a friend</button>
 <button class="cta s" onclick="go(0)" style="width:100%;max-width:320px;justify-content:center;font-size:11px;padding:12px 24px">↺ Start over</button>
 </div>
