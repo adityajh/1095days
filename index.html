@@ -198,6 +198,44 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;bac
 .cite table{width:100%;font-size:11px;border-collapse:collapse}.cite td,.cite th{padding:4px 6px;border-bottom:1px solid var(--b1);text-align:left;color:var(--t2)}.cite th{color:var(--t3);font-weight:700;text-transform:uppercase;font-size:9px}
 .tag{text-align:center;margin-top:28px;padding:16px;background:rgba(10,0,69,.5);border-radius:2px;font-family:'Chivo Mono',monospace;font-size:12px;color:var(--cream);letter-spacing:.05em}
 
+/* FIVE TUESDAYS (S4) */
+.day-row{margin-bottom:12px;background:var(--ink);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--b1);border-radius:2px;padding:14px 16px;cursor:pointer;transition:border-color .25s,background .25s}
+.day-row:hover,.day-row.active{border-color:var(--gold-md)}
+.day-row.featured{border-color:var(--gold);background:var(--ink-h)}
+.day-row.featured .day-label{color:var(--gold)}
+.day-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:10px}
+.day-label{font-family:'Cabinet Grotesk',system-ui,sans-serif;font-size:16px;font-weight:800;letter-spacing:-.01em;color:var(--cream);transition:color .25s}
+.day-hours{font-family:'Chivo Mono',monospace;font-size:11px;color:var(--t3);letter-spacing:.06em}
+.bar-track{width:100%;height:32px;background:rgba(245,240,232,.04);border-radius:2px;display:flex;overflow:hidden;position:relative}
+.bar-seg{height:100%;position:relative;transition:flex .4s cubic-bezier(.22,1,.36,1);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.bar-seg span{font-family:'Chivo Mono',monospace;font-size:9px;font-weight:700;color:rgba(0,0,0,.55);letter-spacing:.04em;white-space:nowrap;opacity:0;transition:opacity .3s}
+.day-row:hover .bar-seg span,.day-row.active .bar-seg span{opacity:1}
+.bar-seg.free-seg span{color:rgba(245,240,232,.25)}
+.day-row:hover .bar-seg.free-seg span,.day-row.active .bar-seg.free-seg span{color:rgba(245,240,232,.35)}
+.day-detail{max-height:0;overflow:hidden;transition:max-height .4s ease,margin .35s ease,opacity .3s ease;opacity:0;margin-top:0}
+.day-row.active .day-detail{max-height:700px;opacity:1;margin-top:12px}
+.day-body{padding-top:12px;border-top:1px solid var(--b1)}
+.day-body p{font-size:14px;color:var(--t2);line-height:1.65;margin-bottom:8px}
+.day-body p:last-child{margin-bottom:0}
+.day-body strong{color:var(--cream);font-weight:700}
+.day-body .stat{font-family:'Chivo Mono',monospace;font-size:11px;color:var(--gold);letter-spacing:.03em;margin-top:6px;padding-top:6px;border-top:1px solid rgba(245,240,232,.06)}
+.day-body .best-for{font-size:13px;color:var(--tl);font-weight:600;margin-top:8px}
+.chev{font-size:11px;color:var(--t3);margin-left:8px;transition:transform .25s;display:inline-block}
+.day-row.active .chev{transform:rotate(180deg)}
+
+/* DNA card decision pills */
+.dna-pill{font-family:'Chivo Mono',monospace;font-size:10px;letter-spacing:.06em;padding:5px 10px;border-radius:2px;background:rgba(245,240,232,.06);border:1px solid rgba(245,240,232,.08);color:var(--t2)}
+
+/* S7 per-match variant bars */
+.s7-bar-track{width:100%;height:36px;background:rgba(245,240,232,.04);border-radius:2px;display:flex;overflow:hidden;position:relative}
+.s7-bar-seg{height:100%;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.s7-bar-seg span{font-family:'Chivo Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.03em;white-space:nowrap}
+.s7-bar-seg.cls span,.s7-bar-seg.wrk span,.s7-bar-seg.gro span{color:rgba(0,0,30,.5)}
+.s7-bar-seg.free span{color:rgba(245,240,232,.25)}
+.bb-item{font-family:'Chivo Mono',monospace;font-size:10px;color:var(--t3);letter-spacing:.03em;display:flex;align-items:center;gap:4px}
+.bb-dot{width:6px;height:6px;border-radius:1px;flex-shrink:0}
+.bb-item strong{color:var(--t2);font-weight:700}
+
 @media(max-width:600px){.cta-r{flex-direction:column}.cta{width:100%;justify-content:center}.map{aspect-ratio:.9}.proj-row{grid-template-columns:1fr}}
 </style>
 </head>
@@ -250,7 +288,7 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;bac
 <div class="cd" style="border-color:rgba(0,203,200,.3);margin-top:6px">
 <div style="font-size:15px;font-weight:700;margin-bottom:4px;color:#fff">"Will AI take my job?"</div>
 <div style="display:flex;align-items:center;gap:10px;margin:6px 0"><span style="font-size:36px;font-weight:900;color:var(--tl);line-height:1;flex-shrink:0">ZERO</span><span style="font-size:13px;color:var(--cream);line-height:1.35">skills scored 'very high' for AI replacement — across every industry globally.</span></div>
-<p style="font-size:14px;color:var(--cream);line-height:1.5;margin:8px 0">The skills employers actually hire for can't be automated. But here's the real problem: <b style="color:#fff">40% of Indian graduates can't get hired today.</b> Not because of AI — because of irrelevance.</p>
+<p style="font-size:14px;color:var(--cream);line-height:1.5;margin:8px 0">The skills employers actually hire for can't be automated. But here's the real problem: <b style="color:#fff">42.6% of Indian graduates aren't employable today.</b> Not because of AI — because of irrelevance.</p>
 <div style="display:flex;gap:6px;margin:10px 0">
 <div style="flex:1;background:rgba(0,203,200,.08);border-radius:8px;padding:10px;text-align:center"><div style="font-size:18px">🧠</div><div style="font-size:12px;font-weight:700;color:var(--tl);margin-top:3px">Analytical Thinking</div><div style="font-size:11px;color:var(--t2);margin-top:1px">#1 skill · 69%</div></div>
 <div style="flex:1;background:rgba(212,192,122,.08);border-radius:8px;padding:10px;text-align:center"><div style="font-size:18px">💪</div><div style="font-size:12px;font-weight:700;color:var(--am);margin-top:3px">Resilience & Agility</div><div style="font-size:11px;color:var(--t2);margin-top:1px">#2 skill · 67%</div></div>
@@ -305,38 +343,34 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;bac
 <button class="cta fw" onclick="go(4)">Find my position →</button>
 </div>
 
-<!-- S4: COMPUTING + DRAGGABLE MAP -->
+<!-- S4: FIVE TUESDAYS -->
 <div class="scr" id="s4">
-<div class="tl">Explore your position.</div>
-<div style="font-size:14px;color:var(--t1);margin-bottom:14px">👆 <b>Drag the <span style="color:var(--tl)">glowing dot</span></b> — watch your stats change in real time.</div>
-<div class="map" id="pMap">
-<div class="map-ax h"></div><div class="map-ax v"></div>
-<!-- Quadrant background glows -->
-<div style="position:absolute;top:0;left:0;width:50%;height:50%;background:radial-gradient(ellipse at 70% 70%,rgba(251,146,60,.06),transparent 70%)"></div>
-<div style="position:absolute;top:0;right:0;width:50%;height:50%;background:radial-gradient(ellipse at 30% 70%,rgba(0,203,200,.08),transparent 70%)"></div>
-<div style="position:absolute;bottom:0;left:0;width:50%;height:50%;background:radial-gradient(ellipse at 70% 30%,rgba(59,130,246,.06),transparent 70%)"></div>
-<div style="position:absolute;bottom:0;right:0;width:50%;height:50%;background:radial-gradient(ellipse at 30% 30%,rgba(167,139,250,.06),transparent 70%)"></div>
-<!-- Axis labels -->
-<div class="map-lb" style="top:3px;left:50%;transform:translateX(-50%);color:var(--tl)">LEARN BY DOING</div>
-<div class="map-lb" style="bottom:3px;left:50%;transform:translateX(-50%);color:var(--t3)">LEARN BY STUDYING</div>
-<div class="map-lb" style="left:-28px;top:50%;transform:translateY(-50%) rotate(-90deg);transform-origin:center center;color:var(--t3)">LOW ACCOUNTABILITY</div>
-<div class="map-lb" style="right:-28px;top:50%;transform:translateY(-50%) rotate(90deg);transform-origin:center center;color:var(--am)">HIGH ACCOUNTABILITY</div>
-<!-- Quadrant labels removed -->
-<div id="pDots"></div>
-<div id="sDot"></div>
-<div style="position:absolute;bottom:4px;right:8px;font-size:9px;color:var(--t3);opacity:.5">Ericsson 1993 · McKinsey MGI 2022</div>
+<div class="ey">Before your match</div>
+<div class="tl">Five versions of Tuesday.</div>
+<div style="font-size:15px;color:var(--t2);line-height:1.55;margin-bottom:18px">Same 16 waking hours. Five completely different structures. Each one is a trade-off — not a ranking.</div>
+
+<!-- Legend -->
+<div style="display:flex;flex-wrap:wrap;gap:10px 16px;margin-bottom:20px;padding:10px 14px;background:var(--ink-l);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--b1);border-radius:6px">
+<div style="display:flex;align-items:center;gap:6px;font-family:'Chivo Mono',monospace;font-size:11px;letter-spacing:.04em;color:var(--t2)"><div style="width:10px;height:10px;border-radius:2px;background:rgba(34,100,220,.75);flex-shrink:0"></div>Class + Study</div>
+<div style="display:flex;align-items:center;gap:6px;font-family:'Chivo Mono',monospace;font-size:11px;letter-spacing:.04em;color:var(--t2)"><div style="width:10px;height:10px;border-radius:2px;background:rgba(0,203,200,.75);flex-shrink:0"></div>Real Work</div>
+<div style="display:flex;align-items:center;gap:6px;font-family:'Chivo Mono',monospace;font-size:11px;letter-spacing:.04em;color:var(--t2)"><div style="width:10px;height:10px;border-radius:2px;background:rgba(212,192,122,.75);flex-shrink:0"></div>Structured Growth</div>
+<div style="display:flex;align-items:center;gap:6px;font-family:'Chivo Mono',monospace;font-size:11px;letter-spacing:.04em;color:var(--t2)"><div style="width:10px;height:10px;border-radius:2px;background:rgba(245,240,232,.08);flex-shrink:0"></div>Your Time</div>
 </div>
-<div class="map-stats" id="mapStats">
-<div class="map-stat"><div class="ms-n" id="msW" style="color:var(--gold)">—</div><div class="ms-l">work days by 21</div></div>
-<div class="map-stat"><div class="ms-n" id="msL" style="color:var(--cream)">—</div><div class="ms-l">lecture days</div></div>
-<div class="map-stat"><div class="ms-n" id="msR" style="color:var(--tl)">—</div><div class="ms-l">readiness %</div></div>
-<div class="map-stat"><div class="ms-n" id="msP" style="color:var(--gold)">—</div><div class="ms-l">closest path</div></div>
+
+<div id="fiveTuesdays"></div>
+
+<!-- Annotation -->
+<div style="margin-top:18px;padding:14px 16px;background:rgba(245,240,232,.04);border:1px solid var(--b1);border-radius:2px">
+<p style="font-size:13px;color:var(--t2);line-height:1.6">The unshaded hours aren't wasted — they're <b style="color:var(--cream)">unscripted.</b> Some students build extraordinary things in that space. The research question is simpler: <b style="color:var(--cream)">does the average 18-year-old convert unstructured time into skills reliably, without external accountability?</b> The data suggests most don't. But you might not be most.</p>
 </div>
-<div style="background:rgba(8,0,50,.75);border-radius:2px;padding:18px 20px;margin-top:14px;border-left:2px solid var(--gold)">
-<div style="font-size:clamp(14px,2vw,18px);font-weight:700;color:var(--cream);line-height:1.35;letter-spacing:-.015em">"The best performers had ~7,410 hours of deliberate practice by 18 — not talent, but structured effort with feedback."</div>
-<div style="font-family:'Chivo Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:6px">— Ericsson et al. 1993 · 9,000+ citations</div>
+
+<!-- Ericsson quote -->
+<div style="background:rgba(8,0,50,.75);border-radius:2px;padding:18px 20px;margin-top:18px;border-left:2px solid var(--gold)">
+<div style="font-size:clamp(14px,2vw,17px);font-weight:700;color:var(--cream);line-height:1.4;letter-spacing:-.015em">"The best performers had accumulated ~7,410 hours of deliberate practice by 18 — not talent, but structured effort with feedback loops."</div>
+<div style="font-family:'Chivo Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:8px">— Ericsson et al. 1993 · Psychological Review · 9,000+ citations</div>
 </div>
-<button class="cta fw" onclick="go(5)">See my results →</button>
+
+<button class="cta fw" onclick="go(5)">See which one matches me →</button>
 </div>
 
 <!-- S5: DATA CAPTURE (HARD GATE) -->
@@ -356,26 +390,48 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;bac
 <p style="font-size:9px;color:var(--t3);text-align:center;margin-top:8px">Your data is only used to personalise your results. We don't spam.</p>
 </div>
 
-<!-- S6: YOUR RESULTS (screenshot card + paths) -->
+<!-- S6: YOUR RESULTS (DNA screenshot card + paths) -->
 <div class="scr" id="s6">
-<!-- SCREENSHOT CARD ZONE -->
-<div id="dnaCard" style="background:rgba(10,0,69,.65);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(212,192,122,.3);border-radius:2px;padding:24px 20px;margin-bottom:16px;position:relative;overflow:hidden">
+<!-- DNA CARD (screenshot zone) -->
+<div id="dnaCard" style="background:rgba(10,0,69,.65);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(212,192,122,.3);border-radius:2px;padding:24px 20px;margin-bottom:20px;position:relative;overflow:hidden">
 <div style="position:absolute;bottom:-1px;right:-1px;width:18px;height:18px;border-bottom:1px solid var(--gold);border-right:1px solid var(--gold)"></div>
-<div style="position:absolute;top:-20px;right:-20px;width:100px;height:100px;background:radial-gradient(circle,rgba(212,192,122,.05),transparent 70%)"></div>
-<div class="ey" style="margin-bottom:14px;position:relative">YOUR COLLEGE DNA</div>
-<div id="dnaDecisions" style="margin-bottom:18px;position:relative"></div>
-<div style="text-align:center;margin:18px 0 8px;position:relative">
-<div id="rScore" class="hero-grad" style="font-size:clamp(72px,20vw,110px)">—%</div>
-<div style="font-family:'Chivo Mono',monospace;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-top:6px">Industry Readiness</div>
-<div style="font-family:'Chivo Mono',monospace;font-size:9px;color:var(--t3);margin-top:2px">by age 21</div>
+<div style="position:absolute;top:-20px;right:-20px;width:120px;height:120px;background:radial-gradient(circle,rgba(212,192,122,.06),transparent 70%)"></div>
+
+<div class="ey" style="margin-bottom:4px;position:relative">YOUR COLLEGE DNA</div>
+
+<!-- Decision pills from MCQs -->
+<div id="dnaPills" style="display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 20px;position:relative"></div>
+
+<!-- Hero match % -->
+<div style="text-align:center;position:relative;margin:20px 0 8px">
+<div id="matchPct" class="hero-grad" style="font-size:clamp(72px,20vw,110px)">—%</div>
+<div style="font-family:'Chivo Mono',monospace;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-top:6px">Your best match · how aligned</div>
+<div style="font-size:16px;color:var(--cream);margin-top:6px">Your ideal day aligns with <b id="matchName" style="color:#fff;font-weight:800">—</b></div>
 </div>
-<div style="width:100%;height:5px;background:rgba(245,240,232,.06);border-radius:3px;overflow:hidden;margin:10px 0 14px;position:relative"><div id="rBar3" style="height:100%;border-radius:3px;background:var(--gold);width:0%;transition:width .5s"></div></div>
-<div id="pctBox" style="text-align:center;position:relative;margin-top:4px">
-<div id="pctText" style="font-size:13px;color:var(--t2);line-height:1.5;max-width:380px;margin:0 auto"></div>
-<div style="font-family:'Chivo Mono',monospace;font-size:10px;color:var(--t3);margin-top:4px">Mercer-Mettl 2025</div>
+
+<!-- Subordinate stats: readiness + working days -->
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0 14px;position:relative">
+<div style="background:rgba(245,240,232,.04);border:1px solid var(--b1);border-radius:2px;padding:12px;text-align:center">
+<div id="rScore" style="font-family:'Cabinet Grotesk',system-ui,sans-serif;font-size:22px;font-weight:900;letter-spacing:-.04em;color:var(--tl)">—%</div>
+<div style="font-family:'Chivo Mono',monospace;font-size:10px;color:var(--t3);letter-spacing:.08em;text-transform:uppercase;margin-top:2px">Readiness · how prepared</div>
 </div>
-<div style="display:flex;justify-content:space-between;margin-top:10px;padding-top:7px;border-top:1px solid var(--b1);position:relative"><span style="font-family:'Chivo Mono',monospace;font-size:9px;color:var(--t3);letter-spacing:.05em">bba.letsenterprise.in</span><span style="font-family:'Chivo Mono',monospace;font-size:9px;color:var(--t3);letter-spacing:.05em">16 sources</span></div>
+<div style="background:rgba(245,240,232,.04);border:1px solid var(--b1);border-radius:2px;padding:12px;text-align:center">
+<div id="wDays21" style="font-family:'Cabinet Grotesk',system-ui,sans-serif;font-size:22px;font-weight:900;letter-spacing:-.04em;color:var(--gold)">—</div>
+<div style="font-family:'Chivo Mono',monospace;font-size:10px;color:var(--t3);letter-spacing:.08em;text-transform:uppercase;margin-top:2px">Working Days by 21</div>
 </div>
+</div>
+
+<!-- Readiness bar -->
+<div style="width:100%;height:5px;background:rgba(245,240,232,.06);border-radius:3px;overflow:hidden;margin:12px 0 6px;position:relative"><div id="rBar3" style="height:100%;border-radius:3px;background:var(--gold);width:0%;transition:width .8s ease"></div></div>
+
+<!-- Context line -->
+<div id="pctText" style="font-size:13px;color:var(--t2);text-align:center;line-height:1.5;position:relative">—</div>
+<div style="font-family:'Chivo Mono',monospace;font-size:10px;color:var(--t3);text-align:center;margin-top:4px">Mercer-Mettl 2025 · Hiring pipeline assessment data</div>
+
+<!-- Card footer -->
+<div style="display:flex;justify-content:space-between;margin-top:14px;padding-top:8px;border-top:1px solid var(--b1);position:relative"><span style="font-family:'Chivo Mono',monospace;font-size:9px;color:var(--t3);letter-spacing:.05em">bba.letsenterprise.in</span><span style="font-family:'Chivo Mono',monospace;font-size:9px;color:var(--t3);letter-spacing:.05em">16 sources</span></div>
+</div>
+
 <!-- PATH CARDS -->
 <div class="ey" style="margin-bottom:10px">PATHS RANKED BY YOUR FIT</div>
 <div class="sub">Tap any card to expand.</div>
@@ -383,56 +439,52 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;bac
 <button class="cta fw" onclick="go(7)">See my future self →</button>
 </div>
 
-<!-- S7: FUTURE SELF + ACTION (dinner table screen) -->
+<!-- S7: PER-MATCH FUTURE SELF + ACTION -->
 <div class="scr" id="s7">
 
-<!-- DONUT CHART (top) -->
-<div style="margin-top:8px">
-<div class="tl" style="text-align:center">Your 3-Year Time Investment Portfolio</div>
-<div class="sub" style="text-align:center">This is how you're investing your next 1,095 days.</div>
-<div style="display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap">
-<svg id="donutSvg" width="240" height="240" viewBox="0 0 200 200" style="flex-shrink:0"></svg>
-<div id="donutLegend" style="display:flex;flex-direction:column;gap:14px;min-width:160px"></div>
+<div class="ey">1,095 days at scale</div>
+<div class="tl">One Tuesday × 1,095.</div>
+<div style="font-size:14px;color:var(--t2);line-height:1.6;margin:6px 0 18px">Remember those daily bars? Here's what they look like stretched across <b style="color:var(--cream)">17,520 waking hours</b> — your entire next 3 years.</div>
+
+<!-- Legend -->
+<div style="display:flex;flex-wrap:wrap;gap:10px 16px;margin-bottom:16px;padding:10px 14px;background:var(--ink-l);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--b1);border-radius:6px">
+<div style="display:flex;align-items:center;gap:6px;font-family:'Chivo Mono',monospace;font-size:11px;letter-spacing:.04em;color:var(--t2)"><div style="width:10px;height:10px;border-radius:2px;background:rgba(34,100,220,.75);flex-shrink:0"></div>Class + Study</div>
+<div style="display:flex;align-items:center;gap:6px;font-family:'Chivo Mono',monospace;font-size:11px;letter-spacing:.04em;color:var(--t2)"><div style="width:10px;height:10px;border-radius:2px;background:rgba(0,203,200,.75);flex-shrink:0"></div>Real Work</div>
+<div style="display:flex;align-items:center;gap:6px;font-family:'Chivo Mono',monospace;font-size:11px;letter-spacing:.04em;color:var(--t2)"><div style="width:10px;height:10px;border-radius:2px;background:rgba(212,192,122,.75);flex-shrink:0"></div>Structured Growth</div>
+<div style="display:flex;align-items:center;gap:6px;font-family:'Chivo Mono',monospace;font-size:11px;letter-spacing:.04em;color:var(--t2)"><div style="width:10px;height:10px;border-radius:2px;background:rgba(245,240,232,.08);flex-shrink:0"></div>Your Time</div>
+</div>
+
+<!-- Compare rows (match + comparison) rendered by JS -->
+<div id="s7Compare"></div>
+
+<div style="font-family:'Chivo Mono',monospace;font-size:10px;color:var(--t3);margin-top:10px;letter-spacing:.03em;line-height:1.5">Class + Study = lecture + self-study + assignments, totalled across all 1,095 days. AICTE formal contact hours (~1,800) cover academic weeks only.</div>
+
+<!-- Interp card -->
+<div style="background:var(--ink);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--gold);border-radius:2px;padding:20px;margin:24px 0;position:relative;overflow:hidden">
+<div style="position:absolute;bottom:-1px;right:-1px;width:18px;height:18px;border-bottom:1px solid var(--gold);border-right:1px solid var(--gold)"></div>
+<div id="iEy" style="font-family:'Chivo Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:6px">—</div>
+<div id="iTitle" style="font-family:'Cabinet Grotesk',system-ui,sans-serif;font-size:22px;font-weight:900;color:var(--cream);letter-spacing:-.02em;line-height:1.15;margin-bottom:12px">—</div>
+<div id="iBody1" style="font-size:14px;color:var(--t2);line-height:1.7;margin-bottom:10px">—</div>
+<div id="iBody2" style="font-size:14px;color:var(--t2);line-height:1.7;margin-bottom:10px">—</div>
+<div id="iCite" style="font-size:12px;color:var(--t2);line-height:1.55;border-left:2px solid var(--gold);padding:4px 0 4px 14px;margin:14px 0 12px;font-style:italic">—</div>
+<div id="iQuestion" style="font-size:15px;color:var(--cream);line-height:1.5;font-weight:700;margin-top:14px;padding-top:14px;border-top:1px solid rgba(212,192,122,.2)">—</div>
+</div>
+
+<!-- Donut (path-specific) -->
+<div style="text-align:center;margin:28px 0 24px;padding-top:24px;border-top:1px solid var(--b1)">
+<div class="tl" style="text-align:center">Your Time Investment Portfolio</div>
+<div class="sub" style="text-align:center">Based on your ideal day, here's how your 1,095 days break down.</div>
+<div style="display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;margin:16px 0">
+<svg id="donutSvg" width="200" height="200" viewBox="0 0 200 200" style="flex-shrink:0"></svg>
+<div id="donutLegend" style="display:flex;flex-direction:column;gap:14px;text-align:left"></div>
 </div>
 <div id="donutStats" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:16px"></div>
 </div>
 
-<!-- VERTICAL BAR COMPARISON -->
-<div class="proj" style="padding:20px 16px;margin-top:20px">
-<div class="tl" style="text-align:center;margin-bottom:12px">By Age 21 — Work vs Lectures</div>
-<div style="display:flex;gap:14px;justify-content:center;margin-bottom:20px">
-<div style="display:flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--cream)"><span style="width:12px;height:12px;border-radius:2px;background:#F5F0E8"></span>Lectures & Exams</div>
-<div style="display:flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--cream)"><span style="width:12px;height:12px;border-radius:2px;background:var(--bl)"></span>Work Experience</div>
-</div>
-<div id="vBars" style="display:flex;justify-content:center;gap:12px;align-items:flex-end;height:220px;padding:0 8px"></div>
-<div id="vLabels" style="display:flex;justify-content:center;gap:12px;margin-top:8px"></div>
-</div>
-
-<!-- MATCH % -->
-<div style="text-align:center;padding:24px 0 8px">
-<div class="ey" style="margin-bottom:4px;justify-content:center">YOUR #1 MATCH</div>
-<div id="fPct" class="hero-grad" style="font-size:clamp(72px,20vw,110px)">—%</div>
-<div style="font-size:16px;color:var(--cream);margin-top:6px">match with <b id="fNm" style="color:#fff">—</b></div>
-</div>
-
-<!-- TOP MATCH WHY -->
-<div class="cd" style="border-color:var(--gold);margin-bottom:16px">
-<div style="font-size:18px;font-weight:800;margin-bottom:6px;letter-spacing:-.02em" id="aN">—</div>
-<p style="font-size:14px;color:var(--t2);line-height:1.72;margin-bottom:8px" id="aWhy">—</p>
-<p style="font-size:13px;color:var(--t2);line-height:1.6;border-left:2px solid var(--gold);padding-left:20px" id="aRef">—</p>
-</div>
-
-<!-- BRAG BOX -->
-<div class="share-cd" id="bragBox" style="margin-top:16px">
-<div style="font-family:'Chivo Mono',monospace;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;display:flex;align-items:center;justify-content:center;gap:8px"><span style="width:16px;height:1px;background:var(--gold)"></span>YOUR 3-YEAR EDGE<span style="width:16px;height:1px;background:var(--gold)"></span></div>
-<div style="font-family:'Chivo Mono',monospace;font-size:clamp(24px,5vw,38px);font-weight:700;letter-spacing:-.02em" id="sBrag">—</div>
-<div style="font-size:13px;color:var(--t2);margin-top:8px;line-height:1.5" id="sBrag2">—</div>
-<div style="font-size:11px;color:var(--t3);margin-top:10px" id="sBrag3">—</div>
-</div>
-
-<!-- ACTION BUTTONS -->
-<div style="display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:24px">
-<button class="cta" onclick="window.open('https://admissions.letsenterprise.in','_blank');try{plausible('Apply',{props:{p:'Working BBA'}})}catch(e){}" style="width:100%;max-width:400px;justify-content:center;font-size:14px;padding:16px 24px;background:#fff;color:#0A0045;text-transform:none;letter-spacing:0">Take the first step with your Working BBA application →</button>
+<!-- CTAs -->
+<div style="display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:28px">
+<button id="s7CtaPrimary" class="cta" onclick="window.open('https://admissions.letsenterprise.in','_blank');try{plausible('Apply',{props:{p:match()[0].n}})}catch(e){}" style="width:100%;max-width:400px;justify-content:center;font-size:14px;padding:16px 24px;background:#fff;color:#0A0045;text-transform:none;letter-spacing:0">Take the first step — apply to The Working BBA →</button>
+<div id="s7CtaHelper" style="font-family:'Chivo Mono',monospace;font-size:10px;color:var(--t3);letter-spacing:.08em;text-align:center;text-transform:uppercase">—</div>
 <button class="cta s" onclick="shareFriend()" style="width:100%;max-width:320px;justify-content:center;font-size:13px;padding:14px 24px">💬 Share with a friend</button>
 <button class="cta s" onclick="go(0)" style="width:100%;max-width:320px;justify-content:center;font-size:11px;padding:12px 24px">↺ Start over</button>
 </div>
@@ -448,7 +500,7 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;bac
 <tr><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">6h45m average screen time</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">IIM Rohtak 2024</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.45)">38,896 youth aged 18–25</td></tr>
 <tr><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">42.6% graduates employable</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">Mercer-Mettl GSI 2025</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.45)">Hiring pipeline assessment data</td></tr>
 <tr><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">Zero skills at very-high AI sub.</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">WEF × Indeed 2025</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.45)">Global labour market skill analysis</td></tr>
-<tr><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">~1,800 BBA contact hours</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">AICTE Model Curriculum 2024</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.45)">120 credits × 15 hrs/credit</td></tr>
+<tr><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">~1,800 AICTE contact hours (academic weeks only)</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">AICTE Model Curriculum 2024</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.45)">120 credits × 15 hrs/credit</td></tr>
 <tr><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">80% use phones for entertainment</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">ASER 2023</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.45)">34,745 youth, 28 districts, 26 states</td></tr>
 <tr><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">377M Indian Gen Z</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">BCG × Snap 2024</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.45)">Born 1997–2012, $860B spending power</td></tr>
 <tr><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">~7,410 hrs deliberate practice</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.7)">Ericsson et al. 1993</td><td style="padding:5px 8px;border-bottom:1px solid rgba(10,0,69,.06);color:rgba(10,0,69,.45)">Psychological Review, 9,000+ citations</td></tr>
@@ -479,15 +531,16 @@ const C=[
 {k:'sleep',l:'Sleep',desc:'Sleep and rest',h:'#334155',i:'😴',mn:4,mx:12,lo:6,hi:10,loE:'💀',hiE:'😴💤',bn:'WHO: 7-9h for ages 18-25',short:'SLEEP'}
 ];
 const BKT={B:['classroom','practical','growth'],R:['sleep','home'],D:['entertainment']};
-// Path profiles recalculated for 6 combined categories
+// Path profiles recalculated for 6 combined categories (5 paths incl. Working Full-Time)
 const P=[
-{n:'College BBA (Tier-2/3)',d:'~1,800 classroom · low cost · close to home',p:{classroom:2.5,practical:0.5,growth:1.5,entertainment:8,home:3.5,sleep:8},wh:200,lh:1800,q1w:[1,0,0,.1],q2w:[.5,.0,.6,.3],q3w:[.1,.8,.3,.5],fit:['Close to home, affordable','You learn well on your own','The degree name matters most'],why:['~1,800 classroom hours over 3 years','Graduates start with 0-6 weeks of work experience','47% of hires have 1-5yr experience — you\'ll build that after']},
-{n:'Premium BBA (Metro)',d:'~2,300 hrs · stronger network · bigger city',p:{classroom:3,practical:1,growth:1.5,entertainment:6.5,home:3.5,sleep:8.5},wh:400,lh:2300,q1w:[.8,.1,.1,0],q2w:[.3,.2,.9,.2],q3w:[.2,.7,.4,.4],fit:['Brand, network, campus life matter','Metro city exposure is worth the fees','You\'ll chase internships beyond what college offers'],why:['~2,300 hours — 13% more than tier-2/3','Better placements, but campus hiring = 10% of all hiring','58% of earnings come from experience, not the degree']},
-{n:'The Working BBA',d:'~4,050 hrs · 60% real work · UGC degree',p:{classroom:1.5,practical:4.5,growth:2,entertainment:4.5,home:3.5,sleep:8},wh:2430,lh:1200,q1w:[.1,1,.8,.2],q2w:[.6,.8,.2,.7],q3w:[.2,.3,1,.6],fit:['Learn by doing — projects, clients, deadlines','Want work experience before graduation','Ready for 33 hrs/week of structure'],why:['~4,050 hours — 2.3× a traditional BBA, 60% real work','~347 working days by 21 vs ~29 for typical BBA','The only path that builds what 47% of employers hire for']},
-{n:'Gap Year / Self-Directed',d:'Your own path · maximum freedom · variable',p:{classroom:1,practical:1.5,growth:2.5,entertainment:8,home:2.5,sleep:8.5},wh:1095,lh:500,q1w:[0,.2,.5,1],q2w:[0,.9,.3,0],q3w:[1,.1,0,.1],fit:['You have a plan and you\'ve already started','Genuinely self-disciplined, no reminders needed','You know how you\'ll use the freedom'],why:['Only 5.6% of youth self-direct into structured learning','Avg screen time: 6h45m/day — entertainment fills the vacuum','Works for self-starters — most 18-year-olds haven\'t been tested']},
+{n:'College BBA',d:'~1,800 hrs · low cost · close to home',p:{classroom:2.5,practical:0.5,growth:1.5,entertainment:8,home:3.5,sleep:8},wh:200,lh:1800,q1w:[1,0,0,.1],q2w:[.5,.0,.6,.3],q3w:[.1,.8,.3,.5],fit:['Close to home, affordable','You learn well on your own','The degree name matters most'],why:['~1,800 classroom hours over 3 years','Graduates start with 0-6 weeks of work experience','47% of hires have 1-5yr experience — you\'ll build that after']},
+{n:'Legacy BBA',d:'~2,300 hrs · metro campus · brand + alumni',p:{classroom:3,practical:1,growth:1.5,entertainment:6.5,home:3.5,sleep:8.5},wh:400,lh:2300,q1w:[.8,.1,.1,0],q2w:[.3,.2,.9,.2],q3w:[.2,.7,.4,.4],fit:['Brand, network, campus life matter','Metro city exposure is worth the fees','You\'ll chase internships beyond what college offers'],why:['~2,300 hours — 13% more than tier-2/3','Better placements, but campus hiring = 10% of all hiring','58% of earnings come from experience, not the degree']},
+{n:'The Working BBA',d:'~4,050 hrs structured · 60% real work · UGC degree',p:{classroom:1.5,practical:4.5,growth:2,entertainment:4.5,home:3.5,sleep:8},wh:2430,lh:1200,q1w:[.1,1,.8,.2],q2w:[.6,.8,.2,.7],q3w:[.2,.3,1,.6],fit:['Learn by doing — projects, clients, deadlines','Want work experience before graduation','Ready for 33 hrs/week of structure'],why:['~4,050 hours — 2.3× a traditional BBA, 60% real work','~347 working days by 21 vs ~29 for typical BBA','The only path that builds what 47% of employers hire for']},
+{n:'Online BBA',d:'Remote degree · max flexibility · for a pursuit',p:{classroom:1,practical:1.5,growth:2.5,entertainment:8,home:2.5,sleep:8.5},wh:1095,lh:500,q1w:[0,.2,.5,1],q2w:[0,.9,.3,0],q3w:[1,.1,0,.1],fit:['You have a pursuit and you\'ve already started','Genuinely self-disciplined, no reminders needed','You know how you\'ll use the freedom'],why:['Only 5.6% of youth self-direct into structured learning','Avg screen time: 6h45m/day — entertainment fills the vacuum','Works for self-starters — most 18-year-olds haven\'t been tested']},
+{n:'Working Full-Time',d:'~6,000 work hrs · no degree · income from day 1',p:{classroom:0,practical:8,growth:2,entertainment:2,home:3,sleep:8},wh:6000,lh:0,q1w:[.0,.9,.2,.3],q2w:[.1,1,.3,.1],q3w:[.7,.2,.6,.1],fit:['Earn and build by doing, not studying','No patience for lectures','Ready for real workplace accountability'],why:['~8,760 hrs of real work by 21 — more than any program','Income from day 1, zero tuition','58% of earnings come from experience — but credential ceilings appear by year 5–7']},
 ];
 const DEF={classroom:1.5,practical:2,growth:2,entertainment:7,home:3.5,sleep:8};
-const MAP_POS=[{x:25,y:75,n:'Gap Year',c:'#FB923C'},{x:28,y:25,n:'College BBA',c:'#3B82F6'},{x:72,y:25,n:'Premium BBA',c:'#A78BFA'},{x:80,y:82,n:'Working BBA',c:'#00CBC8'}];
+const MAP_POS=[{x:25,y:75,n:'Online BBA',c:'#FB923C'},{x:28,y:25,n:'College BBA',c:'#3B82F6'},{x:72,y:25,n:'Legacy BBA',c:'#A78BFA'},{x:80,y:82,n:'Working BBA',c:'#00CBC8'},{x:18,y:50,n:'Working Full-Time',c:'#F59E0B'}];
 const MAP_POS_N=MAP_POS.map(p=>({x:p.x/100,y:p.y/100,n:p.n,c:p.c}));
 
 // NAV
@@ -496,7 +549,7 @@ function go(s){
 if(s===4){document.getElementById('vortex').style.display='flex';setTimeout(()=>{document.getElementById('vortex').style.display='none';goReal(s)},1500);return}
 goReal(s)}
 function goReal(s){document.querySelectorAll('.scr').forEach(e=>e.classList.remove('on'));document.getElementById('s'+s).classList.add('on');cur=s;bD();document.getElementById('nb').style.visibility=s?'visible':'hidden';window.scrollTo({top:0});
-if(s===0)anC();if(s===2)initS();if(s===4)bMap();if(s===6){bRes();bDNA()}if(s===7){bFut();bAct()}
+if(s===0)anC();if(s===2)initS();if(s===4)bTue();if(s===6){bRes();bDNA()}if(s===7)bS7();
 try{updURL()}catch(e){}try{plausible('Screen',{props:{s:['Hook','World','Sliders','MCQ','Map','Form','Results','FutureSelf'][s]}})}catch(e){}
 updSrcCtr()}
 function back(){go(Math.max(0,cur-1))}
@@ -567,42 +620,47 @@ function pk2(q,a,el){
   });
 }
 
-// DRAGGABLE MAP
-function bMap(){
-// X: left=low accountability, right=high accountability. Y: top=learn by doing, bottom=learn by studying
-const pd=document.getElementById('pDots');pd.innerHTML='';
-MAP_POS.forEach(p=>{pd.innerHTML+=`<div class="map-pd" style="left:${p.x}%;top:${100-p.y}%;border-color:${p.c};background:${p.c}30"></div><div class="map-pl" style="left:${p.x}%;top:${100-p.y+4}%;color:${p.c};font-weight:700">${p.n}</div>`});
-// Position dot from sliders
-// X: left=low accountability, right=high accountability.
-const pr=vals.practical||0,cl=vals.classroom||0,gr=vals.growth||0,ent=vals.entertainment||0;
-const structured=pr+cl+gr, unstructured=ent;
-dotPos.x=Math.min(90,Math.max(10, structured/(structured+unstructured+.1)*100 ));
-// Y: bottom=learn by studying, top=learn by doing.
-dotPos.y=Math.min(90,Math.max(10, (pr*10)/(pr*10+cl*8+.1)*100 ));
-const sd=document.getElementById('sDot');sd.style.left=dotPos.x+'%';sd.style.top=(100-dotPos.y)+'%';
-updMapStats();
-// Make draggable
-const mp=document.getElementById('pMap');
-let dragging=false;
-function startDrag(e){dragging=true;e.preventDefault()}
-function moveDrag(e){if(!dragging)return;e.preventDefault();const r=mp.getBoundingClientRect();const cx=(e.touches?e.touches[0].clientX:e.clientX)-r.left;const cy=(e.touches?e.touches[0].clientY:e.clientY)-r.top;
-dotPos.x=Math.min(95,Math.max(5,cx/r.width*100));dotPos.y=Math.min(95,Math.max(5,100-cy/r.height*100));
-sd.style.left=dotPos.x+'%';sd.style.top=(100-dotPos.y)+'%';updMapStats()}
-function endDrag(){dragging=false}
-sd.onmousedown=startDrag;sd.ontouchstart=startDrag;
-mp.onmousemove=moveDrag;mp.ontouchmove=moveDrag;
-mp.onmouseup=endDrag;mp.ontouchend=endDrag;mp.onmouseleave=endDrag}
-
-function updMapStats(){
-const ix=dotPos.x/100,py=dotPos.y/100;
-const wDays=Math.round(ix*py*300);const lDays=Math.round((1-ix)*(1-py)*300);
-const ready=Math.round(ix*60+py*30);
-document.getElementById('msW').textContent=wDays;document.getElementById('msL').textContent=lDays;document.getElementById('msR').textContent=ready+'%';
-// Closest path
-let mn=Infinity,cl='',cc='';MAP_POS_N.forEach(p=>{const d=Math.sqrt(Math.pow(ix-p.x,2)+Math.pow(py-p.y,2));if(d<mn){mn=d;cl=p.n;cc=p.c}});
-const msP=document.getElementById('msP');msP.textContent=cl;msP.style.color=cc;
-// Snap proximity glow
-const sd=document.getElementById('sDot');if(mn<.15)sd.classList.add('near');else sd.classList.remove('near')}
+// FIVE TUESDAYS (S4)
+const TUE=[
+{n:'College BBA',hrs:'~3.5 hrs structured',featured:false,segs:[3.5,0,0,12.5],
+  body:`<p>The most common path. A tier-2 or tier-3 city college with 3–4 hours of lectures on class days, attendance requirements, and semester exams. <strong>~1,800 classroom hours over 3 years</strong> — about 10% of your total waking time.</p><p>The remaining 12.5 hours each day are entirely yours. Some students use this freedom to build startups, freelance, or self-study. Many don't — <strong>80% of Indian youth use their phones primarily for entertainment</strong> (ASER 2023, 34,745 youth surveyed). The outcome depends almost entirely on your self-discipline.</p><p>Cost is typically lower. Proximity to family is a plus. But formal work experience before graduation is rare — most internships, if they happen, are 4–6 weeks in the final year.</p>`,
+  stat:'AICTE Model Curriculum 2024 · 120 credits × 15 hrs/credit',
+  best:'Best for: students who are self-driven, want to stay close to home, or plan to use unstructured time intentionally.'},
+{n:'Legacy BBA',hrs:'~5 hrs structured',featured:false,segs:[4.5,0,0.5,11],
+  body:`<p>The established metro-city BBA — a branded college with better infrastructure, case-study pedagogy, and a stronger alumni network. <strong>~2,300 classroom hours over 3 years</strong>, about 13% of waking time. More structured than tier-2/3, with guest lectures, industry visits, and a more competitive peer group.</p><p>The brand name opens doors at placement time. But <strong>campus hiring accounts for only 10% of all hiring</strong> in India (ISR 2025) — most jobs come through portals (37%) and referrals (32.5%). So the network and brand carry more weight than the placement cell itself.</p><p>Fees are significantly higher. You'll likely live in a metro city, away from home. The 11 unstructured hours carry the same opportunity-or-drift question as the college BBA — just in a more expensive city. The pedagogy is still primarily lecture-based, with real work experience limited to a final-year internship.</p>`,
+  stat:'ISR 2025 (Wheebox/CII/AICTE) · 1,000+ corporations, 15 industries',
+  best:'Best for: students who value brand prestige, campus life, and metro exposure — and whose families can invest in the higher fees.'},
+{n:'The Working BBA',hrs:'~6.5 hrs structured',featured:true,segs:[2,3,1.5,9.5],
+  body:`<p>A newer model where education is built around work, not the other way around. <strong>~4,050 structured hours over 3 years</strong> — 23% of waking time, 2.3× more than a traditional BBA. The split: 60% real work (client projects, paid apprenticeships), 30% concepts and tools, 10% coaching and self-awareness.</p><p>You earn a UGC-approved BBA degree alongside the work experience. By graduation, you've accumulated <strong>~2,430 hours of real industry work</strong> — the equivalent of ~347 working days. For context, <strong>47% of all hiring in India goes to candidates with 1–5 years of experience</strong> (ISR 2025). This path builds that experience before you graduate.</p><p>The trade-off is real: 33 hours/week of structured time means less freedom. It demands discipline, accountability, and showing up consistently. This isn't a traditional college experience — there's no campus, no bunking, no long breaks.</p>`,
+  stat:'McKinsey MGI 2022 · ~1 million Indian work histories · ISR 2025',
+  best:'Best for: students who want to learn by doing, are ready for accountability, and want work experience before graduation.'},
+{n:'Online BBA',hrs:'~1.5 hrs structured',featured:false,segs:[1.5,0,0,14.5],
+  body:`<p>A UGC-approved degree done remotely — pre-recorded lectures, online exams, minimal attendance. <strong>~1–1.5 hours of actual study per day</strong>, mostly self-paced. You get the credential, but the day is almost entirely unstructured.</p><p>This path makes genuine sense for a specific set of students: <strong>full-time athletes who train 4–6 hours daily, performing artists with rigorous practice schedules, or those who want to work full-time from day one</strong> while still earning a degree. For them, the flexibility isn't a risk — it's a necessity.</p><p>The challenge is for everyone else. Without a parallel pursuit that fills those 14.5 hours with deliberate effort, the data suggests most 18-year-olds struggle to convert that freedom into skill-building. <strong>Average screen time for 18–25 year olds is 6 hours 45 minutes per day</strong> (IIM Rohtak, 38,896 youth). An online degree alone doesn't provide the structure or accountability most students need.</p>`,
+  stat:'IIM Rohtak 2024 · 38,896 youth · ASER 2023 · 34,745 youth',
+  best:'Best for: athletes, artists, or working professionals who need a degree alongside an existing full-time pursuit.'},
+{n:'Working Full-Time',hrs:'~8 hrs structured',featured:false,segs:[0,8,0,8],workLabel:'8h WORK',
+  body:`<p>Skip the degree entirely and start earning immediately. <strong>~6,000 work hours over 3 years</strong> — more real-world experience than any other path. Income starts on day one, and some industries (sales, trades, family business) value hustle over credentials.</p><p>The challenge is well-documented: <strong>58% of lifetime earnings in India correlate with work experience, but the remaining 42% correlates with education and credentials</strong> (McKinsey MGI, ~1 million work histories). Without a degree, career progression often hits a ceiling in corporate roles — promotions, switches, and MBA admissions all ask for one.</p><p>There's also no structured growth time built into a typical job. Learning happens on the job, but it's reactive — driven by what the employer needs, not what you need to develop. Over 3 years, you accumulate deep experience in one domain but potentially narrow skills.</p>`,
+  stat:'McKinsey MGI 2022 · ~1 million Indian work histories',
+  best:'Best for: students joining a family business, entering trades, or who have a clear income need and plan to add credentials later.'}
+];
+function bTue(){
+const c=document.getElementById('fiveTuesdays');c.innerHTML='';
+TUE.forEach(t=>{
+  const [cl,wk,gr,fr]=t.segs;
+  const wkSpan=wk?`<span>${t.workLabel||wk+'h'}</span>`:'';
+  const segs=`
+    <div class="bar-seg" style="flex:${cl};background:rgba(34,100,220,.75)">${cl?`<span>${cl}h</span>`:''}</div>
+    <div class="bar-seg" style="flex:${wk};background:rgba(0,203,200,.75)">${wkSpan}</div>
+    <div class="bar-seg" style="flex:${gr};background:rgba(212,192,122,.75)">${gr?`<span>${gr}h</span>`:''}</div>
+    <div class="bar-seg free-seg" style="flex:${fr};background:rgba(245,240,232,.08)">${fr?`<span>${fr}h yours</span>`:''}</div>`;
+  const div=document.createElement('div');
+  div.className='day-row'+(t.featured?' featured':'');
+  div.onclick=function(){tgTue(this)};
+  div.innerHTML=`<div class="day-header"><div class="day-label">${t.n} <span class="chev">▾</span></div><div class="day-hours">${t.hrs}</div></div><div class="bar-track">${segs}</div><div class="day-detail"><div class="day-body">${t.body}<div class="stat">${t.stat}</div><div class="best-for">${t.best}</div></div></div>`;
+  c.appendChild(div);
+});
+}
+function tgTue(el){document.querySelectorAll('.day-row.active').forEach(r=>{if(r!==el)r.classList.remove('active')});el.classList.toggle('active')}
 
 // FORM
 function submitForm(){
@@ -634,38 +692,36 @@ function calcR(){const pr=vals.practical||0,cl=vals.classroom||0,gr=vals.growth|
 return Math.max(0,Math.min(100,Math.round(Math.min(pr/4,1)*45+Math.min(gr/2,1)*20+Math.min(cl/2,1)*10-(sl<7?((7-sl)/7)*10:0)-(ent>5?((ent-5)/5)*15:0))))}
 // Note: practical now includes work+application combined, so threshold adjusted
 
-// DNA CARD (screenshot card with decision statements + percentile)
-const Q_TEXTS=[
-['I\'m chasing a college name that opens doors','I\'m building a portfolio of proof — not just marks','I\'m figuring out who I am before I commit','I want to explore before I lock in'],
-['I\'d rather scroll than start — honestly','I\'d rather build something than watch something','I recharge through people, not screens','I\'m waiting for something to click'],
-['I don\'t need anyone checking on me','I start strong but drift without structure','I do my best when someone\'s counting on me','I haven\'t been tested on my own yet']
+// DNA CARD — hero match % + subordinate readiness/working-days + MCQ decision pills
+const Q_PILLS=[
+['Name opens doors','Portfolio of proof','Figuring out who I am','Explore before lock-in'],
+['Default to scrolling','Build > watch','Recharge with people','Wait for a spark'],
+['Self-starter','Start strong, drift','Need accountability','Untested on my own']
 ];
+// Working-days-by-21 per matched path (ages 18→21, 3 years of apprenticeship/work)
+const W_DAYS_21={'The Working BBA':347,'Working Full-Time':1095,'Legacy BBA':57,'College BBA':29,'Online BBA':0};
 function bDNA(){
-  const dd=document.getElementById('dnaDecisions');dd.innerHTML='';
-  // Line 1: Projection from practical hours
-  const wDays=Math.round((vals.practical||0)*618/7);
-  if(wDays>0){
-    dd.innerHTML+=`<div style="margin-bottom:10px;position:relative"><div style="font-size:18px;color:#fff;font-weight:800;line-height:1.3">By 21, I'll have <span style="color:var(--gold)">${wDays} working days</span> of real experience</div></div>`;
-  }
-  // Lines 2-3: Q2 and Q3 pick1 as identity statements
-  for(let q=1;q<3;q++){
-    const p1=qa[q][0];
-    if(p1!==null&&Q_TEXTS[q][p1]){
-      dd.innerHTML+=`<div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:5px;position:relative"><span style="color:var(--tl);font-size:13px">✓</span><span style="font-size:13px;color:var(--cream);font-weight:500">${Q_TEXTS[q][p1]}</span></div>`;
-    }
-  }
-  // Readiness bar
+  const top=match()[0];
+  // Hero match %
+  document.getElementById('matchPct').textContent=top.pct+'%';
+  document.getElementById('matchName').textContent=top.n;
+  // Subordinate readiness
   const r=calcR();
+  document.getElementById('rScore').textContent=r+'%';
   document.getElementById('rBar3').style.width=r+'%';
-  // Mercer-Mettl comparison (not a percentile — sourced benchmark)
+  // Working days by 21 — path-specific preset (mock-accurate) with Online BBA user-driven fallback
+  let wDays=W_DAYS_21[top.n];
+  if(top.n==='Online BBA') wDays=Math.round((vals.practical||0)*618/7); // user-driven for Online (variable)
+  document.getElementById('wDays21').textContent=(wDays||0).toLocaleString();
+  // Decision pills from MCQ picks (pick1 from each question + path badge)
+  const dp=document.getElementById('dnaPills');dp.innerHTML='';
+  for(let q=0;q<3;q++){const p1=qa[q][0];if(p1!==null&&Q_PILLS[q][p1])dp.innerHTML+=`<span class="dna-pill">${Q_PILLS[q][p1]}</span>`}
+  dp.innerHTML+=`<span class="dna-pill" style="color:var(--gold);border-color:rgba(212,192,122,.3);background:rgba(212,192,122,.08)">${top.n}</span>`;
+  // Readiness context line
   const pctBox=document.getElementById('pctText');
-  if(r>=50){
-    pctBox.textContent='Your time allocation puts you ahead of the average graduate. 42.6% of Indian graduates aren\'t employable — you\'re not in that group.';
-  }else if(r>=30){
-    pctBox.textContent='You\'re tracking like the average graduate. 42.6% of Indian graduates aren\'t employable. Small shifts in your daily hours can change your trajectory.';
-  }else{
-    pctBox.textContent='42.6% of Indian graduates aren\'t employable. Your current time split mirrors that pattern — but it\'s not locked in. Adjust your sliders.';
-  }
+  if(r>=50){pctBox.textContent='Your time allocation puts you ahead of the average graduate. 42.6% of Indian graduates aren\'t employable — you\'re not in that group.'}
+  else if(r>=30){pctBox.textContent='You\'re tracking like the average graduate. 42.6% of Indian graduates aren\'t employable. Small shifts in your daily hours can change your trajectory.'}
+  else{pctBox.textContent='42.6% of Indian graduates aren\'t employable. Your current time split mirrors that pattern — but it\'s not locked in. Adjust your sliders.'}
 }
 
 // RESULTS
@@ -679,137 +735,126 @@ const whys=x.why.map(f=>'<div style="margin:3px 0">⚡ '+f+'</div>').join('');
 d.innerHTML=`<div class="mc-head" onclick="this.parentElement.classList.toggle('open')"><div class="mc-p">${x.pct}%</div><div style="flex:1"><div class="mc-n">${x.n}</div><div class="mc-d">${x.d}</div></div><div class="mc-toggle">▼</div></div><div class="mc-exp"><div style="margin-bottom:8px"><b style="color:var(--tl)">Right for you if:</b></div>${fits}<div style="margin:10px 0 8px"><b style="color:var(--am)">Key facts:</b></div>${whys}</div>`;
 mc.appendChild(d);if(i===0)d.classList.add('open')})}
 
-// FUTURE SELF
-function bFut(){
-const m=match(),top=m[0];
-document.getElementById('fPct').textContent=top.pct+'%';
-document.getElementById('fNm').textContent=top.n;
-
-// Data: work days and lecture days for 3 columns
-const wYou=Math.round((vals.practical||0)*618/7), lYou=Math.round((vals.classroom||0)*618/7);
-const wBBA=Math.round(200/7), lBBA=Math.round(1800/7); // Typical BBA: ~200 work hrs, ~1800 lecture hrs
-const wWBBA=Math.round(2430/7), lWBBA=Math.round(1200/7); // Working BBA: ~2430 work hrs, ~1200 lecture hrs
-const maxDays=Math.max(wYou,lYou,wBBA,lBBA,wWBBA,lWBBA,1);
-
-// VERTICAL BARS
-const vb=document.getElementById('vBars');vb.innerHTML='';
-const vl=document.getElementById('vLabels');vl.innerHTML='';
-const cols=[
-  {label:'Your Sliders',work:wYou,lec:lYou,accent:'var(--tl)',border:'var(--tl)'},
-  {label:'Regular BBA',work:wBBA,lec:lBBA,accent:'var(--cream)',border:'var(--cream)'},
-  {label:'Working BBA',work:wWBBA,lec:lWBBA,accent:'var(--gold)',border:'var(--gold)'}
-];
-cols.forEach(col=>{
-  const wPct=col.work/maxDays*100, lPct=col.lec/maxDays*100;
-  vb.innerHTML+=`<div style="display:flex;gap:4px;align-items:flex-end;flex:1;max-width:100px">
-    <div style="flex:1;display:flex;flex-direction:column;align-items:center">
-      <div style="font-family:'Chivo Mono',monospace;font-size:11px;font-weight:700;color:#F5F0E8;margin-bottom:4px">${col.lec}</div>
-      <div style="width:100%;height:${Math.max(4,lPct*1.8)}px;background:#F5F0E8;border-radius:2px 2px 0 0;transition:height .5s ease"></div>
-    </div>
-    <div style="flex:1;display:flex;flex-direction:column;align-items:center">
-      <div style="font-family:'Chivo Mono',monospace;font-size:11px;font-weight:700;color:var(--bl);margin-bottom:4px">${col.work}</div>
-      <div style="width:100%;height:${Math.max(4,wPct*1.8)}px;background:var(--bl);border-radius:2px 2px 0 0;transition:height .5s ease"></div>
-    </div>
-  </div>`;
-  vl.innerHTML+=`<div style="flex:1;max-width:100px;text-align:center;font-size:13px;font-weight:800;color:${col.accent};border-top:2px solid ${col.border};padding-top:6px">${col.label}</div>`;
-});
-
-// DONUT CHART
-const bktTotals=[0,0,0];
-['B','R','D'].forEach((bk,bi)=>{Object.values(BKT)[bi].forEach(k=>{bktTotals[bi]+=Math.round((vals[k]||0)*D)})});
-const total=bktTotals[0]+bktTotals[1]+bktTotals[2]||1;
-const pcts=[bktTotals[0]/total,bktTotals[1]/total,bktTotals[2]/total];
-const dColors=['#00FFCC','#9B8AFF','#6B7280'];
-const dLabels=['BUILD','RECHARGE','DRIFT'];
-const dEmoji=['🚀','🔋','⏳'];
-const dKeywords=['Classroom · Practical · Growth','Sleep · Home & Family','Entertainment & Social'];
-const cx=100,cy=100,r=80,rInner=50,gap=0.03;
-
-const svg=document.getElementById('donutSvg');svg.innerHTML='';
-// Glow filter
-svg.innerHTML='<defs><filter id="glow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>';
-let angle=-Math.PI/2;
-pcts.forEach((pct,i)=>{
-  if(pct<0.01)return;
-  const a1=angle+gap, a2=angle+pct*Math.PI*2-gap;
-  const explode=i===0?7:0;
-  const midAngle=(a1+a2)/2;
-  const ox=Math.cos(midAngle)*explode, oy=Math.sin(midAngle)*explode;
-  const x1o=cx+Math.cos(a1)*r+ox, y1o=cy+Math.sin(a1)*r+oy;
-  const x2o=cx+Math.cos(a2)*r+ox, y2o=cy+Math.sin(a2)*r+oy;
-  const x1i=cx+Math.cos(a2)*rInner+ox, y1i=cy+Math.sin(a2)*rInner+oy;
-  const x2i=cx+Math.cos(a1)*rInner+ox, y2i=cy+Math.sin(a1)*rInner+oy;
-  const large=pct>0.5?1:0;
-  svg.innerHTML+=`<path d="M${x1o},${y1o} A${r},${r} 0 ${large} 1 ${x2o},${y2o} L${x1i},${y1i} A${rInner},${rInner} 0 ${large} 0 ${x2i},${y2i} Z" fill="${dColors[i]}"${i===0?' filter="url(#glow)"':''} style="opacity:${i===0?1:0.75}"/>`;
-  angle+=pct*Math.PI*2;
-});
-svg.innerHTML+=`<text x="${cx}" y="${cy-4}" text-anchor="middle" fill="var(--cream)" font-family="'Cabinet Grotesk',sans-serif" font-weight="900" font-size="20">${total.toLocaleString()}</text>`;
-svg.innerHTML+=`<text x="${cx}" y="${cy+12}" text-anchor="middle" fill="var(--t3)" font-family="'Chivo Mono',monospace" font-size="8">productive hours</text>`;
-
-// Side legend (prominent labels)
-const dl=document.getElementById('donutLegend');dl.innerHTML='';
-pcts.forEach((pct,i)=>{
-  dl.innerHTML+=`<div style="display:flex;align-items:center;gap:12px">
-    <div style="width:18px;height:18px;border-radius:4px;background:${dColors[i]};flex-shrink:0${i===0?';box-shadow:0 0 12px '+dColors[i]+'80':''}"></div>
-    <div>
-      <div style="font-size:18px;font-weight:900;color:${dColors[i]};letter-spacing:.3px">${dLabels[i]}</div>
-      <div style="font-size:13px;color:var(--cream)">${bktTotals[i].toLocaleString()} hrs · ${Math.round(pct*100)}%</div>
-    </div>
-  </div>`;
-});
-
-// Stats below with keywords
-const ds=document.getElementById('donutStats');ds.innerHTML='';
-pcts.forEach((pct,i)=>{
-  ds.innerHTML+=`<div style="background:var(--ink);backdrop-filter:blur(16px);border:1px solid var(--b1);border-radius:2px;padding:14px;text-align:center">
-    <div style="font-size:26px;font-weight:900;color:${dColors[i]};letter-spacing:-.03em">${Math.round(pct*100)}%</div>
-    <div style="font-size:13px;color:var(--cream);margin-top:4px;font-weight:600;line-height:1.4">${dKeywords[i]}</div>
-  </div>`;
-});
-bBrag();
-}
-
-// ACTION
-const WHY={
-'College BBA (Tier-2/3)':{why:'You value stability and a recognised credential close to home.',ref:'86% of Indian parents rank "college name" as their #1 decision factor. You\'re aligned with the majority. — Shiksha Survey 2024'},
-'Premium BBA (Metro)':{why:'You want a stronger network, better infrastructure, and a city that challenges you.',ref:'Top-25 colleges report higher placement rates — but campus hiring is still only 10% of all hiring. The network matters more than the placements. — NIRF / ISR 2025'},
-'The Working BBA':{why:'You want to build proof, not just collect marks. Real work from day one.',ref:'47% of all hires in India have 1–5 years of experience. Only 14% are freshers. This path builds what employers actually hire for. — ISR 2025'},
-'Gap Year / Self-Directed':{why:'You want freedom to explore on your own terms.',ref:'Only 5.6% of Indian youth self-direct into vocational training without external structure. Freedom works — but only with a plan. — ASER 2023'}
-};
-function bAct(){const m=match(),top=m[0];
-document.getElementById('aN').textContent=top.n;
-const w=WHY[top.n]||{why:top.d,ref:''};
-document.getElementById('aWhy').textContent=w.why;
-document.getElementById('aRef').textContent=w.ref;
-}
-
-// BRAG (called from bFut — path-aware)
-function bBrag(){
-const top=match()[0];
-const wDays=Math.round((vals.practical||0)*618/7);
-const months=Math.round(wDays/22);
-const BRAG={
-'College BBA (Tier-2/3)':{
-  head:'<span style="color:var(--gold)">1,800</span> <span style="color:var(--cream)">classroom hours</span>',
-  sub:'A recognised degree, close to home, at a fraction of the cost.',
-  detail:'Campus placements account for 10% of hiring — your next step after graduation matters more than the degree itself.'},
-'Premium BBA (Metro)':{
-  head:'<span style="color:var(--gold)">2,300</span> <span style="color:var(--cream)">classroom hours</span>',
-  sub:'A stronger network, better infrastructure, metro city exposure.',
-  detail:'The network you build matters more than the placement cell.'},
+// S7 — PER-MATCH VARIANT (5 paths × [compare bars + interp + donut + CTA])
+const WBBA_CMP={cls:2190,wrk:3833,gro:2190,fre:9308}; // "The Working BBA · for comparison" reused across 4 paths
+const PATH_S7={
 'The Working BBA':{
-  head:'<span style="color:var(--gold)">347</span> <span style="color:var(--cream)">working days</span>',
-  sub:'12\u00d7 more real work experience than the average BBA grad.',
-  detail:'While most graduates have 6 weeks of internship, you\'ll have '+months+' months. 47% of hires have 1\u20135yr experience.'},
-'Gap Year / Self-Directed':{
-  head:'<span style="color:var(--gold)">1,095</span> <span style="color:var(--cream)">days</span>',
-  sub:'Maximum freedom \u2014 if you have a plan.',
-  detail:'Only 5.6% of youth self-direct into structured learning. The rest fill the time with screens.'}
+  match:{cls:2190,wrk:3833,gro:2190,fre:9308},
+  compareLabel:'College BBA · for comparison',compare:{cls:3833,wrk:0,gro:0,fre:13688},
+  iEy:'Your match · The Working BBA',
+  iTitle:"You're choosing structure over freedom.",
+  iBody1:'Your ideal day puts <strong>3.5 hours into real work, 2 hours into coached growth, and 2 hours into class</strong>. You picked accountability over autonomy, real clients over case studies, learning-by-doing over learning-about-doing. That\'s a rare profile at 18.',
+  iBody2:'The Working BBA converts <strong>4,380 of your otherwise-unstructured hours into real work, growth, and coached learning</strong>. You graduate with a UGC-recognised degree + 2,430 hours of <strong>paid apprenticeship</strong> — equivalent to 347 working days of experience. The trade-off is real: less free time, more deliberate hours, zero room to drift.',
+  iCite:'"47% of all hiring in India goes to candidates with 1–5 years of experience. Only 14% of new hires are freshers."<br>— ISR 2025, 1,000+ corporations',
+  iQ:'The question worth sitting with: <em>are you ready for 33 hours a week of non-negotiable accountability?</em>',
+  donut:{b:52,r:30,d:18,bh:9110,rh:5256,dh:3154,bL:'Class + Study + Work + Growth',rL:'Sleep + Home + Family',dL:'Entertainment + Screens',dWord:'Drift',dStat:'Drift hrs'},
+  cta:'Take the first step — apply to The Working BBA →',ctaHelper:'You matched. The application takes 8 minutes.'
+},
+'College BBA':{
+  match:{cls:3833,wrk:0,gro:0,fre:13688},
+  compareLabel:'The Working BBA · for comparison',compare:WBBA_CMP,
+  iEy:'Your match · College BBA',
+  iTitle:'The most common path. The question is yours.',
+  iBody1:'Your ideal day leans toward <strong>more personal time and less rigid structure</strong>. You want space to breathe, explore, and choose your own rhythm. Lectures are fine; you\'re comfortable with lower external accountability.',
+  iBody2:'College BBA gives you exactly that — <strong>~3,833 hours of class and 13,688 hours entirely yours.</strong> This path has launched millions of careers. It\'s affordable, often close to home, and manageable. But the data is clear about one thing: <strong>what you do with those 13,688 hours matters more than the 3,833 hours of lectures.</strong>',
+  iCite:'"80% of Indian youth use their phones primarily for entertainment. Only 4% use them for learning."<br>— ASER 2023, 34,745 youth surveyed across 28 districts',
+  iQ:'The question this tool can\'t answer for you: <em>do you have a plan for those 13,688 hours?</em>',
+  donut:{b:28,r:32,d:40,bh:4902,rh:5606,dh:7012,bL:'Class + Study + Growth',rL:'Sleep + Home + Family',dL:'Entertainment + Screens',dWord:'Drift',dStat:'Drift hrs'},
+  cta:'Still curious? Apply to The Working BBA →',ctaHelper:'Same UGC degree · 347 working days built in · real client projects'
+},
+'Legacy BBA':{
+  match:{cls:4928,wrk:0,gro:548,fre:12044},
+  compareLabel:'The Working BBA · for comparison',compare:WBBA_CMP,
+  iEy:'Your match · Legacy BBA',
+  iTitle:'Better brand. Similar day.',
+  iBody1:'Your ideal day puts <strong>classroom learning first and values a recognised institutional brand</strong>. You believe reputation matters, alumni networks matter, and the credential on your CV opens doors.',
+  iBody2:'Legacy BBA delivers on all of that — <strong>4,928 hours of class, case studies, guest lectures, and a brand-name degree</strong>. The placement cell will help. The alumni will pick up your calls. But strip away the logo and the day-to-day is still <strong>~4.5 hours of lecture and 11 hours that are yours to spend</strong>. Very similar to a tier-2 college in how time is actually spent.',
+  iCite:'"Campus tier drives the first offer, not the ceiling. Only 14% of hires are freshers; 47% have 1–5 yrs experience. After year 3, role progression tracks experience, not institutional brand."<br>— ISR 2025, 1,000+ corporate survey',
+  iQ:'The question this tool can\'t answer for you: <em>is the brand premium buying you a different day — or the same day with a better logo?</em>',
+  donut:{b:32,r:32,d:36,bh:5606,rh:5606,dh:6307,bL:'Class + Study + Growth',rL:'Sleep + Home + Family',dL:'Entertainment + Screens',dWord:'Drift',dStat:'Drift hrs'},
+  cta:'Rethinking the premium? Apply to The Working BBA →',ctaHelper:'A UGC-recognised degree with 2,430 hrs of real work built in'
+},
+'Online BBA':{
+  match:{cls:1095,wrk:0,gro:1095,fre:15330},
+  compareLabel:'The Working BBA · for comparison',compare:WBBA_CMP,
+  iEy:'Your match · Online BBA',
+  iTitle:'Maximum freedom. What will fill it?',
+  iBody1:'Your ideal day prizes <strong>autonomy above everything</strong> — minimal structure, no commute, no attendance, no one checking in. This path works brilliantly for a specific person: a full-time athlete training 6 hours a day, an artist in a serious practice, a young professional already working, or someone with a rare, clear parallel pursuit.',
+  iBody2:'Online BBA gives you exactly that flexibility — <strong>a UGC-recognised degree built around ~2 hours of daily study and 14 hours that are entirely yours</strong>. The credential is real. The freedom is real. But so is the cost: <strong>15,330 hours with no scaffolding</strong>. If the pursuit filling those hours isn\'t already intense and specific, this path becomes the hardest one to finish well.',
+  iCite:'"The average Indian youth spends 6h 45m/day on screens. Without external structure, unstructured hours tend to fill with passive consumption."<br>— IIM Rohtak 2024, 38,896 youth surveyed',
+  iQ:'The question worth asking yourself honestly: <em>do you have a pursuit worth 14 hours a day — or is this freedom you haven\'t structured yet?</em>',
+  donut:{b:15,r:30,d:55,bh:2628,rh:5256,dh:9636,bL:'Class + Study + Growth',rL:'Sleep + Home + Family',dL:'Unstructured / Self-directed',dWord:'Drift',dStat:'Unstructured'},
+  cta:'Want structure alongside your pursuit? Apply to The Working BBA →',ctaHelper:'Same UGC degree · half the unstructured hours · real work built in'
+},
+'Working Full-Time':{
+  match:{cls:0,wrk:8760,gro:2190,fre:6570},
+  compareLabel:'The Working BBA · for comparison',compare:WBBA_CMP,
+  iEy:'Your match · Working Full-Time',
+  iTitle:'All work. No degree. What about ceilings?',
+  iBody1:'Your ideal day looks nothing like a classroom. You want to <strong>earn, build, prove yourself by doing</strong> — income from day one, zero tuition, no patience for lectures. This is a legitimate path, and at 18, it\'s the one that pays fastest.',
+  iBody2:'Over 3 years you\'ll stack <strong>8,760 hours of real work</strong> — more than any structured program in the country. Salaries, skills, promotions, all real. But this path has a specific shape: <strong>career ceilings start appearing around years 5–7 without a credential</strong>. In India\'s hiring market, the resume filter at larger companies almost always starts with "degree required."',
+  iCite:'"Without a degree, you compete on experience from day one. 58% of lifetime earnings in India come from work experience, not credentials. The ceiling isn\'t the degree — it\'s whether you compound skills faster than peers stacking both."<br>— McKinsey Global Institute 2022, ~1M work histories',
+  iQ:'The question worth asking yourself early: <em>if the missing degree costs you a promotion in year 6, will you still think this was the right trade?</em>',
+  donut:{b:62,r:25,d:13,bh:10862,rh:4380,dh:2278,bL:'Work + Growth (no degree)',rL:'Sleep + Home + Family',dL:'Entertainment + Screens',dWord:'Drift',dStat:'Drift hrs'},
+  cta:'Add the degree to your day — Apply to The Working BBA →',ctaHelper:'Same hustle. Real paid apprenticeship. UGC-recognised credential.'
+}
 };
-const b=BRAG[top.n]||BRAG['The Working BBA'];
-document.getElementById('sBrag').innerHTML=b.head;
-document.getElementById('sBrag2').textContent=b.sub;
-document.getElementById('sBrag3').textContent=b.detail;
+function barRow(label,isMatch,bars){
+  const tot=bars.cls+bars.wrk+bars.gro+bars.fre;
+  const seg=(flex,cls,lbl,isFree)=>{
+    if(flex<=0)return `<div class="s7-bar-seg ${cls}" style="flex:0"></div>`;
+    const bg=cls==='cls'?'rgba(34,100,220,.75)':cls==='wrk'?'rgba(0,203,200,.75)':cls==='gro'?'rgba(212,192,122,.75)':'rgba(245,240,232,.08)';
+    const label=isFree?flex.toLocaleString()+'h yours':flex.toLocaleString()+'h';
+    return `<div class="s7-bar-seg ${cls}" style="flex:${flex};background:${bg}"><span>${label}</span></div>`;
+  };
+  const bb=(flex,cls,lbl)=>{const bg=cls==='cls'?'rgba(34,100,220,.75)':cls==='wrk'?'rgba(0,203,200,.75)':cls==='gro'?'rgba(212,192,122,.75)':'rgba(245,240,232,.15)';return `<div class="bb-item"><div class="bb-dot" style="background:${bg}"></div><strong>${flex.toLocaleString()}</strong> ${lbl}</div>`};
+  return `<div style="margin-bottom:16px">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px">
+      <div style="font-family:'Cabinet Grotesk',sans-serif;font-size:15px;font-weight:800;color:${isMatch?'var(--gold)':'var(--cream)'}">${label}</div>
+      <div style="font-family:'Chivo Mono',monospace;font-size:11px;color:var(--t3);letter-spacing:.06em">${tot.toLocaleString()} hrs</div>
+    </div>
+    <div class="s7-bar-track">${seg(bars.cls,'cls')}${seg(bars.wrk,'wrk')}${seg(bars.gro,'gro')}${seg(bars.fre,'free',null,true)}</div>
+    <div style="display:flex;gap:4px;margin-top:6px;flex-wrap:wrap">${bb(bars.cls,'cls','class + study')}${bb(bars.wrk,'wrk','work')}${bb(bars.gro,'gro','growth')}${bb(bars.fre,'free','yours')}</div>
+  </div>`;
+}
+function bS7(){
+  const top=match()[0];
+  const v=PATH_S7[top.n]||PATH_S7['The Working BBA'];
+  // Compare bars (match + comparison)
+  const cmp=document.getElementById('s7Compare');
+  cmp.innerHTML=barRow(top.n+' · your match',true,v.match)+barRow(v.compareLabel,false,v.compare);
+  // Interp card
+  document.getElementById('iEy').textContent=v.iEy;
+  document.getElementById('iTitle').textContent=v.iTitle;
+  document.getElementById('iBody1').innerHTML=v.iBody1;
+  document.getElementById('iBody2').innerHTML=v.iBody2;
+  document.getElementById('iCite').innerHTML=v.iCite;
+  document.getElementById('iQuestion').innerHTML=v.iQ;
+  // Donut (stroke-dasharray arcs; C = 2πr = 2π·70 ≈ 439.82)
+  const d=v.donut,C=439.82;
+  const dash=p=>(C*p/100);
+  const bD=dash(d.b),rD=dash(d.r),dD=dash(d.d);
+  const svg=document.getElementById('donutSvg');
+  svg.setAttribute('width','200');svg.setAttribute('height','200');svg.setAttribute('viewBox','0 0 200 200');
+  svg.innerHTML=`<defs><filter id="glow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+    <circle cx="100" cy="100" r="70" fill="none" stroke="#00CBC8" stroke-width="28" stroke-dasharray="${bD.toFixed(1)} ${(C-bD).toFixed(1)}" stroke-dashoffset="0" transform="rotate(-90 100 100)" filter="url(#glow)" opacity=".9"/>
+    <circle cx="100" cy="100" r="70" fill="none" stroke="#D4C07A" stroke-width="28" stroke-dasharray="${rD.toFixed(1)} ${(C-rD).toFixed(1)}" stroke-dashoffset="${(-bD).toFixed(1)}" transform="rotate(-90 100 100)" opacity=".85"/>
+    <circle cx="100" cy="100" r="70" fill="none" stroke="rgba(245,240,232,.15)" stroke-width="28" stroke-dasharray="${dD.toFixed(1)} ${(C-dD).toFixed(1)}" stroke-dashoffset="${(-(bD+rD)).toFixed(1)}" transform="rotate(-90 100 100)" opacity=".7"/>
+    <text x="100" y="92" text-anchor="middle" fill="#F5F0E8" font-family="Cabinet Grotesk,system-ui" font-size="28" font-weight="900">${d.b}%</text>
+    <text x="100" y="112" text-anchor="middle" fill="rgba(245,240,232,.5)" font-family="Chivo Mono,monospace" font-size="9" letter-spacing=".12em">BUILDING</text>`;
+  // Legend
+  document.getElementById('donutLegend').innerHTML=`
+    <div style="display:flex;align-items:center;gap:10px"><div style="width:14px;height:14px;border-radius:3px;background:#00CBC8;flex-shrink:0"></div><div style="font-family:'Chivo Mono',monospace;font-size:12px;color:var(--t2);letter-spacing:.04em"><strong style="color:var(--cream);font-weight:700;font-size:14px;display:block">${d.b}% Build</strong>${d.bL}</div></div>
+    <div style="display:flex;align-items:center;gap:10px"><div style="width:14px;height:14px;border-radius:3px;background:#D4C07A;flex-shrink:0"></div><div style="font-family:'Chivo Mono',monospace;font-size:12px;color:var(--t2);letter-spacing:.04em"><strong style="color:var(--cream);font-weight:700;font-size:14px;display:block">${d.r}% Recharge</strong>${d.rL}</div></div>
+    <div style="display:flex;align-items:center;gap:10px"><div style="width:14px;height:14px;border-radius:3px;background:rgba(245,240,232,.15);border:1px solid rgba(245,240,232,.2);flex-shrink:0"></div><div style="font-family:'Chivo Mono',monospace;font-size:12px;color:var(--t2);letter-spacing:.04em"><strong style="color:var(--cream);font-weight:700;font-size:14px;display:block">${d.d}% ${d.dWord}</strong>${d.dL}</div></div>`;
+  // Stats
+  document.getElementById('donutStats').innerHTML=`
+    <div style="background:var(--ink);backdrop-filter:blur(16px);border:1px solid var(--b1);border-radius:2px;padding:10px 8px;text-align:center"><div style="font-family:'Cabinet Grotesk',sans-serif;font-size:22px;font-weight:900;letter-spacing:-.03em;color:#00CBC8">${d.bh.toLocaleString()}</div><div style="font-family:'Chivo Mono',monospace;font-size:9px;color:var(--t3);letter-spacing:.06em;text-transform:uppercase;margin-top:2px">Build hrs</div></div>
+    <div style="background:var(--ink);backdrop-filter:blur(16px);border:1px solid var(--b1);border-radius:2px;padding:10px 8px;text-align:center"><div style="font-family:'Cabinet Grotesk',sans-serif;font-size:22px;font-weight:900;letter-spacing:-.03em;color:var(--gold)">${d.rh.toLocaleString()}</div><div style="font-family:'Chivo Mono',monospace;font-size:9px;color:var(--t3);letter-spacing:.06em;text-transform:uppercase;margin-top:2px">Recharge hrs</div></div>
+    <div style="background:var(--ink);backdrop-filter:blur(16px);border:1px solid var(--b1);border-radius:2px;padding:10px 8px;text-align:center"><div style="font-family:'Cabinet Grotesk',sans-serif;font-size:22px;font-weight:900;letter-spacing:-.03em;color:var(--t3)">${d.dh.toLocaleString()}</div><div style="font-family:'Chivo Mono',monospace;font-size:9px;color:var(--t3);letter-spacing:.06em;text-transform:uppercase;margin-top:2px">${d.dStat}</div></div>`;
+  // CTA
+  document.getElementById('s7CtaPrimary').textContent=v.cta;
+  document.getElementById('s7CtaHelper').textContent=v.ctaHelper;
 }
 
 // SHARE
