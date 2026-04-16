@@ -206,12 +206,13 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;bac
 .day-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:10px}
 .day-label{font-family:'Cabinet Grotesk',system-ui,sans-serif;font-size:16px;font-weight:800;letter-spacing:-.01em;color:var(--cream);transition:color .25s}
 .day-hours{font-family:'Chivo Mono',monospace;font-size:11px;color:var(--t3);letter-spacing:.06em}
-.bar-track{width:100%;height:32px;background:rgba(245,240,232,.04);border-radius:2px;display:flex;overflow:hidden;position:relative}
-.bar-seg{height:100%;position:relative;transition:flex .4s cubic-bezier(.22,1,.36,1);display:flex;align-items:center;justify-content:center;overflow:hidden}
-.bar-seg span{font-family:'Chivo Mono',monospace;font-size:9px;font-weight:700;color:rgba(0,0,0,.55);letter-spacing:.04em;white-space:nowrap;opacity:0;transition:opacity .3s}
+.bar-track{width:100%;height:36px;background:rgba(10,0,45,.55);border-radius:3px;display:flex;overflow:hidden;position:relative;box-shadow:inset 0 0 0 1px rgba(245,240,232,.1)}
+.bar-seg{height:100%;position:relative;transition:flex .4s cubic-bezier(.22,1,.36,1);display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:inset -1px 0 0 rgba(10,0,45,.25)}
+.bar-seg:last-child{box-shadow:none}
+.bar-seg span{font-family:'Chivo Mono',monospace;font-size:11px;font-weight:800;color:rgba(10,0,45,.9);letter-spacing:.04em;white-space:nowrap;opacity:0;transition:opacity .3s}
 .day-row:hover .bar-seg span,.day-row.active .bar-seg span{opacity:1}
-.bar-seg.free-seg span{color:rgba(245,240,232,.25)}
-.day-row:hover .bar-seg.free-seg span,.day-row.active .bar-seg.free-seg span{color:rgba(245,240,232,.35)}
+.bar-seg.free-seg span{color:rgba(245,240,232,.7)}
+.day-row:hover .bar-seg.free-seg span,.day-row.active .bar-seg.free-seg span{color:rgba(245,240,232,.85)}
 .day-detail{max-height:0;overflow:hidden;transition:max-height .4s ease,margin .35s ease,opacity .3s ease;opacity:0;margin-top:0}
 .day-row.active .day-detail{max-height:700px;opacity:1;margin-top:12px}
 .day-body{padding-top:12px;border-top:1px solid var(--b1)}
@@ -226,12 +227,22 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;bac
 /* DNA card decision pills */
 .dna-pill{font-family:'Chivo Mono',monospace;font-size:10px;letter-spacing:.06em;padding:5px 10px;border-radius:2px;background:rgba(245,240,232,.06);border:1px solid rgba(245,240,232,.08);color:var(--t2)}
 
+/* S7 END-GAME CTA */
+.s7-cta-eyebrow{font-family:'Chivo Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.16em;color:var(--gold);background:rgba(212,192,122,.1);border:1px solid rgba(212,192,122,.35);padding:6px 14px;border-radius:2px;text-transform:uppercase;margin-bottom:4px}
+.s7-cta-primary{width:100%;max-width:460px;justify-content:center;font-size:17px;font-weight:800;padding:22px 32px;background:#fff;color:#0A0045;text-transform:none;letter-spacing:-.005em;border-radius:3px;box-shadow:0 6px 24px rgba(10,0,45,.25);transition:box-shadow .3s ease,transform .2s ease,background .25s ease}
+.s7-cta-primary:hover{box-shadow:0 0 0 1px rgba(212,192,122,.5),0 8px 40px rgba(212,192,122,.4),0 6px 24px rgba(10,0,45,.25);transform:translateY(-1px);background:#fff}
+.s7-cta-primary:active{transform:translateY(0)}
+.s7-cta-helper{font-family:'Cabinet Grotesk',sans-serif;font-size:13px;color:var(--t2);letter-spacing:0;text-align:center;text-transform:none;font-weight:400;line-height:1.5;max-width:420px;margin-top:2px}
+.s7-cta-ghost{background:transparent;border:none;color:var(--t3);font-family:'Chivo Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:10px 14px;cursor:pointer;text-decoration:underline;text-decoration-color:rgba(245,240,232,.2);text-underline-offset:4px;transition:color .2s}
+.s7-cta-ghost:hover{color:var(--cream);text-decoration-color:rgba(245,240,232,.5)}
+
 /* S7 per-match variant bars */
-.s7-bar-track{width:100%;height:36px;background:rgba(245,240,232,.04);border-radius:2px;display:flex;overflow:hidden;position:relative}
-.s7-bar-seg{height:100%;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
-.s7-bar-seg span{font-family:'Chivo Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.03em;white-space:nowrap}
-.s7-bar-seg.cls span,.s7-bar-seg.wrk span,.s7-bar-seg.gro span{color:rgba(0,0,30,.5)}
-.s7-bar-seg.free span{color:rgba(245,240,232,.25)}
+.s7-bar-track{width:100%;height:44px;background:rgba(10,0,45,.55);border-radius:3px;display:flex;overflow:hidden;position:relative;box-shadow:inset 0 0 0 1px rgba(245,240,232,.1)}
+.s7-bar-seg{height:100%;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;box-shadow:inset -1px 0 0 rgba(10,0,45,.25)}
+.s7-bar-seg:last-child{box-shadow:none}
+.s7-bar-seg span{font-family:'Chivo Mono',monospace;font-size:12px;font-weight:800;letter-spacing:.04em;white-space:nowrap}
+.s7-bar-seg.cls span,.s7-bar-seg.wrk span,.s7-bar-seg.gro span{color:rgba(10,0,45,.92)}
+.s7-bar-seg.free span{color:rgba(245,240,232,.75)}
 .bb-item{font-family:'Chivo Mono',monospace;font-size:10px;color:var(--t3);letter-spacing:.03em;display:flex;align-items:center;gap:4px}
 .bb-dot{width:6px;height:6px;border-radius:1px;flex-shrink:0}
 .bb-item strong{color:var(--t2);font-weight:700}
@@ -483,10 +494,11 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;bac
 
 <!-- CTAs -->
 <div style="display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:28px">
-<button id="s7CtaPrimary" class="cta" onclick="window.open('https://admissions.letsenterprise.in','_blank');try{plausible('Apply',{props:{p:match()[0].n}})}catch(e){}" style="width:100%;max-width:400px;justify-content:center;font-size:14px;padding:16px 24px;background:#fff;color:#0A0045;text-transform:none;letter-spacing:0">Take the first step — apply to The Working BBA →</button>
-<div id="s7CtaHelper" style="font-family:'Chivo Mono',monospace;font-size:10px;color:var(--t3);letter-spacing:.08em;text-align:center;text-transform:uppercase">—</div>
-<button class="cta s" onclick="shareFriend()" style="width:100%;max-width:320px;justify-content:center;font-size:13px;padding:14px 24px">💬 Share with a friend</button>
-<button class="cta s" onclick="go(0)" style="width:100%;max-width:320px;justify-content:center;font-size:11px;padding:12px 24px">↺ Start over</button>
+<div id="s7CtaEyebrow" class="s7-cta-eyebrow">—</div>
+<button id="s7CtaPrimary" class="cta s7-cta-primary" onclick="window.open('https://admissions.letsenterprise.in','_blank');try{plausible('Apply',{props:{p:match()[0].n}})}catch(e){}">Start my Working BBA application →</button>
+<div id="s7CtaHelper" class="s7-cta-helper">—</div>
+<button class="cta s" onclick="shareFriend()" style="width:100%;max-width:320px;justify-content:center;font-size:13px;padding:14px 24px;margin-top:14px">💬 Share with a friend</button>
+<button class="s7-cta-ghost" onclick="go(0)">↺ Start over</button>
 </div>
 <div style="margin-top:28px;background:#fff;border-radius:6px;padding:20px 16px;color:#0A0045">
 <div style="font-size:16px;font-weight:800;margin-bottom:4px;color:#0A0045;letter-spacing:-.01em">This Time Calculator was built with 16 primary research sources.</div>
@@ -748,7 +760,7 @@ const PATH_S7={
   iCite:'"47% of all hiring in India goes to candidates with 1–5 years of experience. Only 14% of new hires are freshers."<br>— ISR 2025, 1,000+ corporations',
   iQ:'The question worth sitting with: <em>are you ready for 33 hours a week of non-negotiable accountability?</em>',
   donut:{b:52,r:30,d:18,bh:9110,rh:5256,dh:3154,bL:'Class + Study + Work + Growth',rL:'Sleep + Home + Family',dL:'Entertainment + Screens',dWord:'Drift',dStat:'Drift hrs'},
-  cta:'Take the first step — apply to The Working BBA →',ctaHelper:'You matched. The application takes 8 minutes.'
+  ctaEyebrow:'YOU MATCHED',cta:'Start my Working BBA application →',ctaHelper:'Takes about 8 minutes. Save your progress anytime.'
 },
 'College BBA':{
   match:{cls:3833,wrk:0,gro:0,fre:13688},
@@ -760,7 +772,7 @@ const PATH_S7={
   iCite:'"80% of Indian youth use their phones primarily for entertainment. Only 4% use them for learning."<br>— ASER 2023, 34,745 youth surveyed across 28 districts',
   iQ:'The question this tool can\'t answer for you: <em>do you have a plan for those 13,688 hours?</em>',
   donut:{b:28,r:32,d:40,bh:4902,rh:5606,dh:7012,bL:'Class + Study + Growth',rL:'Sleep + Home + Family',dL:'Entertainment + Screens',dWord:'Drift',dStat:'Drift hrs'},
-  cta:'Still curious? Apply to The Working BBA →',ctaHelper:'Same UGC degree · 347 working days built in · real client projects'
+  ctaEyebrow:'STILL CURIOUS?',cta:'Start my Working BBA application →',ctaHelper:'Same UGC degree · 347 working days built in · real client projects'
 },
 'Legacy BBA':{
   match:{cls:4928,wrk:0,gro:548,fre:12044},
@@ -772,7 +784,7 @@ const PATH_S7={
   iCite:'"Campus tier drives the first offer, not the ceiling. Only 14% of hires are freshers; 47% have 1–5 yrs experience. After year 3, role progression tracks experience, not institutional brand."<br>— ISR 2025, 1,000+ corporate survey',
   iQ:'The question this tool can\'t answer for you: <em>is the brand premium buying you a different day — or the same day with a better logo?</em>',
   donut:{b:32,r:32,d:36,bh:5606,rh:5606,dh:6307,bL:'Class + Study + Growth',rL:'Sleep + Home + Family',dL:'Entertainment + Screens',dWord:'Drift',dStat:'Drift hrs'},
-  cta:'Rethinking the premium? Apply to The Working BBA →',ctaHelper:'A UGC-recognised degree with 2,430 hrs of real work built in'
+  ctaEyebrow:'RETHINKING THE PREMIUM?',cta:'Start my Working BBA application →',ctaHelper:'A UGC-recognised degree with 2,430 hrs of real work built in'
 },
 'Online BBA':{
   match:{cls:1095,wrk:0,gro:1095,fre:15330},
@@ -784,7 +796,7 @@ const PATH_S7={
   iCite:'"The average Indian youth spends 6h 45m/day on screens. Without external structure, unstructured hours tend to fill with passive consumption."<br>— IIM Rohtak 2024, 38,896 youth surveyed',
   iQ:'The question worth asking yourself honestly: <em>do you have a pursuit worth 14 hours a day — or is this freedom you haven\'t structured yet?</em>',
   donut:{b:15,r:30,d:55,bh:2628,rh:5256,dh:9636,bL:'Class + Study + Growth',rL:'Sleep + Home + Family',dL:'Unstructured / Self-directed',dWord:'Drift',dStat:'Unstructured'},
-  cta:'Want structure alongside your pursuit? Apply to The Working BBA →',ctaHelper:'Same UGC degree · half the unstructured hours · real work built in'
+  ctaEyebrow:'WANT STRUCTURE ALONGSIDE YOUR PURSUIT?',cta:'Start my Working BBA application →',ctaHelper:'Same UGC degree · half the unstructured hours · real work built in'
 },
 'Working Full-Time':{
   match:{cls:0,wrk:8760,gro:2190,fre:6570},
@@ -796,18 +808,18 @@ const PATH_S7={
   iCite:'"Without a degree, you compete on experience from day one. 58% of lifetime earnings in India come from work experience, not credentials. The ceiling isn\'t the degree — it\'s whether you compound skills faster than peers stacking both."<br>— McKinsey Global Institute 2022, ~1M work histories',
   iQ:'The question worth asking yourself early: <em>if the missing degree costs you a promotion in year 6, will you still think this was the right trade?</em>',
   donut:{b:62,r:25,d:13,bh:10862,rh:4380,dh:2278,bL:'Work + Growth (no degree)',rL:'Sleep + Home + Family',dL:'Entertainment + Screens',dWord:'Drift',dStat:'Drift hrs'},
-  cta:'Add the degree to your day — Apply to The Working BBA →',ctaHelper:'Same hustle. Real paid apprenticeship. UGC-recognised credential.'
+  ctaEyebrow:'ADD THE DEGREE TO YOUR DAY',cta:'Start my Working BBA application →',ctaHelper:'Same hustle. Real paid apprenticeship. UGC-recognised credential.'
 }
 };
 function barRow(label,isMatch,bars){
   const tot=bars.cls+bars.wrk+bars.gro+bars.fre;
   const seg=(flex,cls,lbl,isFree)=>{
     if(flex<=0)return `<div class="s7-bar-seg ${cls}" style="flex:0"></div>`;
-    const bg=cls==='cls'?'rgba(34,100,220,.75)':cls==='wrk'?'rgba(0,203,200,.75)':cls==='gro'?'rgba(212,192,122,.75)':'rgba(245,240,232,.08)';
+    const bg=cls==='cls'?'#2264DC':cls==='wrk'?'#00CBC8':cls==='gro'?'#D4C07A':'rgba(245,240,232,.15)';
     const label=isFree?flex.toLocaleString()+'h yours':flex.toLocaleString()+'h';
     return `<div class="s7-bar-seg ${cls}" style="flex:${flex};background:${bg}"><span>${label}</span></div>`;
   };
-  const bb=(flex,cls,lbl)=>{const bg=cls==='cls'?'rgba(34,100,220,.75)':cls==='wrk'?'rgba(0,203,200,.75)':cls==='gro'?'rgba(212,192,122,.75)':'rgba(245,240,232,.15)';return `<div class="bb-item"><div class="bb-dot" style="background:${bg}"></div><strong>${flex.toLocaleString()}</strong> ${lbl}</div>`};
+  const bb=(flex,cls,lbl)=>{const bg=cls==='cls'?'#2264DC':cls==='wrk'?'#00CBC8':cls==='gro'?'#D4C07A':'rgba(245,240,232,.3)';return `<div class="bb-item"><div class="bb-dot" style="background:${bg}"></div><strong>${flex.toLocaleString()}</strong> ${lbl}</div>`};
   return `<div style="margin-bottom:16px">
     <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px">
       <div style="font-family:'Cabinet Grotesk',sans-serif;font-size:15px;font-weight:800;color:${isMatch?'var(--gold)':'var(--cream)'}">${label}</div>
@@ -852,7 +864,8 @@ function bS7(){
     <div style="background:var(--ink);backdrop-filter:blur(16px);border:1px solid var(--b1);border-radius:2px;padding:10px 8px;text-align:center"><div style="font-family:'Cabinet Grotesk',sans-serif;font-size:22px;font-weight:900;letter-spacing:-.03em;color:#00CBC8">${d.bh.toLocaleString()}</div><div style="font-family:'Chivo Mono',monospace;font-size:9px;color:var(--t3);letter-spacing:.06em;text-transform:uppercase;margin-top:2px">Build hrs</div></div>
     <div style="background:var(--ink);backdrop-filter:blur(16px);border:1px solid var(--b1);border-radius:2px;padding:10px 8px;text-align:center"><div style="font-family:'Cabinet Grotesk',sans-serif;font-size:22px;font-weight:900;letter-spacing:-.03em;color:var(--gold)">${d.rh.toLocaleString()}</div><div style="font-family:'Chivo Mono',monospace;font-size:9px;color:var(--t3);letter-spacing:.06em;text-transform:uppercase;margin-top:2px">Recharge hrs</div></div>
     <div style="background:var(--ink);backdrop-filter:blur(16px);border:1px solid var(--b1);border-radius:2px;padding:10px 8px;text-align:center"><div style="font-family:'Cabinet Grotesk',sans-serif;font-size:22px;font-weight:900;letter-spacing:-.03em;color:var(--t3)">${d.dh.toLocaleString()}</div><div style="font-family:'Chivo Mono',monospace;font-size:9px;color:var(--t3);letter-spacing:.06em;text-transform:uppercase;margin-top:2px">${d.dStat}</div></div>`;
-  // CTA
+  // CTA (eyebrow + primary + helper)
+  document.getElementById('s7CtaEyebrow').textContent=v.ctaEyebrow||'';
   document.getElementById('s7CtaPrimary').textContent=v.cta;
   document.getElementById('s7CtaHelper').textContent=v.ctaHelper;
 }
