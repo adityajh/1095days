@@ -23,39 +23,67 @@ async function getZohoAccessToken() {
   return cachedToken.value;
 }
 
-async function upsertZohoLead(payload) {
+async function syncZohoLead(payload) {
   const token = await getZohoAccessToken();
+  const authHeaders = { 'Authorization': `Zoho-oauthtoken ${token}` };
+  const jsonHeaders = { ...authHeaders, 'Content-Type': 'application/json' };
   const firstName = (payload.firstName || '').trim();
   const lastName = (payload.lastName || '').trim() || 'Unknown';
   const description = `1095 Match = ${payload.matchPct ?? '—'}%`;
+  const city = payload.city || null;
 
-  const record = {
-    Last_Name: lastName,
-    Email: payload.email,
-    City: payload.city || null,
-    Description: description,
-  };
-  if (firstName) record.First_Name = firstName;
+  const searchRes = await fetch(
+    `${process.env.ZOHO_API_HOST}/crm/v2/Leads/search?email=${encodeURIComponent(payload.email)}`,
+    { headers: authHeaders },
+  );
 
-  const upsertRes = await fetch(`${process.env.ZOHO_API_HOST}/crm/v2/Leads/upsert`, {
-    method: 'POST',
-    headers: { 'Authorization': `Zoho-oauthtoken ${token}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      data: [record],
-      duplicate_check_fields: ['Email'],
-      trigger: ['workflow'],
-    }),
-  });
-  const upsertJson = await upsertRes.json();
-  const row = upsertJson?.data?.[0];
-  if (row?.code !== 'SUCCESS') throw new Error(`Zoho upsert failed: ${JSON.stringify(upsertJson)}`);
-  const leadId = row.details.id;
-  const action = row.action;
+  let leadId;
+  let action;
+
+  if (searchRes.status === 204) {
+    action = 'insert';
+    const insertRes = await fetch(`${process.env.ZOHO_API_HOST}/crm/v2/Leads`, {
+      method: 'POST',
+      headers: jsonHeaders,
+      body: JSON.stringify({
+        data: [{
+          First_Name: firstName || null,
+          Last_Name: lastName,
+          Email: payload.email,
+          City: city,
+          Description: description,
+        }],
+        trigger: ['workflow'],
+      }),
+    });
+    const json = await insertRes.json();
+    const row = json?.data?.[0];
+    if (row?.code !== 'SUCCESS') throw new Error(`Zoho insert failed: ${JSON.stringify(json)}`);
+    leadId = row.details.id;
+  } else if (searchRes.ok) {
+    const searchJson = await searchRes.json();
+    leadId = searchJson?.data?.[0]?.id;
+    if (!leadId) throw new Error(`Zoho search returned 200 but no id: ${JSON.stringify(searchJson)}`);
+    action = 'update';
+    const updateRes = await fetch(`${process.env.ZOHO_API_HOST}/crm/v2/Leads/${leadId}`, {
+      method: 'PUT',
+      headers: jsonHeaders,
+      body: JSON.stringify({
+        data: [{ City: city, Description: description }],
+        trigger: ['workflow'],
+      }),
+    });
+    const json = await updateRes.json();
+    const row = json?.data?.[0];
+    if (row?.code !== 'SUCCESS') throw new Error(`Zoho update failed: ${JSON.stringify(json)}`);
+  } else {
+    throw new Error(`Zoho search failed: HTTP ${searchRes.status} ${await searchRes.text()}`);
+  }
 
   try {
     const tagRes = await fetch(
       `${process.env.ZOHO_API_HOST}/crm/v2/Leads/${leadId}/actions/add_tags?tag_names=1095days&over_write=false`,
-      { method: 'POST', headers: { 'Authorization': `Zoho-oauthtoken ${token}` } },
+      { method: 'POST', headers: authHeaders },
     );
     const tagJson = await tagRes.json();
     const tagRow = tagJson?.data?.[0];
@@ -120,7 +148,7 @@ export default async function handler(req, res) {
          ${record.shareUrl}, ${record.userAgent}, ${record.referrer}, ${record.ip})
       returning id
     `,
-    upsertZohoLead(record),
+    syncZohoLead(record),
   ]);
 
   const neonOk = neonResult.status === 'fulfilled';
