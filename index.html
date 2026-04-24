@@ -676,9 +676,23 @@ function tgTue(el){document.querySelectorAll('.day-row.active').forEach(r=>{if(r
 
 // FORM
 function submitForm(){
-userData={name:document.getElementById('fName').value,email:document.getElementById('fEmail').value,city:document.getElementById('fCity').value,status:document.getElementById('fStatus').value};
-if(!userData.name||!userData.email){alert('Please fill in name and email.');return}
-try{plausible('FormSubmit',{props:{status:userData.status,city:userData.city}})}catch(e){}
+const n=document.getElementById('fName').value.trim();
+const em=document.getElementById('fEmail').value.trim();
+const ct=document.getElementById('fCity').value.trim();
+const st=document.getElementById('fStatus').value;
+if(!n||!em||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){alert('Please enter your name and a valid email.');return}
+userData={name:n,email:em,city:ct,status:st};
+try{plausible('FormSubmit',{props:{status:st,city:ct}})}catch(e){}
+try{
+  const top=match()[0];
+  const payload={name:n,email:em,city:ct,status:st,
+    sliderValues:vals,mcqPicks:qa,
+    topMatch:top?top.n:null,matchPct:top?top.pct:null,
+    readinessPct:calcR(),
+    workDays21:top&&W_DAYS_21[top.n]!=null?W_DAYS_21[top.n]:null,
+    shareUrl:location.href,referrer:document.referrer||null};
+  fetch('/api/submit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),keepalive:true}).catch(()=>{});
+}catch(e){}
 goReal(6)}
 
 // MATCHING — slider distance + two-pick question boost

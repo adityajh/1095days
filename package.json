@@ -1,0 +1,10 @@
+{
+  "name": "1095days",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Your Next 1,095 Days — BBA decision calculator",
+  "dependencies": {
+    "@neondatabase/serverless": "^0.10.4"
+  }
+}
