@@ -391,7 +391,8 @@ input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;bac
 <div class="sub">See your full results — readiness score, path matches, and 3-year projection.</div>
 </div>
 <div class="form-wrap">
-<label>Your name</label><input type="text" id="fName" placeholder="First name">
+<label>First name</label><input type="text" id="fFirst" placeholder="First name">
+<label>Last name</label><input type="text" id="fLast" placeholder="Last name">
 <label>Email</label><input type="email" id="fEmail" placeholder="your@email.com">
 <label>City</label><input type="text" id="fCity" placeholder="Pune, Mumbai, Delhi...">
 <label>What are you currently doing?</label>
@@ -676,16 +677,17 @@ function tgTue(el){document.querySelectorAll('.day-row.active').forEach(r=>{if(r
 
 // FORM
 function submitForm(){
-const n=document.getElementById('fName').value.trim();
+const fn=document.getElementById('fFirst').value.trim();
+const ln=document.getElementById('fLast').value.trim();
 const em=document.getElementById('fEmail').value.trim();
 const ct=document.getElementById('fCity').value.trim();
 const st=document.getElementById('fStatus').value;
-if(!n||!em||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){alert('Please enter your name and a valid email.');return}
-userData={name:n,email:em,city:ct,status:st};
+if(!fn||!ln||!em||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){alert('Please enter your first name, last name, and a valid email.');return}
+userData={firstName:fn,lastName:ln,email:em,city:ct,status:st};
 try{plausible('FormSubmit',{props:{status:st,city:ct}})}catch(e){}
 try{
   const top=match()[0];
-  const payload={name:n,email:em,city:ct,status:st,
+  const payload={firstName:fn,lastName:ln,email:em,city:ct,status:st,
     sliderValues:vals,mcqPicks:qa,
     topMatch:top?top.n:null,matchPct:top?top.pct:null,
     readinessPct:calcR(),
